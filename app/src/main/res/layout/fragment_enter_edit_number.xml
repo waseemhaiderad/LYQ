@@ -1,0 +1,91 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.setting.account.accountsetting.FragmentEnterEditNumber">
+
+        <TextView
+            android:id="@+id/mTvPhoneNumberShould"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="@string/my_phone_number"
+            android:textColor="@color/colorBlackSettingItemsNewTheme"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countryCodePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            app:ccp_autoFormatNumber="true"
+            app:ccp_contentColor="@color/colorBlackHintNewTheme"
+            app:ccp_defaultPhoneCode="1"
+            app:ccp_showArrow="false"
+            app:ccp_showFlag="true"
+            app:ccp_showFullName="false"
+            app:ccp_showNameCode="false"
+            app:ccp_autoDetectCountry="true"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputLayouPhone"
+            app:layout_constraintEnd_toStartOf="@+id/textInputLayouPhone"
+            app:layout_constraintStart_toStartOf="@+id/mTvPhoneNumberShould"
+            app:layout_constraintTop_toBottomOf="@+id/mTvPhoneNumberShould"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayouPhone" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:background="@color/colorBlackHintNewTheme"
+            app:layout_constraintBottom_toBottomOf="@+id/countryCodePicker"
+            app:layout_constraintEnd_toEndOf="@+id/countryCodePicker"
+            app:layout_constraintStart_toStartOf="@+id/countryCodePicker" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayouPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:theme="@style/TextInputLayoutAppearanceBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+            app:layout_constraintTop_toBottomOf="@+id/mTvPhoneNumberShould">
+
+            <EditText
+                android:id="@+id/editTextPhone"
+                style="@style/editTextNewTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_phone_number"
+                android:inputType="phone"
+                tools:ignore="Autofill" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/mBtnVerify"
+            style="@style/buttonNewTheme"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="@string/verify"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayouPhone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

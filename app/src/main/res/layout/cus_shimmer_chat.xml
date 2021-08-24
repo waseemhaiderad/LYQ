@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewProfileshimmer"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:padding="2dp"
+        android:alpha="0.7"
+        android:background="@drawable/bg_circle_shimmer_new"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+
+    <TextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@drawable/bg_popup_shimmer"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        android:alpha="0.7"
+        app:layout_constraintStart_toEndOf="@+id/imageViewProfileshimmer"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProfileshimmer" />
+
+    <TextView
+        android:id="@+id/textViewLastMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:singleLine="true"
+        android:background="@drawable/bg_popup_shimmer"
+        android:textSize="@dimen/_11ssp"
+        android:alpha="0.7"
+        app:layout_constraintEnd_toStartOf="@+id/textViewLastMessageTime"
+        app:layout_constraintStart_toEndOf="@+id/imageViewProfileshimmer"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
+
+    <TextView
+        android:id="@+id/textViewLastMessageTime"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:alpha="0.7"
+        android:background="@drawable/bg_popup_shimmer"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewUserName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewUserName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

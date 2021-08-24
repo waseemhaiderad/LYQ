@@ -1,0 +1,115 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.setting.account.blockusers.FragmentBlockedUsersSetting">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:padding="@dimen/_2sdp"
+            android:tint="@color/colorBlackHintNewTheme"
+            app:layout_constraintBottom_toBottomOf="@id/mTvAccountHeading1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1"
+            app:srcCompat="@drawable/back_arrow_thin" />
+
+        <TextView
+            android:id="@+id/mTvAccountHeading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/back_to_account"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@mipmap/bg_map">
+
+            <ScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/mTvBlockedusers"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/blocked_users"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/mTvSeeBlockedUsers"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:text="@string/see_blocked_users"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvBlockedusers"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvBlockedusers" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgLeftSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvSeeBlockedUsers"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvSeeBlockedUsers"
+                        app:layout_constraintTop_toTopOf="@+id/mTvSeeBlockedUsers"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/mTvSeeBlockedDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:text="@string/settings_block"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/mTvSeeBlockedUsers"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvSeeBlockedUsers" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

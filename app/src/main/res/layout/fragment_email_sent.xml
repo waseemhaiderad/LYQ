@@ -1,0 +1,150 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="lnq.com.lnq.fragments.registeration.FragmentEmailSent.EmailSendClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.registeration.FragmentEmailSent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+<!--                <androidx.appcompat.widget.AppCompatImageView-->
+<!--                    android:id="@+id/imageViewBack"-->
+<!--                    android:layout_width="@dimen/_30sdp"-->
+<!--                    android:layout_height="@dimen/_30sdp"-->
+<!--                    android:layout_marginTop="@dimen/_10sdp"-->
+<!--                    android:onClick="@{clickListener::onBackClick}"-->
+<!--                    android:padding="@dimen/_8sdp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:srcCompat="@mipmap/new_backicon" />-->
+
+                <ImageView
+                    android:id="@+id/imageViewLnqLogo"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginTop="@dimen/_80sdp"
+                    android:contentDescription="@string/lnq_logo"
+                    android:src="@mipmap/new_logo2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewEmailSent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/email_sent"
+                    android:textColor="@color/colorBlueNewTheme"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo" />
+
+                <TextView
+                    android:id="@+id/textViewEmailSentDes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    style="@style/textViewTitleDetailsNewTheme"
+                    android:text="@string/email_sent_des"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewEmailSent" />
+
+                <Button
+                    android:id="@+id/buttonResendEmail"
+                    style="@style/buttonNewTheme"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:onClick="@{clickListener::onSendEmailClick}"
+                    android:text="@string/resend_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewEmailSentDes" />
+
+                <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                        android:id="@+id/buttonResendEmail2"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:text= "@string/resend_email"
+                        android:visibility="gone"
+                        app:spinning_bar_color="@color/colorWhite"
+                        android:background="@drawable/cus_loading_btn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewEmailSentDes" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mLlSignInSignUpButtons"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonResendEmail">
+
+                    <Button
+                        android:id="@+id/mBtnSignUp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@mipmap/btn_get_started"
+                        android:onClick="@{clickListener::onSignUpClick}"
+                        android:text="@string/sign_up"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorBlueNewTheme"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ButtonStyle" />
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                        android:id="@+id/clearTextViewSignIn"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@mipmap/btn_blue_newtheme"
+                        android:gravity="center"
+                        android:onClick="@{clickListener::onSignInClick}"
+                        android:text="@string/sign_in"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

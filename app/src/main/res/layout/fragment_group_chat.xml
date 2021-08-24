@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickHandler"
+                type="lnq.com.lnq.fragments.chat.FragmentGroupChat.ChatClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context="lnq.com.lnq.fragments.chat.FragmentGroupChat">
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@mipmap/bg_map" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewBack1"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:onClick="@{clickHandler::onBackClick}"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewUserName1"
+                app:layout_constraintTop_toTopOf="@+id/textViewUserName1"
+                app:srcCompat="@drawable/icon_back_new" />
+
+        <TextView
+                android:id="@+id/textViewUserName1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_22ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewEditGroupName1"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:onClick="@{clickHandler::onEditStatusClick}"
+                android:tint="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewUserName1"
+                app:layout_constraintStart_toEndOf="@+id/textViewUserName1"
+                app:layout_constraintTop_toTopOf="@+id/textViewUserName1"
+                app:srcCompat="@drawable/edit_icon" />
+
+        <TextView
+                android:id="@+id/textViewGroupMemberNames1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorBlueNewTheme"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/recyclerViewChat"
+                app:layout_constraintStart_toStartOf="@+id/textViewUserName1"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUserName1" />
+
+        <io.supercharge.shimmerlayout.ShimmerLayout
+                android:id="@+id/shimmerLayoutChatThread"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/imglayout"
+                app:layout_constraintEnd_toEndOf="@+id/recyclerViewChat"
+                app:layout_constraintStart_toStartOf="@+id/textViewUserName1"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUserName1"
+                app:shimmer_animation_duration="2000">
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <include layout="@layout/cus_shimmer_chatthread" />
+
+            </LinearLayout>
+
+        </io.supercharge.shimmerlayout.ShimmerLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewChat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:layout_constraintBottom_toTopOf="@+id/imglayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBack1"
+                app:layout_constraintTop_toBottomOf="@+id/userNamecontainer" />
+
+        <LinearLayout
+                android:id="@+id/imglayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewChatImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/mentiolayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayoutChatContainer"
+                app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewMentionData"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayoutChatContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_map"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imglayout"
+                app:layout_constraintVertical_bias="1.0"
+                tools:layout_editor_absoluteX="41dp">
+
+            <com.linkedin.android.spyglass.ui.RichEditorView
+                    android:id="@+id/editTextMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:background="@drawable/bg_bottom_bar"
+                    android:hint="@string/say_something"
+                    android:imeOptions="actionSend"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textColorHint="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageButtonSendMessage"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayoutAttachment"
+                    app:mentionTextBackgroundColor="@color/colorGrey"
+                    app:mentionTextColor="@color/colorBlack" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageButtonSendMessage"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_35sdp"
+                    android:layout_marginRight="@dimen/_35sdp"
+                    android:onClick="@{clickHandler::onSendMessageClick}"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextMessage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editTextMessage"
+                    app:srcCompat="@mipmap/send_chat_new" />
+
+            <LinearLayout
+                    android:id="@+id/linearLayoutAttachment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextMessage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editTextMessage">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageAttachment"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:onClick="@{clickHandler::onAttachmentClick}"
+                        app:srcCompat="@drawable/icon_attachement"
+                        app:tint="@color/colorAccentTeenTransparent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageSendProfile"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:onClick="@{clickHandler::onSendProfileClick}"
+                        app:srcCompat="@drawable/share_contact_icon"
+                        app:tint="@color/colorAccentTeenTransparent" />
+
+            </LinearLayout>
+
+            <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:visibility="gone"
+                    android:background="@color/colorWhite"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <RelativeLayout
+                    android:id="@+id/parent_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_70sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <com.devlomi.record_view.RecordView
+                        android:id="@+id/record_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_toLeftOf="@id/record_button"
+                        app:counter_time_color="#ff0000"
+                        app:slide_to_cancel_arrow="@drawable/recv_ic_arrow"
+                        app:slide_to_cancel_arrow_color="#000000"
+                        app:slide_to_cancel_bounds="8dp"
+                        app:slide_to_cancel_margin_right="10dp"
+                        app:slide_to_cancel_text="Slide To Cancel" />
+
+                <com.devlomi.record_view.RecordButton
+                        android:id="@+id/record_button"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/_26sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@drawable/cus_shape_mick"
+                        android:scaleType="centerInside"
+                        app:mic_icon="@drawable/recv_ic_mic_white" />
+
+
+            </RelativeLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/slideView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/bg_sliding_panle"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/constraintLayoutChatContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userNamecontainer">
+
+            <!--            <ScrollView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/slideView"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/slideView">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content">-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewGroupMembers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginLeft="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:text="@string/group_members"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:text="+"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_22sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewGroupMembers"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewGroupMembers">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <RelativeLayout
+                    android:id="@+id/recyclerViewContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginLeft="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewGroupMembers">
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewGroupMembersDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewShowMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:text="Show More"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_13ssp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewContainer" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewMoreActions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginLeft="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:text="@string/more_actions"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewShowMore" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewMuteChat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:text="@string/mute_chat"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewMoreActions" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textViewLeaveChat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_45sdp"
+                    android:layout_marginLeft="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:text="@string/leave_chat"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewMuteChat" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchMuteUnMute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewMuteChat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewMuteChat">
+
+            </androidx.appcompat.widget.SwitchCompat>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:onClick="@{clickHandler::onLeaveChatClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewLeaveChat"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewLeaveChat"
+                    app:srcCompat="@drawable/leave_icon">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewLeaveChat">
+
+            </View>
+
+            <View
+                    android:id="@+id/view2"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_4sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/colorLightGrey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+            </View>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/userNamecontainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_135sdp"
+                android:background="@drawable/bg_sliding_panle"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewBack1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewBack"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:onClick="@{clickHandler::onBackClick}"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewUserName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewUserName"
+                    app:srcCompat="@mipmap/new_backicon" />
+
+            <TextView
+                    android:id="@+id/textViewUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_35sdp"
+                    android:layout_marginLeft="@dimen/_35sdp"
+                    android:layout_marginTop="@dimen/_65sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:maxLength="15"
+                    android:singleLine="true"
+                    android:textColor="@color/colorBlueNewTheme"
+                    android:textSize="@dimen/_22ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewEditGroupName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewEditGroupName"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:onClick="@{clickHandler::onEditStatusClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewUserName"
+                    app:layout_constraintStart_toEndOf="@+id/textViewUserName"
+                    app:layout_constraintTop_toTopOf="@+id/textViewUserName"
+                    app:srcCompat="@drawable/edit_icon" />
+
+            <TextView
+                    android:id="@+id/textViewGroupMemberNames"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorBlueNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textViewUserName"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewUserName" />
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewEditGroupName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewEditGroupName">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewGroupUserImage1"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        app:srcCompat="@drawable/avatar">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewGroupUserImage2"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginStart="@dimen/_13sdp"
+                        android:layout_marginLeft="@dimen/_13sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:srcCompat="@drawable/avatar">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewDropdownContacts"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@mipmap/page_down_new">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

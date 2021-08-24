@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+                android:id="@+id/imageViewMessage"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:maxWidth="@dimen/_220sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+
+        <com.teleclinic.bulent.smartimageview.SmartImageViewLayout
+                android:id="@+id/smartImageViewMessage"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:maxWidth="@dimen/_220sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/multiImagesLayout"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@color/colorWhite"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img1"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img2"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:elevation="@dimen/_1sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img3"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:elevation="@dimen/_1sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img4"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:elevation="@dimen/_1sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img3"
+                    app:layout_constraintTop_toBottomOf="@id/img2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.luseen.autolinklibrary.AutoLinkTextView
+                android:id="@+id/textViewMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:background="@drawable/bg_chat_bubble_sender"
+                android:gravity="end|center_vertical"
+                android:maxWidth="@dimen/_220sdp"
+                android:padding="@dimen/_7sdp"
+                android:text="Hello how are you man?"
+                android:textColor="@color/colorWhite"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewArrowSender"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toTopOf="@+id/textViewMessage"
+                app:srcCompat="@drawable/ic_action_arrow_chat_bubble"
+                app:tint="@color/colorBlueChatMessagesNewTheme" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewMsgFailed"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewMessage"
+                app:layout_constraintEnd_toStartOf="@id/textViewDate"
+                app:layout_constraintTop_toTopOf="@+id/textViewMessage"
+                app:srcCompat="@drawable/msg_failed" />
+
+        <TextView
+                android:id="@+id/textViewDelivered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not Sent"
+                android:textColor="@color/colorRedAlert"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewArrowSender"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMessage" />
+
+        <TextView
+                android:id="@+id/textViewSent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sent"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewDelivered"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMessage" />
+
+        <ImageView
+                android:id="@+id/imageViewDelivered"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewSent"
+                app:layout_constraintEnd_toEndOf="@+id/textViewMessage"
+                app:layout_constraintTop_toTopOf="@+id/textViewSent"
+                app:srcCompat="@drawable/ic_action_delivered" />
+
+        <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="29/11/2019"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewMessage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textViewMessage"
+                app:layout_constraintTop_toTopOf="@+id/textViewMessage" />
+
+        <TextView
+                android:id="@+id/textViewSent1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivered"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewDelivered1"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewMessage" />
+
+        <ImageView
+                android:id="@+id/imageViewDelivered1"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewSent1"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewMessage"
+                app:layout_constraintTop_toTopOf="@+id/textViewSent1"
+                app:srcCompat="@drawable/ic_action_delivered" />
+
+        <ImageView
+                android:id="@+id/imageViewTextMessage"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:maxWidth="@dimen/_220sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+
+        <com.teleclinic.bulent.smartimageview.SmartImageViewLayout
+                android:id="@+id/smartImageViewTextMessage"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:maxWidth="@dimen/_220sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/multiImagesLayoutText"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@color/colorWhite"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img1Text"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img2Text"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:elevation="@dimen/_1sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img1Text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img3Text"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:elevation="@dimen/_1sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img1Text" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img4Text"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:elevation="@dimen/_1sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img3Text"
+                    app:layout_constraintTop_toBottomOf="@id/img2Text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.luseen.autolinklibrary.AutoLinkTextView
+                android:id="@+id/textViewTextMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:background="@drawable/bg_chat_bubble_sender"
+                android:gravity="end|center_vertical"
+                android:maxWidth="@dimen/_220sdp"
+                android:padding="@dimen/_7sdp"
+                android:text="Hello how are you man 1?"
+                android:textColor="@color/colorWhite"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewTextMessage" />
+
+        <com.luseen.autolinklibrary.AutoLinkTextView
+                android:id="@+id/textViewMultiTextMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:background="@drawable/bg_chat_bubble_sender"
+                android:gravity="end|center_vertical"
+                android:maxWidth="@dimen/_220sdp"
+                android:padding="@dimen/_7sdp"
+                android:text="Hello how are you man2?"
+                android:textColor="@color/colorWhite"
+                android:textIsSelectable="true"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/multiImagesLayoutText" />
+
+        <TextView
+                android:id="@+id/textViewSent2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivered"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewDelivered2"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTextMessage" />
+
+        <ImageView
+                android:id="@+id/imageViewDelivered2"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewSent2"
+                app:layout_constraintEnd_toEndOf="@+id/textViewTextMessage"
+                app:layout_constraintTop_toTopOf="@+id/textViewSent2"
+                app:srcCompat="@drawable/ic_action_delivered" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayoutChatSender"
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:background="@drawable/bg_share_contact_card"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewShareProfile"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_action_avatar" />
+
+            <TextView
+                    android:id="@+id/textViewShareName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:maxLength="20"
+                    android:singleLine="true"
+                    android:text="Shariq ansari sjaksajl"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewShareProfile" />
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/textViewCompany"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_gravity="center_horizontal"-->
+            <!--                    android:layout_marginTop="8dp"-->
+            <!--                    android:gravity="center"-->
+            <!--                    android:singleLine="true"-->
+            <!--                    android:textColor="@color/colorSecondaryText"-->
+            <!--                    android:textSize="@dimen/_12ssp"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@+id/textViewName" />-->
+
+            <View
+                    android:id="@+id/viewShareProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/colorBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewShareName" />
+
+            <TextView
+                    android:id="@+id/textViewShareProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text="@string/view_profile"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewShareProfile" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/voiceLayout"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:background="@drawable/bg_chat_bubble_sender"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewMsgFailed"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTime">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewPlayRecording"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:tag="play"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                    android:id="@+id/imageViewStopRecording"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginTop="@dimen/_4sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:layout_marginBottom="@dimen/_4sdp"-->
+<!--                    android:visibility="gone"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:srcCompat="@drawable/pause_icon_w" />-->
+
+<!--            <ProgressBar-->
+<!--                    android:id="@+id/progressBarVoiceNote"-->
+<!--                    style="@android:style/Widget.ProgressBar.Horizontal"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="@dimen/_7sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:backgroundTint="?attr/colorControlNormal"-->
+<!--                    android:visibility="visible"-->
+<!--                    app:layout_constraintBottom_toBottomOf="@id/imageViewPlayRecording"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/imageViewPlayRecording"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/imageViewPlayRecording" />-->
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/progressBarVoiceNote"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:lottie_colorFilter="@color/colorWhite"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="@id/imageViewPlayRecording"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageViewPlayRecording"
+                    app:layout_constraintTop_toTopOf="@id/imageViewPlayRecording" />
+
+
+            <TextView
+                    android:id="@+id/textViewVoiceNoteTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:text="0.00"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageViewPlayRecording"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewPlayRecording" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

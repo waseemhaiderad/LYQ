@@ -1,0 +1,1200 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="lnq.com.lnq.fragments.connections.FragmentConnections.ConnectionsClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_map"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.connections.FragmentConnections">
+
+        <include
+            android:id="@+id/topBarContact"
+            layout="@layout/cus_topbar_contacts_new_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <io.supercharge.shimmerlayout.ShimmerLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/recyclerViewAlphabets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactsButtons"
+            app:layout_constraintVertical_bias="0.0"
+            app:shimmer_animation_duration="2000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_35sdp"
+                android:orientation="vertical">
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+            </LinearLayout>
+
+        </io.supercharge.shimmerlayout.ShimmerLayout>
+
+        <io.supercharge.shimmerlayout.ShimmerLayout
+            android:id="@+id/shimmerLayoutGrid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/recyclerViewAlphabets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactsButtons"
+            app:layout_constraintVertical_bias="0.0"
+            app:shimmer_animation_duration="2000">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:orientation="vertical">
+
+                <include layout="@layout/cus_shimmer_contactsgrid" />
+
+                <include layout="@layout/cus_shimmer_contactsgrid" />
+
+                <include layout="@layout/cus_shimmer_contactsgrid" />
+
+                <include layout="@layout/cus_shimmer_contactsgrid" />
+
+                <include layout="@layout/cus_shimmer_contactsgrid" />
+
+                <include layout="@layout/cus_shimmer_contactsgrid" />
+
+                <include layout="@layout/cus_shimmer_contactsgrid" />
+
+
+            </LinearLayout>
+
+        </io.supercharge.shimmerlayout.ShimmerLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutContactsButtons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:background="@drawable/bg_searchbar_new_theme"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topBarContact">
+
+            <Button
+                android:id="@+id/clearTextViewLNQ"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_terms_btn"
+                android:gravity="center"
+                android:onClick="@{clickHandler::onLNQUSersClick}"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="LNQ Users"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:id="@+id/buttonLNQImport"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_terms_btn"
+                android:onClick="@{clickHandler::onLNQImportClick}"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="Imported"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlueNewTheme" />
+
+            <Button
+                android:id="@+id/buttonLNQGroups"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_terms_btn"
+                android:onClick="@{clickHandler::onGroupClicked}"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:text="Groups"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlueNewTheme" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewConnections"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/recyclerViewAlphabets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactsButtons">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewGroups"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactsButtons">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <lnq.com.lnq.custom.views.fast_scroller.RecyclerViewFastScroller
+            android:id="@+id/recyclerViewAlphabets"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/recyclerViewConnections"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactsButtons" />
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textViewConnectionsHeading"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/_20sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_20sdp"-->
+        <!--            android:layout_marginTop="@dimen/_20sdp"-->
+        <!--            android:text="@string/connections"-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:textSize="@dimen/_22ssp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/linearLayoutGridMapButtons"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/_8sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_8sdp"-->
+        <!--            android:layout_marginEnd="@dimen/_8sdp"-->
+        <!--            android:layout_marginRight="@dimen/_8sdp"-->
+        <!--            android:background="@drawable/bg_terms_condition_container"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/textViewConnectionsHeading"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/imageViewMenu"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/textViewConnectionsHeading">-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/clearTextViewList"-->
+        <!--                android:layout_width="@dimen/_55sdp"-->
+        <!--                android:layout_height="@dimen/_25sdp"-->
+        <!--                android:background="@drawable/bg_terms_btn"-->
+        <!--                android:gravity="center"-->
+        <!--                android:onClick="@{clickHandler::onListClick}"-->
+        <!--                android:paddingStart="@dimen/_10sdp"-->
+        <!--                android:paddingLeft="@dimen/_10sdp"-->
+        <!--                android:paddingEnd="@dimen/_10sdp"-->
+        <!--                android:paddingRight="@dimen/_10sdp"-->
+        <!--                android:text="List"-->
+        <!--                android:textAllCaps="false"-->
+        <!--                android:textColor="@color/colorAccentTeenTransparent" />-->
+
+        <!--            <Button-->
+        <!--                android:id="@+id/buttonGrid"-->
+        <!--                android:layout_width="@dimen/_55sdp"-->
+        <!--                android:layout_height="@dimen/_25sdp"-->
+        <!--                android:background="@drawable/bg_terms_btn"-->
+        <!--                android:onClick="@{clickHandler::onGridClick}"-->
+        <!--                android:paddingStart="@dimen/_15sdp"-->
+        <!--                android:paddingLeft="@dimen/_15sdp"-->
+        <!--                android:paddingEnd="@dimen/_15sdp"-->
+        <!--                android:paddingRight="@dimen/_15sdp"-->
+        <!--                android:text="@string/grid"-->
+        <!--                android:textAllCaps="false"-->
+        <!--                android:textColor="@color/colorWhite" />-->
+
+        <!--        </LinearLayout>-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewMenu"-->
+        <!--            android:layout_width="@dimen/_22sdp"-->
+        <!--            android:layout_height="@dimen/_22sdp"-->
+        <!--            android:layout_marginEnd="@dimen/_20sdp"-->
+        <!--            android:layout_marginRight="@dimen/_20sdp"-->
+        <!--            android:onClick="@{clickHandler::onMenuClick}"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/textViewConnectionsHeading"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/textViewConnectionsHeading"-->
+        <!--            app:srcCompat="@drawable/icon_menu_more"-->
+        <!--            app:tint="@color/colorWhite" />-->
+
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:id="@+id/textInputLayoutSearch"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:theme="@style/TextInputLayoutAppearance"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/imageViewMenu"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/buttonFilter"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/textViewConnectionsHeading">-->
+
+        <!--        <androidx.appcompat.widget.AppCompatAutoCompleteTextView-->
+        <!--            android:id="@+id/editTextSearch"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/_17sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_17sdp"-->
+        <!--            android:layout_marginTop="@dimen/_5sdp"-->
+        <!--            android:hint="@string/search_through_profiles"-->
+        <!--            android:imeOptions="actionSearch"-->
+        <!--            android:inputType="text"-->
+        <!--            android:paddingStart="@dimen/_50sdp"-->
+        <!--            android:paddingEnd="@dimen/_50sdp"-->
+        <!--            android:singleLine="true"-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:textColorHint="@color/colorWhite"-->
+        <!--            android:textSize="@dimen/_13ssp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            app:backgroundTint="@color/colorWhite"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/imageViewQrCode"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textViewConnectionsHeading" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewQrCode"-->
+        <!--            android:layout_width="@dimen/_30sdp"-->
+        <!--            android:layout_height="@dimen/_30sdp"-->
+        <!--            android:onClick="@{clickHandler::onQrCodeClick}"-->
+        <!--            android:padding="@dimen/_5sdp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/imageViewMenu"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/qr_user_icon" />-->
+
+        <!--        &lt;!&ndash;</android.support.design.widget.TextInputLayout>&ndash;&gt;-->
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewSearch"-->
+        <!--            android:layout_width="@dimen/_15sdp"-->
+        <!--            android:layout_height="@dimen/_15sdp"-->
+        <!--            android:layout_marginStart="@dimen/_30sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_30sdp"-->
+        <!--            android:onClick="@{clickHandler::onSearchClick}"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/icon_search" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewClose"-->
+        <!--            android:layout_width="@dimen/_15sdp"-->
+        <!--            android:layout_height="@dimen/_15sdp"-->
+        <!--            android:layout_marginEnd="@dimen/_5sdp"-->
+        <!--            android:layout_marginRight="@dimen/_5sdp"-->
+        <!--            android:onClick="@{clickHandler::onCloseClick}"-->
+        <!--            android:padding="@dimen/_3sdp"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/icon_close"-->
+        <!--            app:tint="@color/colorWhite" />-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/buttonFilter"-->
+        <!--            android:layout_width="@dimen/_20sdp"-->
+        <!--            android:layout_height="@dimen/_17sdp"-->
+        <!--            android:background="@drawable/filter_icon_new1"-->
+        <!--            android:gravity="center"-->
+        <!--            android:onClick="@{clickHandler::onFilterClick}"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/textViewConnectionsHeading"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch" />-->
+
+        <!--        <lnq.com.lnq.custom.views.ClearTextView-->
+        <!--            android:id="@+id/clearTextViewFilter"-->
+        <!--            android:layout_width="@dimen/_20sdp"-->
+        <!--            android:layout_height="@dimen/_17sdp"-->
+        <!--            android:background="@drawable/filter_icon_new1"-->
+        <!--            android:gravity="center"-->
+        <!--            android:onClick="@{clickHandler::onFilterClick}"-->
+        <!--            android:visibility="invisible"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/textViewConnectionsHeading"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch" />-->
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollViewConnectionsFilters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="0dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/topBarContact">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutConnectionsFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutNoLnqFound"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactsButtons">
+
+            <TextView
+                android:id="@+id/textViewNoLnqFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/expand_lnq_community"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonSearchMember"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/bg_blue_border_button"
+                android:onClick="@{clickHandler::onSearchMemberClick}"
+                android:text="@string/search_members"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryBlue"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNoLnqFound" />
+
+            <TextView
+                android:id="@+id/textViewOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="@string/or"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSearchMember" />
+
+            <Button
+                android:id="@+id/buttonImportContacts"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_blue_border_button"
+                android:onClick="@{clickHandler::onImportClick}"
+                android:text="@string/importing_contacts_from_phone"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryBlue"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewOr" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/textViewNoGroup"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/bg_terms_white_container"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onCreateGroupClick}"
+            android:text="@string/create_a_group"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryBlue"
+            android:textSize="@dimen/_13ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutContactsButtons">
+
+        </Button>
+
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewArrowUp"-->
+        <!--            android:layout_width="@dimen/_16sdp"-->
+        <!--            android:layout_height="@dimen/_16sdp"-->
+        <!--            android:elevation="4dp"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/imageViewMenu"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/imageViewMenu"-->
+        <!--            app:srcCompat="@drawable/icon_menu_up"-->
+        <!--            app:tint="@color/colorWhite" />-->
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/cardViewPopUpContactsContainer"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="@dimen/_10sdp"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:cardBackgroundColor="@color/colorWhite"-->
+        <!--            app:cardCornerRadius="8dp"-->
+        <!--            app:cardElevation="4dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/imageViewMenu"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/imageViewArrowUp">-->
+
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:layout_width="@dimen/_180sdp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:paddingBottom="@dimen/_10sdp">-->
+
+        <!--                <RelativeLayout-->
+        <!--                    android:id="@+id/relativeLayoutLnqCount"-->
+        <!--                    android:layout_width="@dimen/_150sdp"-->
+        <!--                    android:layout_height="@dimen/_30sdp"-->
+        <!--                    android:layout_marginTop="@dimen/_5sdp"-->
+        <!--                    android:gravity="center"-->
+        <!--                    android:onClick="@{clickHandler::onLnqCountClick}"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+        <!--                    &lt;!&ndash;                    <TextView&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:id="@+id/textViewLnqCount"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:text="@string/lnq_count"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:textColor="#818587"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:textSize="@dimen/_14ssp"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:textStyle="normal" />&ndash;&gt;-->
+
+        <!--                    &lt;!&ndash;                    <TextView&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:id="@+id/textViewLnqCountsNumber"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_width="@dimen/_20sdp"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_height="@dimen/_20sdp"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_alignBottom="@+id/textViewLnqCount"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_marginStart="@dimen/_10sdp"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_marginLeft="@dimen/_10sdp"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_toEndOf="@+id/textViewLnqCount"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:layout_toRightOf="@+id/textViewLnqCount"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:background="@drawable/bg_circle_green"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:gravity="center"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:text="0"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:textColor="@color/colorWhite"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:textSize="@dimen/_11ssp"&ndash;&gt;-->
+        <!--                    &lt;!&ndash;                        android:textStyle="bold" />&ndash;&gt;-->
+
+        <!--                </RelativeLayout>-->
+
+        <!--                <View-->
+        <!--                    android:id="@+id/viewDividerOne"-->
+        <!--                    android:layout_width="@dimen/_130sdp"-->
+        <!--                    android:layout_height="1dp"-->
+        <!--                    android:layout_marginTop="@dimen/_5sdp"-->
+        <!--                    android:background="#A4B8BD"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@+id/relativeLayoutLnqCount" />-->
+
+        <!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:id="@+id/textViewImportConnections"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_width="@dimen/_150sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_height="@dimen/_30sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:onClick="@{clickHandler::onImportClick}"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:text="@string/import_connections"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textColor="@color/colorDarkGrey"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textSize="@dimen/_14ssp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textStyle="normal"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/viewDividerOne" />&ndash;&gt;-->
+
+        <!--                &lt;!&ndash;                <View&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:id="@+id/viewDividerTwo"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_width="@dimen/_130sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_height="1dp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:background="#A4B8BD"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/textViewImportConnections" />&ndash;&gt;-->
+
+        <!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:id="@+id/textViewExportConnections"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_width="@dimen/_150sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_height="@dimen/_30sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:onClick="@{clickHandler::onExportClick}"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:text="@string/export_connections"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textColor="@color/colorDarkGrey"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textSize="@dimen/_14ssp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/viewDividerTwo" />&ndash;&gt;-->
+
+        <!--                &lt;!&ndash;                <View&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:id="@+id/viewDividerThree"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_width="@dimen/_130sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_height="1dp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:background="#A4B8BD"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/textViewExportConnections" />&ndash;&gt;-->
+
+        <!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:id="@+id/textViewImportToGmailConnections"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_width="@dimen/_150sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_height="@dimen/_30sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:onClick="@{clickHandler::onImportToGmailClick}"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:text="@string/import_to_gmail_connections"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textColor="@color/colorDarkGrey"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textSize="@dimen/_14ssp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/viewDividerThree" />&ndash;&gt;-->
+
+        <!--                &lt;!&ndash;                <View&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:id="@+id/viewDividerFour"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_width="@dimen/_130sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_height="1dp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:background="#A4B8BD"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/textViewImportToGmailConnections" />&ndash;&gt;-->
+
+        <!--                &lt;!&ndash;                <TextView&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:id="@+id/textViewCreateGroup"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_width="@dimen/_150sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_height="@dimen/_30sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:onClick="@{clickHandler::onCreateGroupClick}"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:text="@string/create_group"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textColor="@color/colorDarkGrey"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    android:textSize="@dimen/_14ssp"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    app:layout_constraintTop_toBottomOf="@+id/viewDividerFour" />&ndash;&gt;-->
+
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <!--        <androidx.core.widget.NestedScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/slideViewContacts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_bottomsheet_corners"
+            android:elevation="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            android:visibility="visible">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewBack"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginStart="@dimen/_14sdp"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:tint="@color/colorBlackNewTheme"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/mTvAccountHeading1"
+                        app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1"
+                        app:srcCompat="@drawable/back_arrow_thin" />
+
+                    <TextView
+                        android:id="@+id/mTvAccountHeading1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:text="@string/back_to_connections"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewClearAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_18sdp"
+                        android:layout_marginRight="@dimen/_18sdp"
+                        android:text="@string/reset"
+                        android:textColor="@color/colorBlueDarkNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="@id/mTvAccountHeading1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/searchBarLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_17sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_17sdp"
+                        android:visibility="gone"
+                        android:background="@drawable/bg_searchbargray_new_theme"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvAccountHeading1">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/editTextSearch"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/search"
+                            android:imeOptions="actionSearch"
+                            android:inputType="text"
+                            android:paddingStart="@dimen/_45sdp"
+                            android:paddingEnd="@dimen/_45sdp"
+                            android:textColor="@color/colorGrayNewTheme"
+                            android:textColorHint="@color/colorGrayNewTheme"
+                            android:textSize="@dimen/_13ssp"
+                            android:textStyle="bold"
+                            app:backgroundTint="@color/colorGrayLightNewTheme"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/imageViewSearch"
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:background="@color/colorGrayNewTheme"
+                            android:onClick="@{clickHandler::onSearchClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                            app:layout_constraintStart_toEndOf="@+id/buttonFilter"
+                            app:layout_constraintTop_toTopOf="@+id/editTextSearch" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewClose"
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onCloseClick}"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                            app:layout_constraintEnd_toEndOf="@+id/editTextSearch"
+                            app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                            app:srcCompat="@drawable/icon_close"
+                            app:tint="@color/colorBlackHintNewTheme" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/buttonFilter"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_marginStart="@dimen/_7sdp"
+                            android:layout_marginLeft="@dimen/_7sdp"
+                            android:gravity="center"
+                            android:tint="@color/colorBlackHintNewTheme"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                            app:srcCompat="@drawable/filter_icon_new1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@+id/searchBarLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/searchBarLayout">
+
+                        <TextView
+                            android:id="@+id/textViewLnqCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:onClick="@{clickHandler::onLnqCountClick}"
+                            android:text="@string/lnq_count"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textViewLnqCountsNumber"
+                            android:layout_width="@dimen/_22sdp"
+                            android:layout_height="@dimen/_16sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:background="@drawable/bg_circle_blue_new_theme"
+                            android:gravity="center"
+                            android:onClick="@{clickHandler::onLnqCountClick}"
+                            android:text="0"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_11ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewLnqCount"
+                            app:layout_constraintStart_toEndOf="@+id/textViewLnqCount"
+                            app:layout_constraintTop_toTopOf="@+id/textViewLnqCount" />
+
+                        <TextView
+                            android:id="@+id/textViewImportConnections"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:onClick="@{clickHandler::onImportClick}"
+                            android:text="@string/import_connections"
+                            android:textColor="@color/colorBlueNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewLnqCount" />
+
+                        <TextView
+                            android:id="@+id/textViewExportConnections"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:onClick="@{clickHandler::onExportClick}"
+                            android:text="@string/export_connections"
+                            android:textColor="@color/colorBlueNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewImportConnections" />
+
+                        <TextView
+                            android:id="@+id/textViewImportToGmailConnections"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:onClick="@{clickHandler::onImportToGmailClick}"
+                            android:text="@string/import_to_gmail_connections"
+                            android:textColor="@color/colorBlueNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewExportConnections" />
+
+                        <TextView
+                            android:id="@+id/textViewCreateGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:onClick="@{clickHandler::onCreateGroupClick}"
+                            android:text="@string/create_group"
+                            android:textColor="@color/colorBlueNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewImportToGmailConnections" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/sortLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@+id/searchBarLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutMenu">
+
+                        <TextView
+                            android:id="@+id/textViewSortBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/sort_by"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <HorizontalScrollView
+                            android:id="@+id/scroll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbarSize="0dp"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewSortBy">
+
+                            <RelativeLayout
+                                android:id="@+id/multipleProfile"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/mBtnAlphabetical"
+                                    android:layout_width="@dimen/_100sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:background="@drawable/bg_verification_blue_btn"
+                                    android:gravity="center"
+                                    android:text="@string/alphabetical"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="@dimen/_12ssp" />
+
+                                <Button
+                                    android:id="@+id/mBtnDistance"
+                                    android:layout_width="@dimen/_100sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:layout_alignTop="@+id/mBtnAlphabetical"
+                                    android:layout_alignBottom="@+id/mBtnAlphabetical"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_toEndOf="@+id/mBtnAlphabetical"
+                                    android:layout_toRightOf="@+id/mBtnAlphabetical"
+                                    android:background="@drawable/bg_blue_border_btn"
+                                    android:gravity="center"
+                                    android:text="@string/distance"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorBlueNewTheme"
+                                    android:textSize="@dimen/_12ssp" />
+
+                                <Button
+                                    android:id="@+id/mBtnRecentLNQs"
+                                    android:layout_width="@dimen/_100sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:layout_alignTop="@+id/mBtnDistance"
+                                    android:layout_alignBottom="@+id/mBtnDistance"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_toEndOf="@+id/mBtnDistance"
+                                    android:layout_toRightOf="@+id/mBtnDistance"
+                                    android:background="@drawable/bg_blue_border_btn"
+                                    android:gravity="center"
+                                    android:text="@string/recent_lnqs"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorBlueNewTheme"
+                                    android:textSize="@dimen/_12ssp" />
+
+
+                                <Button
+                                    android:id="@+id/mBtnRecentlyViewed"
+                                    android:layout_width="@dimen/_100sdp"
+                                    android:layout_height="@dimen/_25sdp"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:layout_marginLeft="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_toEndOf="@+id/mBtnRecentLNQs"
+                                    android:layout_toRightOf="@+id/mBtnRecentLNQs"
+                                    android:background="@drawable/bg_blue_border_btn"
+                                    android:text="@string/recently_viewed"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/colorBlueNewTheme"
+                                    android:textSize="@dimen/_12ssp" />
+
+                            </RelativeLayout>
+
+                        </HorizontalScrollView>
+
+                        <!--                <View-->
+                        <!--                    android:id="@+id/viewDivider"-->
+                        <!--                    android:layout_width="0dp"-->
+                        <!--                    android:layout_height="1dp"-->
+                        <!--                    android:layout_marginTop="@dimen/_15sdp"-->
+                        <!--                    android:background="@color/colorBlackNewTheme"-->
+                        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"-->
+                        <!--                    app:layout_constraintTop_toBottomOf="@+id/clearTextViewMostRecent" />-->
+
+                        <TextView
+                            android:id="@+id/textViewShowOnly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:text="@string/show_only"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/scroll" />
+
+                        <TextView
+                            android:id="@+id/mTvFavorites"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:text="@string/favorites"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxFavourites"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewShowOnly" />
+
+                        <TextView
+                            android:id="@+id/mTvVerifiedProfiles"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/verified_profile"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxVerifiedProfile"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/mTvFavorites" />
+
+                        <TextView
+                            android:id="@+id/mTvPendingLnq"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/pending_lnqs"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxPendingLNQs"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/mTvVerifiedProfiles" />
+
+                        <TextView
+                            android:id="@+id/mTvOutstandingTasks"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/outstanding_tasks"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxOutstandingTasks"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/mTvPendingLnq" />
+
+                        <TextView
+                            android:id="@+id/mTvLnqUsersOnly"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/lnq_users_only"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxLNQUsersOnly"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/mTvOutstandingTasks" />
+
+                        <TextView
+                            android:id="@+id/mTvBlockedUsers"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/blocked_users"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/checkBoxBlockedUsers"
+                            app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                            app:layout_constraintTop_toBottomOf="@+id/mTvLnqUsersOnly" />
+
+                        <Button
+                            android:id="@+id/mBtnApply"
+                            android:layout_width="@dimen/_220sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@mipmap/btn_blue_newtheme"
+                            android:gravity="center"
+                            android:text="@string/apply"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_13ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/checkBoxBlockedUsers" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/checkBoxFavourites"
+                            style="@style/CustomCheckbox02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/mTvFavorites"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/mTvFavorites" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/checkBoxVerifiedProfile"
+                            style="@style/CustomCheckbox02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/mTvVerifiedProfiles"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/mTvVerifiedProfiles" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/checkBoxPendingLNQs"
+                            style="@style/CustomCheckbox02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/mTvPendingLnq"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/mTvPendingLnq" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/checkBoxOutstandingTasks"
+                            style="@style/CustomCheckbox02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/mTvOutstandingTasks"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/mTvOutstandingTasks" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/checkBoxLNQUsersOnly"
+                            style="@style/CustomCheckbox02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/mTvLnqUsersOnly"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/mTvLnqUsersOnly" />
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/checkBoxBlockedUsers"
+                            style="@style/CustomCheckbox02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/mTvBlockedUsers"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/mTvBlockedUsers" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@color/colorGrayNewTheme"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sortLayout">
+
+                    </View>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/viewScroll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/topBarContact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topBarContact">
+
+        </View>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

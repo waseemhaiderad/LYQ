@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0ae3d4</color>
+    <color name="colorPrimaryDark">#4CCDF8</color>
+    <color name="colorAccent">#1eaaf5</color>
+    <color name="colorError">#eb4d4d</color>
+    <color name="colorSuccess">#7cd706</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGrey">#747474</color>
+    <color name="colorDarkGrey">#4c4c4c</color>
+    <color name="colorLightGrey">#C1C0C8</color>
+    <color name="colorPrimaryBlue">#1eaaf5</color>
+    <color name="colorPrimaryGreen">#7cd706</color>
+    <color name="colorRedAlert">#eb4d4d</color>
+    <color name="colorGoldAlert">#f4b416</color>
+    <color name="colorAccentTeen">#0ae3d4</color>
+    <color name="colorWhiteTransparent">#AAFFFFFF</color>
+    <color name="colorAccentTeenTransparent">#f04CCDF8</color>
+    <color name="colorBlueTransparent">#804CCDF8</color>
+    <color name="colorMyLocationFab">#57BBF1</color>
+    <color name="colorTeal">#008080</color>
+    <color name="colorTransparaent">#00000000</color>
+
+
+    <color name="picker_background">#3F51B5</color>
+    <color name="picker_button_background_selected">#3F51B5</color>
+    <color name="picker_button_background">@android:color/white</color>
+    <color name="picker_button_background_innactive">#BDBDBD</color>
+    <color name="picker_default_text_color">#999</color>
+    <color name="picker_default_selected_text_color">@android:color/black</color>
+    <color name="picker_default_selector_color">#646464</color>
+
+
+    <color name="colorSecondaryText">#829090</color>
+    <color name="colorGreen">#8BE354</color>
+    <color name="colorBlackTrans">#1e010200</color>
+    <color name="colorWhiteTrans">#CCFFFFFF</color>
+    <color name="colorWhiteTagFilter">#40FFFFFF</color>
+    <color name="animColor">#19cc95</color>
+
+    <color name="viewfinder_mask">#b3000000</color>
+    <color name="viewfinder_laser">#0ae3d4</color>
+    <color name="viewfinder_border">#00000000</color>
+
+    <color name="alphabet_text_color">#7F8887</color>
+    <color name="alphabet_text_selected_color">#7F8887</color>
+    <color name="alphabet_background_color">@android:color/transparent</color>
+    <color name="alphabet_background_border_color">@android:color/transparent</color>
+    <color name="alphabet_background_selected_color">#9E9E9E</color>
+    <color name="shimmer_graycolor">#D5D3D3</color>
+    <color name="shimmer_graycolor1">#FBFBFB</color>
+
+
+<!--    Theme colore-->
+
+    <color name="colorBlueNewTheme">#54BEF7</color>
+    <color name="colorBlueDarkNewTheme">#5ABDEB</color>
+    <color name="colorDarkBlueNewTheme">#54bef6</color>
+    <color name="colorBlackNewTheme">#303031</color>
+    <color name="colorBlackSettingNewTheme">#2F3033</color>
+    <color name="colorBlackSettingItemsNewTheme">#303033</color>
+    <color name="colorBlackSettingArrowNewTheme">#50555C</color>
+    <color name="colorBlackHintNewTheme">#747474</color>
+    <color name="colorWhiteNewTheme">#FDFDFD</color>
+    <color name="colorWhiteNewTheme1">#F3F3F3</color>
+    <color name="colorTermsBlackNewTheme">#3C3C3D</color>
+    <color name="colorTermsPurpulNewTheme">#6053A3</color>
+    <color name="colorBluePurpulNewTheme">#6C2CF4</color>
+    <color name="colorGrayLightNewTheme">#EDECEB</color>
+    <color name="colorGrayNewTheme">#A8A6A7</color>
+    <color name="colorGrayChatNewTheme">#AFACAC</color>
+    <color name="colorGrayChatMessagesNewTheme">#F1F1F1</color>
+    <color name="colorBlueChatMessagesNewTheme">#2CADF4</color>
+
+</resources>

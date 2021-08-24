@@ -1,0 +1,118 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.profile.editprofile.FragmentEditContactInfoEmail">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mImgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_7sdp"
+            android:tint="@color/colorBlackSettingItemsNewTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTvCreateContactHeading"
+            app:layout_constraintTop_toTopOf="@+id/mTvCreateContactHeading"
+            app:srcCompat="@drawable/back_arrow_thin" />
+
+        <TextView
+            android:id="@+id/mTvCreateContactHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:text="Edit Contact Info"
+            android:textColor="@color/colorBlackSettingItemsNewTheme"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mTvCreateContactDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="Edit your contact info."
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@id/mTvCreateContactHeading"
+            app:layout_constraintTop_toBottomOf="@+id/mTvCreateContactHeading" />
+
+
+        <TextView
+            android:id="@+id/mTEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="Email"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/mTiEmail"
+            app:layout_constraintEnd_toEndOf="@+id/mTiEmail" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mTiEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:theme="@style/TextInputLayoutAppearanceBlack"
+            app:layout_constraintEnd_toEndOf="@+id/mTvCreateContactHeading"
+            app:layout_constraintStart_toStartOf="@+id/mTvCreateContactHeading"
+            app:layout_constraintTop_toBottomOf="@+id/mTvCreateContactDes">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mEtEmail"
+                style="@style/editTextNewTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/mBtnSaveChange"
+            style="@style/buttonNewTheme"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:text="@string/save_changes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTiEmail" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewContactEditEmail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mBtnSaveChange"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

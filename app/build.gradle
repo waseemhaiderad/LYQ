@@ -1,0 +1,169 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+apply plugin: 'com.google.firebase.crashlytics'
+android {
+    dataBinding {
+        enabled = true
+    }
+    compileSdkVersion 29
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId 'com.lnq'
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 16
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+//    Google support libraries....
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+//    Play services libraries....
+    implementation 'com.google.android.gms:play-services-plus:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.api-client:google-api-client:1.21.0'
+
+//    Retrofit libraries....
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+//    Google maps libraries....
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.maps.android:android-maps-utils:0.4.3'
+
+    implementation 'com.google.apis:google-api-services-people:v1-rev2-1.21.0'
+
+//    Firebase libraries....
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
+    implementation 'com.google.firebase:firebase-ml-vision:19.0.3'
+    implementation 'com.google.firebase:firebase-ml-vision-face-model:17.0.2'
+    implementation 'com.google.firebase:firebase-messaging:17.5.0'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.1'
+
+//    Custom libraries....
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.hbb20:ccp:2.2.3'
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
+    implementation 'com.doodle.android:android-material-chips:1.2.0'
+    implementation 'com.google.zxing:core:3.2.1'
+    implementation 'me.dm7.barcodescanner:zbar:1.8.4'
+    implementation 'com.github.kenglxn.QRGen:javase:2.5.0'
+    implementation 'com.github.kenglxn.QRGen:android:2.5.0'
+    implementation "me.leolin:ShortcutBadger:1.1.22@aar"
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:2.2.0'
+    implementation 'com.adamstyrc.cookiecutter:cookie-cutter:1.0.2'
+    implementation 'com.zhihu.android:matisse:0.5.3-beta3'
+    implementation project(path: ':linkedinsdk')
+    implementation project(path: ':library')
+    implementation project(path: ':smartimageview2')
+    implementation project(path: ':spyglass')
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+
+//    Biomatric Finger Print
+    implementation(group: 'com.an.biometric', name: 'biometric-auth', version: '0.1.0', ext: 'aar', classifier: '')
+//      Facebook Login
+    implementation 'com.facebook.android:facebook-login:[5,6)'
+//    Shimmer
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+
+//    Edit or crop photo
+    implementation 'com.github.hotchemi:permissionsdispatcher:2.4.0'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
+    implementation 'com.isseiaoki:simplecropview:1.1.8'
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.github.armcha:AutoLinkTextView:0.3.0'
+    implementation 'com.github.mabbas007:TagsEditText:1.0.5'
+    implementation 'gun0912.ted:tedbottompicker:2.0.1'
+
+//    Bounce ScrollView
+    implementation 'me.everything:overscroll-decor-android:1.1.0'
+    implementation 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:1.0.0'
+
+//    PhotoView FOR IMAGE ZOOM
+    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+
+//    AWS S3 sdk
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.6.30'
+
+//    Room DataBase
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+    implementation "com.github.mancj:SlideUp-Android:2.2.8"
+
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+    implementation "androidx.core:core-ktx:1.5.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+    kapt 'android.arch.persistence.room:compiler:2.2.3'
+
+    // Java language implementation
+    implementation "androidx.fragment:fragment:1.3.1"
+    // Kotlin
+    implementation "androidx.fragment:fragment-ktx:1.3.1"
+
+    //    Animated Button
+    implementation 'br.com.simplepass:loading-button-android:2.2.0'
+
+    // View Pager 2
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
+
+   // Audio Recorder
+    implementation 'com.github.3llomi:RecordView:3.0.2'
+
+   // Audio Animation
+    implementation 'com.airbnb.android:lottie:4.0.0'
+
+   // Reactions on Messages
+    implementation "com.github.pgreze:android-reactions:1.6"
+
+   // Giphy View
+    implementation 'com.giphy.sdk:ui:2.0.9'
+
+}
+apply plugin: 'com.google.gms.google-services'
+repositories {
+    mavenCentral()
+}
+

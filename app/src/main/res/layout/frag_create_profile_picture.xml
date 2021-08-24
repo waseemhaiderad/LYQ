@@ -1,0 +1,322 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickHandler"
+                type="lnq.com.lnq.fragments.registeration.createprofile.FragmentCreateProfilePicture.CreateProfilePictureClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhiteNewTheme"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context="lnq.com.lnq.fragments.registeration.createprofile.FragmentCreateProfilePicture">
+
+        <include
+                android:id="@+id/tobBar"
+                layout="@layout/cus_topbar_new_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                        android:id="@+id/textViewCreateProfilePictureDes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_25sdp"
+                        android:layout_marginLeft="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:text="@string/profile_picture_des_two"
+                        android:textColor="@color/colorBlackNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewCameraContainer1"
+                        android:layout_width="@dimen/_140sdp"
+                        android:layout_height="@dimen/_140sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="@dimen/_70sdp"
+                        app:cardPreventCornerOverlap="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewCreateProfilePictureDes">
+
+                    <com.github.chrisbanes.photoview.PhotoView
+                            android:id="@+id/imageViewProfilePicture"
+                            android:layout_width="@dimen/_140sdp"
+                            android:layout_height="@dimen/_140sdp"
+                            android:scaleType="center"
+                            android:visibility="invisible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewCreateProfilePictureDes"
+                            app:srcCompat="@drawable/avatar" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewCameraContainer"
+                        android:layout_width="@dimen/_140sdp"
+                        android:layout_height="@dimen/_140sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:shape="ring"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="@dimen/_70sdp"
+                        app:cardPreventCornerOverlap="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewCreateProfilePictureDes">
+
+                    <LinearLayout
+                            android:id="@+id/cameraView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_circle_white_border"
+                            android:gravity="center"
+                            android:orientation="horizontal" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewCapturePicture"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:background="@mipmap/camera_icon_new"
+                        android:onClick="@{clickHandler::onCaptureImageClick}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewCameraContainer1" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgCamera"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewCapturePicture"
+                        app:layout_constraintEnd_toEndOf="@+id/imageViewCapturePicture"
+                        app:layout_constraintStart_toStartOf="@+id/imageViewCapturePicture"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewCapturePicture"
+                        app:srcCompat="@drawable/icon_camera" />
+
+                <View
+                        android:id="@+id/viewOrOne"
+                        android:layout_width="@dimen/_5sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:background="@color/colorBlackNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewOr"
+                        app:layout_constraintEnd_toStartOf="@+id/textViewOr"
+                        app:layout_constraintTop_toTopOf="@+id/textViewOr"
+                        app:layout_constraintVertical_bias="0.6" />
+
+                <TextView
+                        android:id="@+id/textViewOr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/or"
+                        android:textColor="@color/colorBlackNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageViewCapturePicture" />
+
+                <View
+                        android:id="@+id/viewOrTwo"
+                        android:layout_width="@dimen/_5sdp"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:background="@color/colorBlackNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewOr"
+                        app:layout_constraintStart_toEndOf="@+id/textViewOr"
+                        app:layout_constraintTop_toTopOf="@+id/textViewOr"
+                        app:layout_constraintVertical_bias="0.6" />
+
+                <Button
+                        android:id="@+id/buttonUploadPicture"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@mipmap/btn_get_started"
+                        android:onClick="@{clickHandler::onUploadClick}"
+                        android:text="@string/upload_photo"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOr" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewGallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonUploadPicture" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fabChooseFolder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_20sdp"
+                        android:onClick="@{clickHandler::onFabClick}"
+                        android:visibility="gone"
+                        app:fabSize="mini"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:srcCompat="@drawable/icon_edit" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewProfilePictureBorder"
+                        android:layout_width="@dimen/_140sdp"
+                        android:layout_height="@dimen/_140sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:scaleType="centerCrop"
+                        android:visibility="invisible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewCreateProfilePictureDes"
+                        app:srcCompat="@drawable/bg_circle_white_border" />
+
+                <ProgressBar
+                        android:id="@+id/mPb"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/galleryBottomSheet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_bottomsheet_corners"
+                    android:visibility="gone"
+                    app:behavior_hideable="false"
+                    app:behavior_peekHeight="@dimen/_100sdp"
+                    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                    tools:context="lnq.com.lnq.fragments.gallery.GalleryFragmentNew">
+
+                <TextView
+                        android:id="@+id/mImgDone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:gravity="center"
+                        android:text="@string/upload"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                        android:id="@+id/mTvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/recent"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewArrowDown"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:padding="@dimen/_6sdp"
+                        android:tint="@color/colorBlack"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvTitle"
+                        app:layout_constraintStart_toEndOf="@+id/mTvTitle"
+                        app:layout_constraintTop_toTopOf="@+id/mTvTitle"
+                        app:srcCompat="@drawable/gallery_arrow_new_theme">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+
+                <TextView
+                        android:id="@+id/mTvFilter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/cancel"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mImgDone" />
+
+                <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mRv">
+
+                </View>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

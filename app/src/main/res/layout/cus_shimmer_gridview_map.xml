@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_3sdp"
+    app:cardBackgroundColor="#CCffffff"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_7sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewProfile1"
+            android:layout_width="@dimen/_65sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:alpha="0.6"
+            android:background="@drawable/bg_circle_shimmer_new" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewChat1"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewProfile1"
+            android:alpha="0.6"
+            android:background="@drawable/bg_circle_shimmer_new"
+            />
+
+        <TextView
+            android:id="@+id/textViewName1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="                                   "
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewProfile1" />
+
+        <TextView
+            android:id="@+id/textViewJobTitle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            android:text="                                   "
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName1" />
+
+        <TextView
+            android:id="@+id/textViewCompany1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            android:text="                                   "
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewJobTitle1" />
+
+
+        <TextView
+            android:id="@+id/textViewStatusMessage1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textSize="@dimen/_16ssp"
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompany1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewHomeLocation1"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStatusMessage1"
+            android:alpha="0.6"
+            android:background="@drawable/bg_circle_shimmer_new" />
+
+        <TextView
+            android:id="@+id/textViewHomeLocation1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="                           "
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewHomeLocation1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHomeLocation1"
+            app:layout_constraintTop_toTopOf="@+id/imageViewHomeLocation1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewCurrentLocation1"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHomeLocation1"
+            android:alpha="0.6"
+            android:background="@drawable/bg_circle_shimmer_new"/>
+
+        <TextView
+            android:id="@+id/textViewCurrentLocation1"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="                           "
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewCurrentLocation1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCurrentLocation1"
+            app:layout_constraintTop_toTopOf="@+id/imageViewCurrentLocation1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewLinkedConnection1"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCurrentLocation1"
+            android:alpha="0.6"
+            android:background="@drawable/bg_circle_shimmer_new" />
+
+        <TextView
+            android:id="@+id/textViewConnectionSince1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="                           "
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewLinkedConnection1"
+            app:layout_constraintStart_toEndOf="@+id/imageViewLinkedConnection1"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLinkedConnection1" />
+
+        <TextView
+            android:id="@+id/textViewConnectionDate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:text="               "
+            android:alpha="0.6"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewLinkedConnection1"
+            app:layout_constraintStart_toEndOf="@+id/textViewConnectionSince1"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLinkedConnection1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3sdp"
+        app:cardBackgroundColor="#CCffffff"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_7sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewProfile2"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:alpha="0.6"
+                android:background="@drawable/bg_circle_shimmer_new" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewChat2"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageViewProfile2"
+                android:alpha="0.6"
+                android:background="@drawable/bg_circle_shimmer_new"
+                />
+
+            <TextView
+                android:id="@+id/textViewName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="                                   "
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProfile2" />
+
+            <TextView
+                android:id="@+id/textViewJobTitle2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                android:text="                                   "
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewName2" />
+
+            <TextView
+                android:id="@+id/textViewCompany2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                android:text="                                   "
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewJobTitle2" />
+
+
+            <TextView
+                android:id="@+id/textViewStatusMessage2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:textSize="@dimen/_16ssp"
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCompany2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewHomeLocation2"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewStatusMessage2"
+                android:alpha="0.6"
+                android:background="@drawable/bg_circle_shimmer_new" />
+
+            <TextView
+                android:id="@+id/textViewHomeLocation2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="                           "
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewHomeLocation2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewHomeLocation2"
+                app:layout_constraintTop_toTopOf="@+id/imageViewHomeLocation2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewCurrentLocation2"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHomeLocation2"
+                android:alpha="0.6"
+                android:background="@drawable/bg_circle_shimmer_new"/>
+
+            <TextView
+                android:id="@+id/textViewCurrentLocation2"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="                           "
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewCurrentLocation2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewCurrentLocation2"
+                app:layout_constraintTop_toTopOf="@+id/imageViewCurrentLocation2" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewLinkedConnection2"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCurrentLocation2"
+                android:alpha="0.6"
+                android:background="@drawable/bg_circle_shimmer_new" />
+
+            <TextView
+                android:id="@+id/textViewConnectionSince2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:text="                           "
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewLinkedConnection2"
+                app:layout_constraintStart_toEndOf="@+id/imageViewLinkedConnection2"
+                app:layout_constraintTop_toTopOf="@+id/imageViewLinkedConnection2" />
+
+            <TextView
+                android:id="@+id/textViewConnectionDate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:text="               "
+                android:alpha="0.6"
+                android:background="@drawable/bg_popup_shimmer"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewLinkedConnection2"
+                app:layout_constraintStart_toEndOf="@+id/textViewConnectionSince2"
+                app:layout_constraintTop_toTopOf="@+id/imageViewLinkedConnection2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

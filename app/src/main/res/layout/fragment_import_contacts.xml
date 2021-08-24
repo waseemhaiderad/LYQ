@@ -1,0 +1,432 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="lnq.com.lnq.fragments.connections.import_contacts.FragmentImportContacts.ImportContactsClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.connections.import_contacts.FragmentImportContacts">
+
+
+        <include
+            android:id="@+id/topBarImportContact"
+            layout="@layout/cus_topbar_import_contacts_new_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_map"
+            android:contentDescription="@null" />
+
+        <!--        <View-->
+        <!--            android:id="@+id/viewTopBar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="@dimen/_100sdp"-->
+        <!--            android:background="@drawable/bg_top_bar_contacts"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewBack"-->
+        <!--            android:layout_width="@dimen/_30sdp"-->
+        <!--            android:layout_height="@dimen/_30sdp"-->
+        <!--            android:layout_marginTop="@dimen/_6sdp"-->
+        <!--            android:onClick="@{clickHandler::onBackClick}"-->
+        <!--            android:padding="@dimen/_9sdp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/textViewImportContactHeading"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/textViewImportContactHeading"-->
+        <!--            app:srcCompat="@drawable/icon_back_new" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textViewImportContactHeading"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/_35sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_35sdp"-->
+        <!--            android:layout_marginTop="@dimen/_20sdp"-->
+        <!--            android:text="@string/import_connections"-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:textSize="@dimen/_22ssp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <Button
+            android:id="@+id/clearTextViewImport"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@mipmap/btn_lnq_new"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onImportClick}"
+            android:text="@string/_import"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topBarImportContact" />
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewSearch"-->
+        <!--            android:layout_width="@dimen/_15sdp"-->
+        <!--            android:layout_height="@dimen/_15sdp"-->
+        <!--            android:layout_marginStart="@dimen/_2sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_2sdp"-->
+        <!--            android:onClick="@{clickHandler::onSearchClick}"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/icon_search" />-->
+
+        <!--        &lt;!&ndash;<android.support.design.widget.TextInputLayout&ndash;&gt;-->
+        <!--        &lt;!&ndash;android:id="@+id/textInputLayoutSearch"&ndash;&gt;-->
+        <!--        &lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+        <!--        &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--        &lt;!&ndash;android:layout_marginTop="@dimen/_5sdp"&ndash;&gt;-->
+        <!--        &lt;!&ndash;android:theme="@style/TextInputLayoutAppearance"&ndash;&gt;-->
+        <!--        &lt;!&ndash;app:layout_constraintEnd_toEndOf="@+id/clearTextViewImport"&ndash;&gt;-->
+        <!--        &lt;!&ndash;app:layout_constraintStart_toEndOf="@+id/buttonFilter"&ndash;&gt;-->
+        <!--        &lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/textViewImportContactHeading">&ndash;&gt;-->
+
+        <!--        <androidx.appcompat.widget.AppCompatAutoCompleteTextView-->
+        <!--            android:id="@+id/editTextSearch"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="4dp"-->
+        <!--            android:hint="@string/search_through_profiles"-->
+        <!--            android:imeOptions="actionSearch"-->
+        <!--            android:inputType="text"-->
+        <!--            android:paddingStart="@dimen/_23sdp"-->
+        <!--            android:paddingLeft="@dimen/_23sdp"-->
+        <!--            android:paddingEnd="@dimen/_80sdp"-->
+        <!--            android:paddingRight="@dimen/_80sdp"-->
+        <!--            android:singleLine="true"-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:textColorHint="@color/colorWhite"-->
+        <!--            android:textSize="@dimen/_13ssp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            app:backgroundTint="@color/colorWhite"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/imageViewQrCode"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/textViewImportContactHeading"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textViewImportContactHeading" />-->
+
+        <!--        &lt;!&ndash;</android.support.design.widget.TextInputLayout>&ndash;&gt;-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewQrCode"-->
+        <!--            android:layout_width="@dimen/_30sdp"-->
+        <!--            android:layout_height="@dimen/_30sdp"-->
+        <!--            android:onClick="@{clickHandler::onQrCodeClick}"-->
+        <!--            android:padding="@dimen/_5sdp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/clearTextViewImport"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/qr_user_icon" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewClose"-->
+        <!--            android:layout_width="@dimen/_12sdp"-->
+        <!--            android:layout_height="@dimen/_12sdp"-->
+        <!--            android:layout_marginEnd="@dimen/_5sdp"-->
+        <!--            android:layout_marginRight="@dimen/_5sdp"-->
+        <!--            android:onClick="@{clickHandler::onCloseClick}"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintRight_toLeftOf="@+id/imageViewQrCode"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/icon_close"-->
+        <!--            app:tint="@color/colorWhite" />-->
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewSelectAllContacts"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/bg_circle_secondary_color_border"
+            android:onClick="@{clickHandler::onSelectAllClick}"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerViewImportContacts"
+            app:layout_constraintTop_toBottomOf="@+id/topBarImportContact" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDeSelectAllContacts"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/bg_circle_green_success"
+            android:onClick="@{clickHandler::onDeSelectAllClick}"
+            android:padding="@dimen/_4sdp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerViewImportContacts"
+            app:layout_constraintTop_toBottomOf="@+id/topBarImportContact"
+            app:srcCompat="@drawable/icon_check"
+            app:tint="@color/colorWhite" />
+
+        <View
+            android:id="@+id/viewDivider"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/colorBlackNewTheme"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewSelectAllContacts"
+            app:layout_constraintStart_toStartOf="@+id/imageViewSelectAllContacts"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSelectAllContacts" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewStartAllContacts"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:onClick="@{clickHandler::onStartClick}"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewDeSelectAllContacts"
+            app:layout_constraintEnd_toEndOf="@+id/recyclerViewAlphabets"
+            app:layout_constraintTop_toTopOf="@+id/imageViewDeSelectAllContacts"
+            app:srcCompat="@drawable/icon_star_stroke"
+            app:tint="@color/colorBlackNewTheme" />
+
+        <io.supercharge.shimmerlayout.ShimmerLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/recyclerViewAlphabets"
+            app:layout_constraintStart_toStartOf="@+id/topBarImportContact"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider"
+            app:shimmer_animation_duration="2000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+                <include layout="@layout/cus_shimmer_contactslist" />
+
+            </LinearLayout>
+
+        </io.supercharge.shimmerlayout.ShimmerLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewImportContacts"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/recyclerViewAlphabets"
+            app:layout_constraintStart_toStartOf="@+id/topBarImportContact"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <lnq.com.lnq.custom.views.fast_scroller.RecyclerViewFastScroller
+            android:id="@+id/recyclerViewAlphabets"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/topBarImportContact"
+            app:layout_constraintStart_toEndOf="@+id/recyclerViewImportContacts"
+            app:layout_constraintTop_toTopOf="@+id/recyclerViewImportContacts" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/qloading"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/slideViewContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottomsheet_corners"
+            android:elevation="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_30sdp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginLeft="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:padding="@dimen/_2sdp"
+                android:tint="@color/colorBlackNewTheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mTvAccountHeading1"
+                app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1"
+                app:srcCompat="@drawable/back_arrow_thin" />
+
+            <TextView
+                android:id="@+id/mTvAccountHeading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:text="@string/back_to_connections"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/textViewClearAll"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="@dimen/_18sdp"-->
+            <!--                android:layout_marginRight="@dimen/_18sdp"-->
+            <!--                android:text="@string/reset"-->
+            <!--                android:textColor="@color/colorBlueDarkNewTheme"-->
+            <!--                android:textSize="@dimen/_14ssp"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@id/mTvAccountHeading1"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1" />-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_17sdp"
+                android:background="@drawable/bg_searchbargray_new_theme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTvAccountHeading1">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/editTextSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_45sdp"
+                    android:paddingEnd="@dimen/_45sdp"
+                    android:textColor="@color/colorGrayNewTheme"
+                    android:textColorHint="@color/colorGrayNewTheme"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/colorGrayLightNewTheme"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/imageViewSearch"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:background="@color/colorGrayNewTheme"
+                    android:onClick="@{clickHandler::onSearchClick}"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                    app:layout_constraintStart_toEndOf="@+id/buttonFilter"
+                    app:layout_constraintTop_toTopOf="@+id/editTextSearch" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewClose"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:onClick="@{clickHandler::onCloseClick}"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextSearch"
+                    app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                    app:srcCompat="@drawable/icon_close"
+                    app:tint="@color/colorBlackHintNewTheme" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/buttonFilter"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:gravity="center"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                    app:srcCompat="@drawable/filter_icon_new1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:id="@+id/viewScroll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/topBarImportContact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topBarImportContact">
+
+        </View>
+
+        <View
+            android:id="@+id/viewHideTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slideViewContacts">
+
+        </View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

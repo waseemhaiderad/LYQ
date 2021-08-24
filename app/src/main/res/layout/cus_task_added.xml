@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/checkBoxTaskAdd"
+        android:layout_width="@dimen/_22sdp"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginRight="8dp"
+        android:text="Task"
+        android:textColor="@color/colorBlackHintNewTheme"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBoxTaskAdd"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTaskDate"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTaskDate"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxTaskAdd"
+        app:layout_constraintTop_toTopOf="@+id/checkBoxTaskAdd" />
+
+    <TextView
+        android:id="@+id/textViewTaskDate"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:textColor="@color/colorBlackHintNewTheme"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTask"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewTask" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

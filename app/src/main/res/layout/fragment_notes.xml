@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_20sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_popup_menu"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context="lnq.com.lnq.fragments.fullprofileview.FragmentNotes">
+
+            <LinearLayout
+                android:id="@+id/viewdata"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:fillViewport="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/viewdata"
+                app:layout_constraintTop_toBottomOf="@+id/viewdata">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textViewCompletedTasksDes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/completed_tasks"
+                        android:textColor="@color/colorBlackSettingItemsNewTheme"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintEnd_toEndOf="@+id/linearLayoutGridMapButtons"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.appcompat.widget.AppCompatTextView>
+
+                    <TextView
+                        android:id="@+id/textViewTask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/tasks"
+                        android:textColor="@color/colorBlackSettingItemsNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewCompletedTasksDes" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewTaskEdit"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:tint="@color/colorBlackSettingItemsNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewTask"
+                        app:layout_constraintLeft_toRightOf="@+id/textViewTask"
+                        app:layout_constraintTop_toTopOf="@+id/textViewTask"
+                        app:srcCompat="@drawable/icon_edit_pencil" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutGridMapButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_terms_condition_containerblack"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageViewTaskEdit"
+                        app:layout_constraintEnd_toEndOf="@+id/recyclerViewTaskAdded"
+                        app:layout_constraintTop_toTopOf="@+id/imageViewTaskEdit">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewHide"
+                            android:layout_width="@dimen/_45sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:background="@drawable/bg_terms_btn_blue"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:text="@string/hide"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_9ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/textViewShow"
+                            android:layout_width="@dimen/_45sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:background="@drawable/bg_terms_btn_blue"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:text="@string/show"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorAccentTeenTransparent"
+                            android:textSize="@dimen/_9ssp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textViewNoTask"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewTask"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewTask" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewTaskAdded"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewTask"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewTask" />
+
+                    <TextView
+                        android:id="@+id/textViewNotes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/notes"
+                        android:textColor="@color/colorBlackSettingItemsNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerViewTaskAdded" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewNoteEdit"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:tint="@color/colorBlackSettingItemsNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewNotes"
+                        app:layout_constraintLeft_toRightOf="@+id/textViewNotes"
+                        app:layout_constraintTop_toTopOf="@+id/textViewNotes"
+                        app:srcCompat="@drawable/icon_edit_pencil" />
+
+                    <TextView
+                        android:id="@+id/textViewNotesDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textViewNotes"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNotes" />
+
+                    <TextView
+                        android:id="@+id/textViewBottomSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewNotesDetail"
+                        app:layout_constraintVertical_bias="1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

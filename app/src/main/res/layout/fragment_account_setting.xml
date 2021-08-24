@@ -1,0 +1,450 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.setting.account.accountsetting.FragmentAccountSetting">
+
+        <!--        <View-->
+        <!--            android:id="@+id/mViewBgTopBar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="@dimen/_75sdp"-->
+        <!--            android:background="@drawable/bg_top_bar"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:padding="@dimen/_2sdp"
+            android:tint="@color/colorBlackHintNewTheme"
+            app:layout_constraintBottom_toBottomOf="@id/mTvGeneralHeading1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mTvGeneralHeading1"
+            app:srcCompat="@drawable/back_arrow_thin" />
+
+        <TextView
+            android:id="@+id/mTvGeneralHeading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/back_to_account"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@mipmap/bg_map"
+            android:paddingBottom="@dimen/_30sdp">
+
+            <ScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/mTvAccountSetting"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:text="@string/account_setting"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/mTvEnablePushNotification"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:text="@string/enable_push_notification"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvAccountSetting" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/mScLocationHidden"
+                        android:layout_width="@dimen/_38sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvEnablePushNotification"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvEnablePushNotification"
+                        app:layout_constraintTop_toTopOf="@+id/mTvEnablePushNotification" />
+
+
+                    <TextView
+                        android:id="@+id/mTvSeeBlockedDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:text="@string/settings_notification"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        app:layout_constraintEnd_toStartOf="@id/mScLocationHidden"
+                        app:layout_constraintStart_toStartOf="@+id/mTvEnablePushNotification"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvEnablePushNotification" />
+
+                    <TextView
+                        android:id="@+id/mTvEnableLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/enable_location_services"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvSeeBlockedDescription" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgEnableLocationRightSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvEnableLocation"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvEnableLocation"
+                        app:layout_constraintTop_toTopOf="@+id/mTvEnableLocation"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/mTvEnableCamera"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/enable_camera"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvEnableLocation" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgEnableCameraRightSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvEnableCamera"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvEnableCamera"
+                        app:layout_constraintTop_toTopOf="@+id/mTvEnableCamera"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/mTvEnableAccessContacts"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/enable_access_contacts"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvEnableCamera" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgEnableAccessContactsRightSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvEnableAccessContacts"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvEnableAccessContacts"
+                        app:layout_constraintTop_toTopOf="@+id/mTvEnableAccessContacts"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <View
+                        android:id="@+id/mView"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@color/colorBlackSettingNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvEnableAccessContacts" />
+
+
+                    <TextView
+                        android:id="@+id/mTvContactInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@string/contact_info"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mView" />
+
+                    <TextView
+                        android:id="@+id/mTvEmailAddressHeading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/email_address"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvContactInfo" />
+
+
+                    <TextView
+                        android:id="@+id/mTvEmailAddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvEmailAddressHeading"
+                        app:layout_constraintEnd_toStartOf="@+id/mImgEditEmail"
+                        app:layout_constraintStart_toEndOf="@id/mTvEmailAddressHeading"
+                        app:layout_constraintTop_toTopOf="@+id/mTvEmailAddressHeading" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgEditEmail"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvEmailAddress"
+                        app:layout_constraintEnd_toEndOf="@id/mView1"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvEmailAddress"
+                        app:layout_constraintTop_toTopOf="@+id/mTvEmailAddress"
+                        app:srcCompat="@drawable/icon_edit_pencil"
+                        app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+
+                    <TextView
+                        android:id="@+id/mTvPasswordHeading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/password"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvEmailAddressHeading" />
+
+
+                    <EditText
+                        android:id="@+id/mTvPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@null"
+                        android:inputType="textPassword"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvPasswordHeading"
+                        app:layout_constraintEnd_toStartOf="@+id/mImgEditPassword"
+                        app:layout_constraintStart_toStartOf="@id/mTvEmailAddress"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvEmailAddress"
+                        app:layout_constraintTop_toTopOf="@+id/mTvPasswordHeading" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgEditPassword"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvPassword"
+                        app:layout_constraintEnd_toEndOf="@id/mView1"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvPassword"
+                        app:layout_constraintTop_toTopOf="@+id/mTvPassword"
+                        app:srcCompat="@drawable/icon_edit_pencil"
+                        app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+
+                    <TextView
+                        android:id="@+id/mTvPhoneNumberHeading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/phone_number"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvPasswordHeading" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewFlag"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvPhoneNumberHeading"
+                        app:layout_constraintStart_toEndOf="@+id/mTvPhoneNumberHeading"
+                        app:layout_constraintTop_toTopOf="@+id/mTvPhoneNumberHeading" />
+
+                    <EditText
+                        android:id="@+id/mTvPhoneNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvPhoneNumberHeading"
+                        app:layout_constraintEnd_toStartOf="@+id/mImgEditPhoneNumber"
+                        app:layout_constraintStart_toEndOf="@id/imageViewFlag"
+                        app:layout_constraintTop_toTopOf="@+id/mTvPhoneNumberHeading" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgEditPhoneNumber"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvPhoneNumber"
+                        app:layout_constraintEnd_toEndOf="@id/mView1"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvPhoneNumber"
+                        app:layout_constraintTop_toTopOf="@+id/mTvPhoneNumber"
+                        app:srcCompat="@drawable/icon_edit_pencil"
+                        app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <View
+                        android:id="@+id/mView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@color/colorBlackSettingNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvPhoneNumberHeading" />
+
+                    <TextView
+                        android:id="@+id/mTvAccountAction"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/account_actions"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mView1" />
+
+                    <TextView
+                        android:id="@+id/mTvRequestYourData"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="@string/request_your_data"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/mImgRequestDataRightSign"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvAccountAction" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgRequestDataRightSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvRequestYourData"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvRequestYourData"
+                        app:layout_constraintTop_toTopOf="@+id/mTvRequestYourData"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/mTvFreezeAccount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/freeze_account"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvRequestYourData" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgFreezeAccountRightSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvFreezeAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvFreezeAccount"
+                        app:layout_constraintTop_toTopOf="@+id/mTvFreezeAccount"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/mTvDeleteAccount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:text="@string/delete_account"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/mTvAccountSetting"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvFreezeAccount" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgDeleteAccountRightSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvDeleteAccount"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvDeleteAccount"
+                        app:layout_constraintTop_toTopOf="@+id/mTvDeleteAccount"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

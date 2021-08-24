@@ -1,0 +1,212 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.qrcode.FragMyCode">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp">
+
+            <View
+                android:id="@+id/mViewShareQrCode"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_65sdp"
+                android:background="@drawable/bg_share_qr_code"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgProfilePicture"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintCircle="@+id/mViewShareQrCode"
+                app:layout_constraintCircleRadius="@dimen/_220sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_action_avatar" />
+
+
+            <Button
+                android:id="@+id/mBtnSelectProfile"
+                style="@style/buttonNewTheme"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:text="@string/select_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgProfilePictureBorder"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintCircle="@+id/mViewShareQrCode"
+                app:layout_constraintCircleRadius="@dimen/_220sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bg_circle_white_border" />
+
+            <TextView
+                android:id="@+id/mTvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="User A"
+                android:textColor="@color/colorBlackSettingItemsNewTheme"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mImgProfilePicture" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutJobContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/mTvName">
+
+                <TextView
+                    android:id="@+id/mTvPosition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:text="CEO . "
+                    android:textColor="@color/colorBlackSettingItemsNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/mImgProfilePicture"
+                    app:layout_constraintStart_toStartOf="@+id/mViewShareQrCode" />
+
+                <TextView
+                    android:id="@+id/mTvCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Human Logistics Corp."
+                    android:textColor="@color/colorBlackSettingItemsNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/mViewShareQrCode"
+                    app:layout_constraintStart_toEndOf="@+id/mTvPosition"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvName" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/mImgQrCode"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_240sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/qr_code_placeholder"
+                app:layout_constraintEnd_toEndOf="@+id/mViewShareQrCode"
+                app:layout_constraintStart_toStartOf="@+id/mViewShareQrCode"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutJobContainer" />
+
+            <Button
+                android:id="@+id/mBtnShareCode"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:background="@drawable/bg_blue_border_btn"
+                android:text="@string/share_my_code"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlueDarkNewTheme"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mImgQrCode" />
+
+            <Button
+                android:id="@+id/mBtnSavetoPhoto"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_blue_border_btn"
+                android:text="@string/save_to_photo"
+                android:textAllCaps="false"
+                android:textColor="@color/colorBlueDarkNewTheme"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mBtnShareCode" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/mImgQrCode"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mImgQrCode"
+                app:srcCompat="@drawable/small_q"
+                tools:layout_editor_absoluteX="149dp"
+                tools:layout_editor_absoluteY="305dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewArrowUp"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:elevation="4dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/mBtnSelectProfile"
+                app:layout_constraintStart_toStartOf="@+id/mBtnSelectProfile"
+                app:layout_constraintTop_toBottomOf="@+id/mBtnSelectProfile"
+                app:srcCompat="@drawable/icon_menu_up"
+                app:tint="@color/colorWhite" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewPopUpSelectProfileContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageViewArrowUp"
+                app:layout_constraintTop_toTopOf="@+id/imageViewArrowUp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewSelectProdfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

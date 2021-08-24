@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+                name="objGalery"
+                type="lnq.com.lnq.fragments.gallery.GalleryModelNew"/>
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:layout_margin="1dp"
+  >
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mImg"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:loadGaleryImage='@{objGalery.path}'
+       />
+
+    <!--<TextView-->
+        <!--android:layout_marginTop="@dimen/_5sdp"-->
+        <!--android:id="@+id/mTvName"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="NAME"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/mImg"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="@color/black"-->
+        <!--android:textSize="16sp"/>-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:srcCompat="@drawable/green_tick"
+        android:id="@+id/mImgCheck"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="4dp"
+        android:visibility='@{objGalery.isSelected ? View.VISIBLE : View.INVISIBLE}'
+        />
+
+
+</RelativeLayout>
+
+</layout>

@@ -1,0 +1,94 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.status.FragmentUpdateStatus">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:tint="@color/colorBlackHintNewTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_arrow_up" />
+
+        <EditText
+            android:id="@+id/editTextStatusMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:textCursorDrawable="@drawable/cus_cursor_new_theme"
+            android:hint="@string/write_status_here"
+            android:maxLength="50"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textColorHint="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_18ssp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewBack"
+            tools:ignore="Autofill,TextFields" />
+
+        <Button
+            android:id="@+id/clearTextUpdate"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@mipmap/btn_blue_newtheme"
+            android:gravity="center"
+            android:text="@string/update"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextStatusMessage" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginLeft="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewBack"
+            app:srcCompat="@mipmap/left_qoute_new" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_18sdp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextStatusMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextStatusMessage"
+            app:layout_constraintVertical_bias="0.19"
+            app:srcCompat="@mipmap/right_qoute_new" />
+
+        <View
+            android:id="@+id/view_status"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clearTextUpdate"
+            tools:layout_editor_absoluteX="-16dp">
+
+        </View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

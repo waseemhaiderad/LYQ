@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_login_signup"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.fullprofileview.FragmentUnLnqUserProfileView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgLookingFor"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                app:layout_constraintEnd_toStartOf="@+id/mImgVisible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_status" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgVisible"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                app:layout_constraintEnd_toStartOf="@+id/mImgSetting"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_eye" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgSetting"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_setting" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mImgBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_9sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTvContactsNameHeading"
+            app:layout_constraintTop_toTopOf="@+id/mTvContactsNameHeading"
+            app:srcCompat="@drawable/icon_back_new" />
+
+        <TextView
+            android:id="@+id/mTvContactsNameHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_35sdp"
+            android:layout_marginLeft="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTopBar" />
+
+        <TextView
+            android:id="@+id/mTvPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_11ssp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/mTvContactsNameHeading"
+            app:layout_constraintTop_toBottomOf="@+id/mTvContactsNameHeading" />
+
+        <TextView
+            android:id="@+id/mTvCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/mTvPosition"
+            app:layout_constraintTop_toBottomOf="@+id/mTvContactsNameHeading" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mImgDots"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/mTvContactsNameHeading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mTvContactsNameHeading"
+            app:srcCompat="@drawable/icon_menu_more"
+            app:tint="@color/colorWhite" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mImgProfilePictureBorder"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:background="@drawable/bg_circle_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTvContactsNameHeading"
+            app:srcCompat="@drawable/ic_action_avatar" />
+
+        <Button
+            android:id="@+id/mBtnInviteToLnq"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_login_emailreset_btn"
+            android:text="@string/invite_to_lnq"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mImgProfilePictureBorder" />
+
+        <lnq.com.lnq.custom.views.view_pagify.ViewPagify
+            android:id="@+id/viewPagify"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mBtnInviteToLnq">
+
+        </lnq.com.lnq.custom.views.view_pagify.ViewPagify>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

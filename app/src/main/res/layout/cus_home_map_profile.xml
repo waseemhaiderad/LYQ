@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:singleLine="true"
+            android:text="Mandy Bennett"
+            android:textColor="@color/colorBlackSettingNewTheme"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewVerifiedProfileTick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewJobTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Global Coordinator"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCompany"
+            app:layout_constraintStart_toStartOf="@+id/textViewName"
+            app:layout_constraintTop_toTopOf="@+id/textViewCompany" />
+
+        <TextView
+            android:id="@+id/textViewCompany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="XYZ Corp"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/buttonLnq"
+            app:layout_constraintStart_toEndOf="@+id/textViewJobTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewVerifiedProfileTick"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewName"
+            app:layout_constraintEnd_toStartOf="@id/buttonLnq"
+            app:layout_constraintStart_toEndOf="@+id/textViewName"
+            app:layout_constraintTop_toTopOf="@+id/textViewName"
+            app:srcCompat="@mipmap/profile_tic_new" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewPopupMenu"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewName"
+            app:srcCompat="@drawable/icon_menu_more"
+            app:tint="@color/colorBlackHintNewTheme" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonLnq"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@mipmap/btn_lnq_new"
+            android:gravity="center"
+            android:padding="@dimen/_1sdp"
+            android:text="LNQ'd"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_9ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewName"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewPopupMenu"
+            app:layout_constraintStart_toEndOf="@id/imageViewVerifiedProfileTick"
+            app:layout_constraintTop_toTopOf="@+id/textViewName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewProfile"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewStatusMessage"
+            app:srcCompat="@drawable/ic_action_avatar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewFavoriteBorder"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewStatusMessage"
+            app:srcCompat="@drawable/icon_fav_border" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewRoundedLinkedProfile"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:background="@drawable/bg_circle_green"
+            android:padding="@dimen/_3sdp"
+            android:visibility="gone"
+            app:layout_constraintCircle="@+id/imageViewProfile"
+            app:layout_constraintCircleAngle="45"
+            app:layout_constraintCircleRadius="@dimen/_37sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_link"
+            app:tint="@color/colorWhite" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewQuoteLeft"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            app:layout_constraintRight_toLeftOf="@+id/textViewStatusMessage"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfile"
+            app:layout_constraintTop_toTopOf="@+id/textViewStatusMessage"
+            app:srcCompat="@mipmap/left_qoute_new" />
+
+        <TextView
+            android:id="@+id/textViewStatusMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:maxLines="3"
+            android:text="On business in sunny San Fran. Let's LNQ up!"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewQuoteRight"
+            app:layout_constraintStart_toEndOf="@+id/imageViewQuoteLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewJobTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewQuoteRight"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewStatusMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/textViewStatusMessage"
+            app:srcCompat="@mipmap/right_qoute_new" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewHome"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="@+id/textViewStatusMessage"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStatusMessage"
+            app:srcCompat="@drawable/icon_home"
+            app:tint="@color/colorBlackSettingNewTheme" />
+
+        <TextView
+            android:id="@+id/textViewHomeLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:gravity="top|start"
+            android:singleLine="true"
+            android:text="Austin, USA"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewHome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHome"
+            app:layout_constraintTop_toTopOf="@+id/imageViewHome" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewCurrentLocation"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@+id/textViewStatusMessage"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHomeLocation"
+            app:srcCompat="@drawable/icon_pin"
+            app:tint="@color/colorBlackSettingNewTheme" />
+
+        <TextView
+            android:id="@+id/textViewCurrentLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="San Francisco, USA . 0.9 mi"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewCurrentLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCurrentLocation"
+            app:layout_constraintTop_toTopOf="@+id/imageViewCurrentLocation" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewLnqConnection"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@+id/textViewStatusMessage"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCurrentLocation"
+            app:srcCompat="@drawable/icon_link"
+            app:tint="@color/colorBlackSettingNewTheme" />
+
+        <TextView
+            android:id="@+id/textViewConnectionSince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="@string/since"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewLnqConnection"
+            app:layout_constraintStart_toEndOf="@+id/imageViewLnqConnection"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLnqConnection" />
+
+        <TextView
+            android:id="@+id/textViewConnectionDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:text="[Date]"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewLnqConnection"
+            app:layout_constraintStart_toEndOf="@+id/textViewConnectionSince"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLnqConnection" />
+
+        <TextView
+            android:id="@+id/textViewConnectionIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="@string/in"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewLnqConnection"
+            app:layout_constraintStart_toEndOf="@+id/textViewConnectionDate"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLnqConnection" />
+
+        <TextView
+            android:id="@+id/textViewConnectionLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:singleLine="true"
+            android:text="[Location]"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewLnqConnection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewConnectionIn"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLnqConnection" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

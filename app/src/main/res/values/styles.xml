@@ -1,0 +1,144 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorWhiteNewTheme
+        </item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="CustomCheckbox02" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_selector</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottomsheet_corners</item>
+    </style>
+
+    <style name="MyCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut
+        </item>
+        <item name="cardElevation">10dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
+        <item name="cardElevation">9dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/_20sdp</item>
+        <item name="cornerSizeTopLeft">@dimen/_20sdp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <style name="MyCardViewNew" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay
+        </item>
+        <item name="cardElevation">10dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay" parent="">
+        <item name="cardElevation">10dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">@dimen/_20sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_20sdp</item>
+    </style>
+
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorControlActivated">@color/colorWhite</item>
+        <item name="colorControlHighlight">@color/colorWhite</item>
+    </style>
+
+    <style name="TextInputLayoutAppearanceBlack" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColor">@color/colorBlackNewTheme</item>
+        <item name="android:textColorHint">@color/colorBlackHintNewTheme</item>
+        <item name="colorControlNormal">@color/colorBlackNewTheme</item>
+        <item name="colorControlActivated">@color/colorBlackNewTheme</item>
+        <item name="colorControlHighlight">@color/colorBlackNewTheme</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:background">@color/colorLightGrey</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/colorPrimary</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorRedAlert</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="myTextInputLabel" parent="TextAppearance.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="android:textColorHint">@android:color/tertiary_text_dark</item>
+        <item name="android:textSize">20sp</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@android:color/tertiary_text_dark</item>
+        <item name="colorControlActivated">@android:color/holo_orange_light</item>
+    </style>
+
+    <style name="textViewTitleNewTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_22sdp</item>
+        <item name="android:textColor">@color/colorBlueNewTheme</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="textViewTitleDetailsNewTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@color/colorBlueNewTheme</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="editTextNewTheme" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:inputType">textNoSuggestions</item>
+        <item name="android:textCursorDrawable">@drawable/cus_cursor_new_theme</item>
+        <item name="android:textColor">@color/colorBlackHintNewTheme</item>
+        <item name="android:textColorHint">@color/colorBlackHintNewTheme</item>
+    </style>
+
+    <style name="buttonNewTheme" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@mipmap/btn_blue_newtheme</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="buttonWhiteNewTheme" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:textColor">@color/colorBlueNewTheme</item>
+        <item name="android:background">@mipmap/btn_get_started</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+</resources>

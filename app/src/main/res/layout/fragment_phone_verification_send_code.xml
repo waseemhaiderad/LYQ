@@ -1,0 +1,484 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickListener"
+                type="lnq.com.lnq.fragments.registeration.phoneverification.FragmentPhoneVerificationSendCode.SendCodeClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhiteNewTheme"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context="lnq.com.lnq.fragments.registeration.phoneverification.FragmentPhoneVerificationSendCode">
+
+        <include
+                android:id="@+id/tobBar"
+                layout="@layout/cus_topbar_new_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{clickListener::backPressed}"
+                android:padding="@dimen/_8sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/new_backicon" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mRoot1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:onClick="@{clickListener::onRootClick}"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+            <ImageView
+                    android:id="@+id/imageViewLnqLogo1"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:contentDescription="@string/lnq_logo"
+                    android:src="@mipmap/new_logo2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                    android:id="@+id/textViewWelcome1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:text="@string/phone_verification_des"
+                    android:textColor="@color/colorBlueNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutFirstName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewWelcome1">
+
+                <EditText
+                        android:id="@+id/editTextFirstName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/first_name_signup"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textColorHint="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutLastName1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName1"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName1"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFirstName1">
+
+                <EditText
+                        android:id="@+id/editTextLastName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/last_name_signup"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textColorHint="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutNickName1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayoutLastName1"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayoutLastName1"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName1">
+
+                <EditText
+                        android:id="@+id/editTextNickName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/nick_name_optional"
+                        android:inputType="textCapWords"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textColorHint="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_autoFormatNumber="true"
+                    app:ccp_contentColor="@color/colorBlackNewTheme"
+                    app:ccp_defaultPhoneCode="1"
+                    app:ccp_showArrow="false"
+                    app:ccp_showFlag="true"
+                    app:ccp_showFullName="false"
+                    app:ccp_showNameCode="false"
+                    app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintEnd_toStartOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayoutNickName1"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayoutPhone1" />
+
+            <TextView
+                    android:id="@+id/textViewCode1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:textColor="@color/colorBlackNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintEnd_toStartOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayoutNickName1"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayoutPhone1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPhone1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName1"
+                    app:layout_constraintStart_toEndOf="@+id/countryCodePicker1"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNickName1">
+
+                <EditText
+                        android:id="@+id/editTextPhone1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="@string/enter_phone_number"
+                        android:inputType="phone"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textColorHint="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                    android:id="@+id/textViewWeWillSendYou1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:text="@string/phone_verification_des1"
+                    android:textColor="@color/colorBlueNewTheme"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhone1" />
+
+            <TextView
+                    android:id="@+id/textViewPleaseEnter1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:text="@string/phone_verification_des2"
+                    android:textColor="@color/colorBlueNewTheme"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewWeWillSendYou1" />
+
+            <lnq.com.lnq.custom.views.ClearTextView
+                    android:id="@+id/clearTextViewSendVerification1"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:background="@mipmap/btn_blue_newtheme"
+                    android:gravity="center"
+                    android:onClick="@{clickListener::onSendCodeClick}"
+                    android:text="@string/send_code"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPleaseEnter1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mRoot"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:onClick="@{clickListener::onRootClick}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+            <ScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                            android:id="@+id/imageViewLnqLogo"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_marginTop="@dimen/_31sdp"
+                            android:contentDescription="@string/lnq_logo"
+                            android:src="@mipmap/new_logo2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                            android:id="@+id/textViewWelcome"
+                            style="@style/textViewTitleDetailsNewTheme"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:text="@string/phone_verification_des"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutFirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:theme="@style/TextInputLayoutAppearanceBlack"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewWelcome">
+
+                        <EditText
+                                android:id="@+id/editTextFirstName"
+                                style="@style/editTextNewTheme"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/first_name_signup"
+                                tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutLastName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:theme="@style/TextInputLayoutAppearanceBlack"
+                            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFirstName">
+
+                        <EditText
+                                android:id="@+id/editTextLastName"
+                                style="@style/editTextNewTheme"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/last_name_signup"
+                                tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayoutNickName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:theme="@style/TextInputLayoutAppearanceBlack"
+                            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutLastName"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutLastName"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName">
+
+                        <EditText
+                                android:id="@+id/editTextNickName"
+                                style="@style/editTextNewTheme"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/nick_name_optional"
+                                tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.hbb20.CountryCodePicker
+                            android:id="@+id/countryCodePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            app:ccp_autoDetectCountry="true"
+                            app:ccp_autoFormatNumber="true"
+                            app:ccp_contentColor="@color/colorBlackNewTheme"
+                            app:ccp_defaultPhoneCode="1"
+                            app:ccp_showArrow="false"
+                            app:ccp_showFlag="true"
+                            app:ccp_showFullName="false"
+                            app:ccp_showNameCode="false"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayouPhone"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayouPhone"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutNickName"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayouPhone" />
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:background="@color/colorBlackNewTheme"
+                            app:layout_constraintBottom_toBottomOf="@+id/countryCodePicker"
+                            app:layout_constraintEnd_toEndOf="@+id/countryCodePicker"
+                            app:layout_constraintStart_toStartOf="@+id/countryCodePicker" />
+
+                    <TextView
+                            android:id="@+id/textViewCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:layout_marginLeft="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:text="+1"
+                            android:textColor="@color/colorBlackNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayouPhone"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayouPhone"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutNickName"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayouPhone" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayouPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:theme="@style/TextInputLayoutAppearanceBlack"
+                            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName"
+                            app:layout_constraintStart_toEndOf="@+id/countryCodePicker"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNickName">
+
+                        <EditText
+                                android:id="@+id/editTextPhone"
+                                style="@style/editTextNewTheme"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/enter_phone_number"
+                                android:inputType="phone"
+                                tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                            android:id="@+id/textViewWeWillSendYou"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:gravity="center"
+                            android:text="@string/phone_verification_des1"
+                            android:textColor="@color/colorDarkBlueNewTheme"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayouPhone" />
+
+                    <TextView
+                            android:id="@+id/textViewPleaseEnter"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_30sdp"
+                            android:layout_marginEnd="@dimen/_30sdp"
+                            android:gravity="center"
+                            android:text="@string/phone_verification_des2"
+                            android:textColor="@color/colorBlueNewTheme"
+                            android:textSize="@dimen/_12ssp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewWeWillSendYou" />
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                            android:id="@+id/clearTextViewSendVerification"
+                            style="@style/buttonNewTheme"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:onClick="@{clickListener::onSendCodeClick}"
+                            android:text="@string/send_code"
+                            android:textAllCaps="false"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewPleaseEnter" />
+
+                    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                            android:id="@+id/clearTextViewSendVerification2"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@drawable/cus_loading_btn"
+                            android:text="@string/sign_in"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewPleaseEnter"
+                            app:spinning_bar_color="@color/colorWhite" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

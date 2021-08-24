@@ -1,0 +1,460 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickHandler"
+                type="lnq.com.lnq.fragments.setting.FragmentSetting.SettingClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context="lnq.com.lnq.fragments.setting.FragmentSetting">
+
+        <include
+                android:id="@+id/tobBar"
+                layout="@layout/cus_topbar_new_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_55sdp"
+                android:background="@mipmap/bg_map">
+
+            <ScrollView
+                    android:id="@+id/nestedScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp">
+
+                    <TextView
+                            android:id="@+id/textViewAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginLeft="@dimen/_20sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:text="@string/account"
+                            android:textColor="@color/colorBlackSettingNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                            android:id="@+id/textViewYourProfile"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onYourProfileClick}"
+                            android:text="@string/your_profile"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowYourProfile"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewAccount" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowYourProfile"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onYourProfileClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewYourProfile"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewYourProfile"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewdefaultSettings"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onDefaultSettingClick}"
+                            android:text="@string/default_setting"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowVisibilitySettings"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewYourProfile" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowdefaultSettings"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onDefaultSettingClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewdefaultSettings"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewdefaultSettings"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewVisibilitySettings"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onVisibilitySettingClick}"
+                            android:text="@string/visibility_settings"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowVisibilitySettings"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewdefaultSettings" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowVisibilitySettings"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onVisibilitySettingClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewVisibilitySettings"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewVisibilitySettings"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewSyncContacts"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onSyncContactsClick}"
+                            android:text="@string/sync_contacts"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowSyncContacts"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewVisibilitySettings" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowSyncContacts"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onSyncContactsClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewSyncContacts"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewSyncContacts"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewAccountSettings"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onAccountSettingClick}"
+                            android:text="@string/account_settings"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowAccountSettings"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewSyncContacts" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowAccountSettings"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onAccountSettingClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewAccountSettings"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewAccountSettings"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewBlockedUsers"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onBlockedUserClick}"
+                            android:text="@string/blocked_users"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowBlockedUsers"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewAccountSettings" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowBlockedUsers"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onBlockedUserClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewBlockedUsers"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewBlockedUsers"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewSignOut"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onSignOutClick}"
+                            android:text="@string/sign_out"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowSignOut"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewBlockedUsers" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowSignOut"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onSignOutClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewSignOut"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewSignOut"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewGeneral"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:text="@string/general"
+                            android:textColor="@color/colorBlackSettingNewTheme"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewSignOut" />
+
+                    <TextView
+                            android:id="@+id/textViewFaq"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onFaqClick}"
+                            android:text="@string/faq"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowFaq"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewGeneral" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowFaq"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onFaqClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewFaq"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewFaq"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewCommunityGuidlines"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onCommunityGuidlineClick}"
+                            android:text="@string/community_guidlines"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowCommunityGuidlines"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewFaq" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowCommunityGuidlines"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onCommunityGuidlineClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewCommunityGuidlines"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewCommunityGuidlines"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewVisibilityPolicy"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onVisibilityPolicyClick}"
+                            android:text="@string/visibility_policy"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowVisibilityPolicy"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewCommunityGuidlines" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowVisibilityPolicy"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onVisibilityPolicyClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewVisibilityPolicy"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewVisibilityPolicy"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewPrivacyPolicy"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onPrivacyPolicyClick}"
+                            android:text="@string/privacy_policies"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowPrivacyPolicy"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewVisibilityPolicy" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowPrivacyPolicy"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onPrivacyPolicyClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewPrivacyPolicy"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewPrivacyPolicy"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewTermsAndConditions"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onTermsAndConditionClick}"
+                            android:text="@string/terms_condition"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowTermsAndConditions"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewPrivacyPolicy" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowTermsAndConditions"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onTermsAndConditionClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewTermsAndConditions"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewTermsAndConditions"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewContactUs"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{clickHandler::onContactUsClick}"
+                            android:text="@string/contact_us"
+                            android:textColor="@color/colorBlackSettingItemsNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            app:layout_constraintEnd_toStartOf="@+id/imageViewArrowContactUs"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewTermsAndConditions" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageViewArrowContactUs"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:layout_marginRight="@dimen/_20sdp"
+                            android:onClick="@{clickHandler::onContactUsClick}"
+                            app:layout_constraintBottom_toBottomOf="@+id/textViewContactUs"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textViewContactUs"
+                            app:srcCompat="@drawable/icon_arrow_right"
+                            app:tint="@color/colorBlackSettingArrowNewTheme" />
+
+                    <TextView
+                            android:id="@+id/textViewAppVersion"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_30sdp"
+                            android:text="LNQ App Version #1.0.118"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_11ssp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/textViewAccount"
+                            app:layout_constraintTop_toBottomOf="@+id/textViewContactUs" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+                android:id="@+id/mViewBgBottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/bg_bottom_bar"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

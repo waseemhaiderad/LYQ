@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+            android:id="@+id/topBarContactCardView"
+            style="@style/MyCardViewNew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            app:cardElevation="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topBarRoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewBackTopBar"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewContactNameTopBar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewContactNameTopBar"
+                    app:srcCompat="@mipmap/new_backicon" />
+
+            <TextView
+                    android:id="@+id/textViewContactNameTopBar"
+                    style="@style/textViewTitleNewTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:maxLength="15"
+                    android:text="Awais Sarwar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageViewBackTopBar"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewContactSearchTopBar"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewContactNameTopBar"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewContactGridTopBar"
+                    app:layout_constraintTop_toTopOf="@+id/textViewContactNameTopBar"
+                    app:srcCompat="@drawable/icon_search">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewContactGridTopBar"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:tag="grid"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewContactNameTopBar"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewContactQRTopBar"
+                    app:layout_constraintTop_toTopOf="@+id/textViewContactNameTopBar"
+                    app:srcCompat="@mipmap/icon_grid_new">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewContactQRTopBar"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewContactNameTopBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewContactNameTopBar"
+                    app:srcCompat="@mipmap/icon_qr_new">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewDropdownContacts"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@mipmap/page_down_new">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

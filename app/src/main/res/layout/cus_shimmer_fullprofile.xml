@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mRootshimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/textViewNameshimmer"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            android:singleLine="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewJobTitleshimmer"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCompanyshimmer"
+            app:layout_constraintStart_toStartOf="@+id/textViewNameshimmer" />
+
+        <TextView
+            android:id="@+id/textViewCompanyshimmer"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintEnd_toStartOf="@+id/buttonLnqshimmer"
+            app:layout_constraintStart_toEndOf="@+id/textViewJobTitleshimmer"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNameshimmer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewProfileVerifiedTickshimmer"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewNameshimmer"
+            app:layout_constraintLeft_toRightOf="@+id/textViewNameshimmer"
+            app:layout_constraintTop_toTopOf="@+id/textViewNameshimmer" />
+
+        <Button
+            android:id="@+id/buttonLnqshimmer"
+            android:layout_width="@dimen/_33sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_circle_white"
+            android:gravity="center"
+            android:padding="@dimen/_1sdp"
+            android:text="@string/lnq"
+            android:textColor="@color/colorPrimaryBlue"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewJobTitleshimmer"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewMenushimmer"
+            app:layout_constraintTop_toTopOf="@+id/textViewNameshimmer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewMenushimmer"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewNameshimmer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewProfileshimmer"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_circle_shimmer_new"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="@+id/textViewNameshimmer"
+            app:layout_constraintTop_toTopOf="@+id/textViewStatusMessageshimmer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewQuoteLeftshimmer"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintRight_toLeftOf="@+id/textViewStatusMessageshimmer"
+            app:layout_constraintStart_toEndOf="@+id/imageViewProfileshimmer"
+            app:layout_constraintTop_toTopOf="@+id/textViewStatusMessageshimmer"
+            app:srcCompat="@drawable/icon_left_quote" />
+
+        <TextView
+            android:id="@+id/textViewStatusMessageshimmer"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            android:maxLines="3"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewQuoteLeftshimmer"
+            app:layout_constraintTop_toBottomOf="@+id/textViewconnectionsshimmer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewQuoteRightshimmer"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:alpha="0.7"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewStatusMessageshimmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/textViewStatusMessageshimmer"
+            app:srcCompat="@drawable/icon_quote_right" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewHomeLocationshimmer"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:alpha="0.7"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewStatusMessageshimmer"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStatusMessageshimmer"
+            app:srcCompat="@drawable/icon_home"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/textViewHomeLocationshimmer"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewHomeLocationshimmer"
+            app:layout_constraintStart_toEndOf="@+id/imageViewHomeLocationshimmer"
+            app:layout_constraintTop_toTopOf="@+id/imageViewHomeLocationshimmer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewCurrentLocationshimmer"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:alpha="0.7"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewStatusMessageshimmer"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHomeLocationshimmer"
+            app:srcCompat="@drawable/icon_pin"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/textViewCurrentLocationshimmer"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewCurrentLocationshimmer"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCurrentLocationshimmer"
+            app:layout_constraintTop_toTopOf="@+id/imageViewCurrentLocationshimmer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewLinkedConnectionshimmer"
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:alpha="0.7"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/textViewStatusMessageshimmer"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCurrentLocationshimmer"
+            app:srcCompat="@drawable/icon_link"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/textViewCurrentLocationshimmer1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewMenushimmer"
+            app:layout_constraintStart_toEndOf="@+id/imageViewLinkedConnectionshimmer"
+            app:layout_constraintTop_toTopOf="@+id/imageViewLinkedConnectionshimmer" />
+
+        <!--        <RelativeLayout-->
+        <!--            android:id="@+id/linearLayoutConnectionInfoshimmer"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="@dimen/_20sdp"-->
+        <!--            android:layout_marginStart="@dimen/_5sdp"-->
+        <!--            android:layout_marginTop="@dimen/_3sdp"-->
+        <!--            android:background="@drawable/bg_popup_shimmer"-->
+        <!--            android:layout_marginLeft="@dimen/_5sdp"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/imageViewMenushimmer"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/imageViewLinkedConnectionshimmer"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/imageViewLinkedConnectionshimmer">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textViewConnectionSinceshimmer"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_alignParentStart="true"-->
+        <!--                android:background="@drawable/bg_popup_shimmer"-->
+        <!--                android:layout_alignParentLeft="true"-->
+        <!--                android:textColor="@color/colorWhite"-->
+        <!--                android:textSize="@dimen/_11ssp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textViewConnectionDateshimmer"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:background="@drawable/bg_popup_shimmer"-->
+        <!--                android:layout_marginStart="@dimen/_3sdp"-->
+        <!--                android:layout_marginLeft="@dimen/_3sdp"-->
+        <!--                android:layout_toEndOf="@+id/textViewConnectionSinceshimmer"-->
+        <!--                android:layout_toRightOf="@+id/textViewConnectionSinceshimmer"-->
+        <!--                android:textSize="@dimen/_11ssp"-->
+        <!--                android:textStyle="bold" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textViewConnectionInshimmer"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginStart="@dimen/_5sdp"-->
+        <!--                android:layout_marginLeft="@dimen/_5sdp"-->
+        <!--                android:layout_toEndOf="@+id/textViewConnectionDateshimmer"-->
+        <!--                android:layout_toRightOf="@+id/textViewConnectionDateshimmer"-->
+        <!--                android:singleLine="true"-->
+        <!--                android:background="@drawable/bg_popup_shimmer"-->
+        <!--                android:textColor="@color/colorWhite"-->
+        <!--                android:textSize="@dimen/_11ssp"-->
+        <!--                android:visibility="invisible" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/textViewConnectionLocationshimmer"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_below="@+id/textViewConnectionSinceshimmer"-->
+        <!--                android:background="@drawable/bg_popup_shimmer"-->
+        <!--                android:textSize="@dimen/_11ssp"-->
+        <!--                android:textStyle="bold" />-->
+
+        <!--        </RelativeLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pagerViewshimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewLinkedConnectionshimmer">
+
+            <TextView
+                android:id="@+id/textViewNotesshimmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:alpha="0.7"
+                android:background="@drawable/bg_popup_shimmer"
+                android:text="            "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textViewAboutshimmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:alpha="0.7"
+                android:background="@drawable/bg_popup_shimmer"
+                android:text="             "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNotesshimmer"
+                app:layout_constraintLeft_toRightOf="@+id/textViewNotesshimmer"
+                app:layout_constraintTop_toTopOf="@+id/textViewNotesshimmer" />
+
+            <TextView
+                android:id="@+id/textViewHistoryshimmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:alpha="0.7"
+                android:background="@drawable/bg_popup_shimmer"
+                android:text="             "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewAboutshimmer"
+                app:layout_constraintLeft_toRightOf="@+id/textViewAboutshimmer"
+                app:layout_constraintTop_toTopOf="@+id/textViewAboutshimmer" />
+
+            <TextView
+                android:id="@+id/textViewContactListshimmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:alpha="0.7"
+                android:background="@drawable/bg_popup_shimmer"
+                android:text="                  "
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewHistoryshimmer"
+                app:layout_constraintLeft_toRightOf="@+id/textViewHistoryshimmer"
+                app:layout_constraintTop_toTopOf="@+id/textViewHistoryshimmer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/viewPagifyshimmer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pagerViewshimmer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/bg_popup_menu"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/bg_popup_menu"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/textViewTagsshimmer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:alpha="0.7"
+                    android:background="@drawable/bg_popup_shimmer"
+                    android:text="             "
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewTagDetailshimmer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:alpha="0.7"
+                    android:background="@drawable/bg_popup_shimmer"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textViewTagsshimmer"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTagsshimmer" />
+
+                <TextView
+                    android:id="@+id/textViewBioshimmer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:alpha="0.7"
+                    android:background="@drawable/bg_popup_shimmer"
+                    android:text="             "
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTagDetailshimmer" />
+
+                <TextView
+                    android:id="@+id/textViewBioDetailshimmer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:alpha="0.7"
+                    android:background="@drawable/bg_popup_shimmer"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/textViewTagsshimmer"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewBioshimmer"
+                    app:layout_constraintVertical_bias="0.015" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/bg_popup_menu"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textViewconnectionsshimmer"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:alpha="0.7"
+            android:background="@drawable/bg_popup_shimmer"
+            android:gravity="start"
+            android:singleLine="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewCompanyshimmer"
+            app:layout_constraintStart_toStartOf="@+id/textViewNameshimmer"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCompanyshimmer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

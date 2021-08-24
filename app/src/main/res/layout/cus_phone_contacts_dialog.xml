@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <ImageView
+        android:id="@+id/imageViewContact"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@drawable/bg_circle_grey_border"
+        android:contentDescription="@null"
+        android:padding="2dp"
+        android:src="@drawable/ic_action_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewFavoriteBorder"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_fav_border" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewProfileLinkedConnection"
+        android:layout_width="@dimen/_13sdp"
+        android:layout_height="@dimen/_13sdp"
+        android:background="@drawable/bg_circle_green"
+        android:padding="@dimen/_3sdp"
+        android:visibility="gone"
+        app:layout_constraintCircle="@+id/imageViewContact"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="@dimen/_23sdp"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewContact"
+        app:layout_constraintTop_toTopOf="@+id/imageViewContact"
+        app:srcCompat="@drawable/icon_link"
+        app:tint="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:singleLine="true"
+        android:textColor="@color/colorBlackSettingNewTheme"
+        android:textSize="@dimen/_16ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewContact"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDeSelectContact"
+        app:layout_constraintStart_toEndOf="@+id/imageViewContact"
+        app:layout_constraintTop_toTopOf="@+id/imageViewContact" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewSelectContact"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:background="@drawable/bg_circle_secondary_color_border"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewContact" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageViewDeSelectContact"
+        android:layout_width="@dimen/_18sdp"
+        android:layout_height="@dimen/_18sdp"
+        android:background="@drawable/bg_circle_green_success"
+        android:padding="@dimen/_4sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewContact"
+        app:srcCompat="@drawable/icon_check"
+        app:tint="@color/colorWhite" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

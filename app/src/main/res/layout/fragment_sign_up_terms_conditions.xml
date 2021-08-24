@@ -1,0 +1,203 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="lnq.com.lnq.fragments.registeration.FragmentSignUpTermsConditions.TermsConditionClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.registeration.FragmentSignUpTermsConditions">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:onClick="@{clickHandler::onBackClick}"
+            android:padding="@dimen/_8sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/new_backicon" />
+
+        <TextView
+            android:id="@+id/textViewTermsConditionHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="@string/terms_condition"
+            android:textColor="@color/colorBlueNewTheme"
+            android:textSize="@dimen/_22ssp"
+            app:layout_constraintStart_toEndOf="@+id/imageViewBack"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayoutTermsConditionButtonsContainer"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_terms_condition_container_new_theme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTermsConditionHeading">
+
+            <Button
+                android:id="@+id/buttonTerms"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@drawable/bg_terms_btn_newtheme"
+                android:gravity="center"
+                android:onClick="@{clickHandler::onTermsClick}"
+                android:paddingStart="@dimen/_25sdp"
+                android:paddingEnd="@dimen/_25sdp"
+                android:text="@string/terms_condition"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryBlue"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/buttonPrivacy"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@drawable/bg_terms_btn_newtheme"
+                android:gravity="center"
+                android:onClick="@{clickHandler::onPrivacyClick}"
+                android:paddingStart="@dimen/_35sdp"
+                android:paddingEnd="@dimen/_35sdp"
+                android:text="@string/privacy"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ButtonStyle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutTermsConditionButtonsContainer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewTermsHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/colorBlackNewTheme"
+                    android:text="@string/terms_condition">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewDescriptionHeading1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTermsHeading"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTermsBlackNewTheme"
+                    android:text="@string/lorem_ipsum1">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewDescription1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionHeading1"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/colorTermsBlackNewTheme"
+                    android:text="@string/lorem_ipsum_description">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewDescriptionHeading2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDescription1"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTermsBlackNewTheme"
+                    android:text="@string/lorem_ipsum1">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/textViewDescription2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionHeading2"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/colorTermsBlackNewTheme"
+                    android:text="@string/lorem_ipsum_description">
+
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <TextView-->
+<!--                android:id="@+id/textViewTermsConditionDescription"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingStart="@dimen/_14sdp"-->
+<!--                android:paddingLeft="@dimen/_14sdp"-->
+<!--                android:paddingEnd="@dimen/_14sdp"-->
+<!--                android:visibility="gone"-->
+<!--                android:paddingRight="@dimen/_14sdp"-->
+<!--                android:text="@string/terms_des"-->
+<!--                android:textColor="@color/colorTermsBlackNewTheme"-->
+<!--                android:textSize="@dimen/_13ssp" />-->
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

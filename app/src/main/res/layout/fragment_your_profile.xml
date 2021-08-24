@@ -1,0 +1,202 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.setting.account.FragmentYourProfile">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:padding="@dimen/_2sdp"
+            android:tint="@color/colorBlackHintNewTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/mTvAccountHeading1"
+            app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1"
+            app:srcCompat="@drawable/back_arrow_thin" />
+
+        <TextView
+            android:id="@+id/mTvAccountHeading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/back_to_account"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@mipmap/bg_map">
+
+            <ScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/mTvYourProfile"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/your_profile"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/mTvProfileCreated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_created"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        app:layout_constraintStart_toStartOf="@+id/mTvYourProfile"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvYourProfile" />
+
+                    <TextView
+                        android:id="@+id/mTvLnQs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:text="@string/lnqs"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvYourProfile"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvProfileCreated" />
+
+                    <TextView
+                        android:id="@+id/mTvCountsNumber"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:background="@drawable/bg_circle_blue_new_theme"
+                        android:gravity="center"
+                        android:text="24"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvLnQs"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvLnQs"
+                        app:layout_constraintTop_toTopOf="@+id/mTvLnQs" />
+
+                    <TextView
+                        android:id="@+id/mTvLnqDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:text="@string/lorem_ipsum"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/mTvYourProfile"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLnQs" />
+
+                    <TextView
+                        android:id="@+id/mTvViewOrEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:text="@string/view_or_edit_status"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvYourProfile"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLnqDescription" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgLeftSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvViewOrEdit"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvViewOrEdit"
+                        app:layout_constraintTop_toTopOf="@+id/mTvViewOrEdit"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/mTvViewOrEditDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:text="@string/lorem_ipsum"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/mTvYourProfile"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvViewOrEdit" />
+
+                    <TextView
+                        android:id="@+id/mTvProfileVerification"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:text="@string/profile_verification"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvYourProfile"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvViewOrEditDescription" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgProfileVerfiLeftSign"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvProfileVerification"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvProfileVerification"
+                        app:layout_constraintTop_toTopOf="@+id/mTvProfileVerification"
+                        app:srcCompat="@drawable/icon_arrow_right" />
+
+                    <TextView
+                        android:id="@+id/mTvProfileVerfiDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:text="@string/lorem_ipsum"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/mTvYourProfile"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvProfileVerification" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <View-->
+        <!--            android:id="@+id/mViewBgBottomBar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="@dimen/_80sdp"-->
+        <!--            android:background="@drawable/bg_bottom_bar"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,97 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.setting.account.accountsetting.FragmentEditPhoneNumber">
+
+        <TextView
+            android:id="@+id/mTvChangePhoneNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="@string/change_phone"
+            android:textColor="@color/colorBlackSettingItemsNewTheme"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mTvChangePhoneDes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:text="@string/phone_des"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/mTvChangePhoneNum"
+            app:layout_constraintTop_toBottomOf="@+id/mTvChangePhoneNum" />
+
+
+        <TextView
+            android:id="@+id/mTvPhoneNumberHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/contact"
+            android:textColor="@color/colorBlackSettingItemsNewTheme"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="@id/mTvChangePhoneNum"
+            app:layout_constraintTop_toBottomOf="@+id/mTvChangePhoneDes" />
+
+
+        <TextView
+            android:id="@+id/mTvPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@null"
+            android:maxLines="1"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/mTvPhoneNumberHeading"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mTvPhoneNumberHeading"
+            app:layout_constraintTop_toTopOf="@+id/mTvPhoneNumberHeading" />
+
+
+        <Button
+            android:id="@+id/mBtnNeverMind"
+            style="@style/buttonWhiteNewTheme"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="Nevermind"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTvPhoneNumberHeading" />
+
+        <Button
+            android:id="@+id/mBtnUpdatePhone"
+            style="@style/buttonNewTheme"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="@string/update_phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mBtnNeverMind" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

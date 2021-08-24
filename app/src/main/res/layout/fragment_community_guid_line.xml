@@ -1,0 +1,186 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.setting.general.FragmentCommunityGuidLine">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:padding="@dimen/_2sdp"
+            android:tint="@color/colorBlackHintNewTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mTvGeneralHeading1"
+            app:layout_constraintTop_toTopOf="@+id/mTvGeneralHeading1"
+            app:srcCompat="@drawable/back_arrow_thin" />
+
+        <TextView
+            android:id="@+id/mTvGeneralHeading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/back_to_general"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@mipmap/bg_map">
+
+            <ScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/mTvCommunityGuidLine"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/community_guid_lines"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/mTvLoremIpsum"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:text="@string/lorem_ipsum_doller"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCommunityGuidLine"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvCommunityGuidLine" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgDownSign"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvLoremIpsum"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvLoremIpsum"
+                        app:layout_constraintTop_toTopOf="@+id/mTvLoremIpsum"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+
+                    <TextView
+                        android:id="@+id/mTvLoremIpsumDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:text="@string/lorem_ipsum"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCommunityGuidLine"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLoremIpsum" />
+
+                    <TextView
+                        android:id="@+id/mTvLoremIpsum1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/lorem_ipsum_doller"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCommunityGuidLine"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLoremIpsumDescription" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgLoremIpsumDownSign"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvLoremIpsum1"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvLoremIpsum1"
+                        app:layout_constraintTop_toTopOf="@+id/mTvLoremIpsum1"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+                    <TextView
+                        android:id="@+id/mTvLoremIpsum2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/lorem_ipsum_doller"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCommunityGuidLine"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLoremIpsumDescription" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgLoremIpsumRightSign2"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvLoremIpsum1"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvLoremIpsum1"
+                        app:layout_constraintTop_toTopOf="@+id/mTvLoremIpsum1"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+                    <TextView
+                        android:id="@+id/mTvLoremIpsum3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/lorem_ipsum_doller"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCommunityGuidLine"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLoremIpsum2" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgLoremIpsumRightSign3"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:tint="@color/colorBlackSettingArrowNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvLoremIpsum3"
+                        app:layout_constraintLeft_toRightOf="@+id/mTvLoremIpsum3"
+                        app:layout_constraintTop_toTopOf="@+id/mTvLoremIpsum3"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,267 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="lnq.com.lnq.fragments.registeration.FragmentEmailVerification" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.registeration.phoneverification.FragmentPhoneVerificationEnterCode">
+
+        <include
+            android:id="@+id/tobBar"
+            layout="@layout/cus_topbar_new_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageViewLnqLogo"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:contentDescription="@string/lnq_logo"
+                    android:src="@mipmap/new_logo2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewVerifyPhoneNo"
+                    style="@style/textViewTitleDetailsNewTheme"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:text="@string/verify_code_for_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCode1"
+                    android:layout_width="20dp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_60sdp"
+                    android:layout_marginLeft="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextCode2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVerifyPhoneNo" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCode2"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextCode3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/editTextCode1"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVerifyPhoneNo" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCode3"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextCode4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/editTextCode2"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVerifyPhoneNo" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCode4"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextCode5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/editTextCode3"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVerifyPhoneNo" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCode5"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toStartOf="@+id/editTextCode6"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/editTextCode4"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVerifyPhoneNo" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCode6"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:layout_marginRight="@dimen/_60sdp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/editTextCode5"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVerifyPhoneNo" />
+
+                <TextView
+                    android:id="@+id/textViewEnterDigitCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:gravity="center"
+                    android:text="@string/enter_six_digit_code"
+                    android:textColor="@color/colorBlueNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextCode1" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@+id/textViewEnterDigitCode"
+                    app:layout_constraintStart_toStartOf="@+id/textViewEnterDigitCode"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewEnterDigitCode"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/editTextPassword"
+                        style="@style/editTextNewTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/new_password"
+                        android:inputType="textPassword"
+                        tools:ignore="Autofill" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPasswordConfirm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPassword"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayoutPassword"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/editTextPasswordConfirm"
+                        style="@style/editTextNewTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/re_enter_password"
+                        android:inputType="textPassword"
+                        tools:ignore="Autofill" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/buttonResendEmailNew"
+                    style="@style/buttonWhiteNewTheme"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="@string/resend_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPasswordConfirm" />
+
+                <lnq.com.lnq.custom.views.ClearTextView
+                    android:id="@+id/clearTextViewResetPassword"
+                    style="@style/buttonNewTheme"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="@string/reset_password"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/buttonResendEmailNew" />
+
+                <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                        android:id="@+id/clearTextViewLogin2"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_25sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:text= "@string/reset_password"
+                        android:visibility="gone"
+                        app:spinning_bar_color="@color/colorWhite"
+                        android:background="@drawable/cus_loading_btn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/buttonResendEmailNew" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

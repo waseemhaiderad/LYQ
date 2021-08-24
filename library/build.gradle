@@ -1,0 +1,122 @@
+plugins {
+    id("com.android.library")
+    id("maven-publish")
+    id("signing")
+}
+
+android {
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+
+    configurations {
+        javadocSources.extendsFrom(implementation)
+    }
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+        versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName project.VERSION_NAME
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    testOptions {
+        animationsDisabled = true
+    }
+}
+
+dependencies {
+    testImplementation("junit:junit:4.13")
+
+    implementation("androidx.annotation:annotation:$ANDROIDX_VERSION")
+    implementation("androidx.appcompat:appcompat:$ANDROIDX_VERSION")
+}
+
+task libraryJavadocs(type: Javadoc) {
+    failOnError = false
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += configurations.javadocSources
+}
+
+task libraryJavadocsJar(type: Jar, dependsOn: libraryJavadocs) {
+    archiveClassifier.set("javadoc")
+    from libraryJavadocs.destinationDir
+}
+
+task librarySourcesJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from android.sourceSets.main.java.srcDirs
+}
+
+task jar(type: Jar) {
+    dependsOn 'assembleRelease'
+    baseName project.POM_ARTIFACT_ID
+    version project.VERSION_NAME
+    from fileTree(dir: 'build/intermediates/classes/release/')
+}
+
+publishing {
+    repositories {
+        maven {
+            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.properties['NEXUS_USERNAME'] ?: ""
+                password = project.properties['NEXUS_PASSWORD'] ?: ""
+            }
+        }
+    }
+
+    publications {
+        maven(MavenPublication) { publication ->
+            groupId = GROUP
+            artifactId = POM_ARTIFACT_ID
+            version = VERSION_NAME
+
+            artifact(librarySourcesJar)
+            artifact(libraryJavadocsJar)
+            artifact("$buildDir/outputs/aar/library-release.aar")
+
+            pom {
+                name = POM_NAME
+                packaging = POM_PACKAGING
+                description = POM_DESCRIPTION
+                url = POM_URL
+
+                licenses {
+                    license {
+                        name = POM_LICENCE_NAME
+                        url = POM_LICENCE_URL
+                        distribution = POM_LICENCE_DIST
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = POM_DEVELOPER_ID
+                        name = POM_DEVELOPER_NAME
+                    }
+                }
+
+                scm {
+                    connection = POM_SCM_CONNECTION
+                    developerConnection = POM_SCM_DEV_CONNECTION
+                    url = POM_SCM_URL
+                }
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.maven
+}

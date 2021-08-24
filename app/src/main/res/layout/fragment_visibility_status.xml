@@ -1,0 +1,403 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickHandler"
+                type="lnq.com.lnq.fragments.visibility.FragmentVisibilityStatus.VisibilityStatusClickHandler" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:clickable="true"
+                android:focusable="true"
+                tools:context=".fragments.visibility.FragmentVisibilityStatus">
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_55sdp"
+                    android:background="@mipmap/bg_map"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewBack"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:onClick="@{clickHandler::onBackClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icon_arrow_up" />
+
+            <TextView
+                    android:id="@+id/textViewVisibilityStatusHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_50sdp"
+                    android:text="@string/visibility_status"
+                    android:textColor="@color/colorBlackSettingNewTheme"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewBack"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewBack" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewVisibilitySetting"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:onClick="@{clickHandler::onVisibilitySettingClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewVisibilityStatusHeading"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewVisibilityStatusHeading"
+                    app:srcCompat="@drawable/icon_help_round" />
+
+            <TextView
+                    android:id="@+id/textViewStreetLevelDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/show_your_location"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textViewVisibilityStatusHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVisibilityStatusHeading" />
+
+            <View
+                    android:id="@+id/viewStreetLevelAccuracy"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="@drawable/bg_visibility_icons"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textViewStreetLevelDes"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewStreetLevelDes" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewNobody"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_27sdp"
+                    android:onClick="@{clickHandler::onNobodyClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintStart_toStartOf="@+id/viewStreetLevelAccuracy"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewStreetLevelDes"
+                    app:srcCompat="@drawable/ic_action_nobody_transparent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewPeopleNearMe"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:onClick="@{clickHandler::onPeopleNearMeClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewNobody"
+                    app:layout_constraintEnd_toEndOf="@+id/viewStreetLevelAccuracy"
+                    app:layout_constraintStart_toStartOf="@+id/viewStreetLevelAccuracy"
+                    app:srcCompat="@drawable/ic_action_people_near_me_white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewEveryOne"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:onClick="@{clickHandler::onEveryOneClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewNobody"
+                    app:layout_constraintEnd_toEndOf="@+id/viewStreetLevelAccuracy"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewNobody"
+                    app:srcCompat="@drawable/ic_action_everyone_transparent" />
+
+            <View
+                    android:id="@+id/viewDividerNoboby"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/colorBlackHintNewTheme"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewNobody"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewNobody" />
+
+            <TextView
+                    android:id="@+id/textViewNobody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/noBody"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/textViewVisibilityStatusHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerNoboby" />
+
+            <View
+                    android:id="@+id/viewDividerPeopleNearMe"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/colorBlackHintNewTheme"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewPeopleNearMe"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewPeopleNearMe" />
+
+            <TextView
+                    android:id="@+id/textViewPeopleNearMe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:gravity="center"
+                    android:text="@string/people_near_me"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/viewDividerPeopleNearMe"
+                    app:layout_constraintStart_toStartOf="@+id/viewDividerPeopleNearMe"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerPeopleNearMe" />
+
+            <View
+                    android:id="@+id/viewDividerEveryOne"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/colorBlackHintNewTheme"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewEveryOne"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewEveryOne" />
+
+            <TextView
+                    android:id="@+id/textViewEveryOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:text="@string/everyOne"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/viewDividerEveryOne"
+                    app:layout_constraintStart_toStartOf="@+id/viewDividerEveryOne"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerEveryOne" />
+
+
+            <TextView
+                    android:id="@+id/textViewLocationDes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:text="@string/street_lelvel_accuracy"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textViewVisibilityStatusHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewNobody" />
+
+
+            <View
+                    android:id="@+id/viewLocationAccuracy"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:background="@drawable/bg_visibility_icons"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textViewStreetLevelDes"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewLocationDes" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewOffGrid"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_27sdp"
+                    android:onClick="@{clickHandler::onOffGridClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintStart_toStartOf="@+id/viewStreetLevelAccuracy"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewLocationDes"
+                    app:srcCompat="@drawable/ic_action_off_grid_transparent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewGlobalRegion"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_55sdp"
+                    android:layout_marginLeft="@dimen/_55sdp"
+                    android:onClick="@{clickHandler::onGlobalRegionClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewOffGrid"
+                    app:layout_constraintStart_toEndOf="@+id/imageViewOffGrid"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewOffGrid"
+                    app:srcCompat="@drawable/ic_action_global_region_transparent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewLocalRegion"
+                    android:layout_width="14dp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_55sdp"
+                    android:layout_marginRight="@dimen/_55sdp"
+                    android:onClick="@{clickHandler::onLocalRegionClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewOffGrid"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewCity"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewOffGrid"
+                    app:srcCompat="@drawable/ic_action_local_region_white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewCity"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:onClick="@{clickHandler::onCityClick}"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewOffGrid"
+                    app:layout_constraintEnd_toEndOf="@+id/viewLocationAccuracy"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewOffGrid"
+                    app:srcCompat="@drawable/ic_action_city_transparent" />
+
+            <View
+                    android:id="@+id/viewDividerOffGrid"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/colorBlackHintNewTheme"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewOffGrid"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewOffGrid" />
+
+
+            <TextView
+                    android:id="@+id/textViewOffGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/off_grid"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@+id/textViewVisibilityStatusHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerOffGrid" />
+
+
+            <View
+                    android:id="@+id/viewDividerGlobalRegion"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/colorBlackHintNewTheme"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewGlobalRegion"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewGlobalRegion" />
+
+
+            <TextView
+                    android:id="@+id/textViewGlobalRegion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:gravity="center"
+                    android:text="@string/globle_region"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/viewDividerGlobalRegion"
+                    app:layout_constraintStart_toStartOf="@+id/viewDividerGlobalRegion"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerGlobalRegion" />
+
+
+            <View
+                    android:id="@+id/viewDividerLocalRegion"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/colorBlackHintNewTheme"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewLocalRegion"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewLocalRegion" />
+
+
+            <TextView
+                    android:id="@+id/textViewLocalRegion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:text="@string/local_region"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/viewDividerLocalRegion"
+                    app:layout_constraintStart_toStartOf="@+id/viewDividerLocalRegion"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerLocalRegion" />
+
+            <View
+                    android:id="@+id/viewDividerCity"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/colorBlackHintNewTheme"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewCity"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewCity" />
+
+            <TextView
+                    android:id="@+id/textViewCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:gravity="center"
+                    android:text="@string/city"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@+id/viewDividerCity"
+                    app:layout_constraintStart_toStartOf="@+id/viewDividerCity"
+                    app:layout_constraintTop_toBottomOf="@+id/viewDividerCity" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewGroupDataVisibility"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/textViewVisibilityStatusHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewGlobalRegion">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <!--        <View-->
+            <!--            android:id="@+id/visible"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="0dp"-->
+            <!--            android:layout_marginTop="@dimen/_8sdp"-->
+            <!--            android:onClick="@{clickHandler::onBackClick}"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/textViewGlobalRegion"-->
+            <!--            tools:layout_editor_absoluteX="16dp"></View>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

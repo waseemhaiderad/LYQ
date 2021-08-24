@@ -1,0 +1,139 @@
+{
+  "project_info": {
+    "project_number": "608133543978",
+    "firebase_url": "https://leadlnq.firebaseio.com",
+    "project_id": "leadlnq",
+    "storage_bucket": "leadlnq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608133543978:android:8786e65d439297ee626b53",
+        "android_client_info": {
+          "package_name": "com.android.lnq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608133543978-sbethfr1ageb525qmu0k2paa6rodhaog.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.lnq",
+            "certificate_hash": "f5e3c22256a1a8df228cfb073406c6c940cbcc90"
+          }
+        },
+        {
+          "client_id": "608133543978-4omjn1e69umuqq992rilmltg31u9nj83.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.lnq",
+            "certificate_hash": "e03f499252104cc1927e3cb7b07470b383f8a9d8"
+          }
+        },
+        {
+          "client_id": "608133543978-oe04rltasbmmfhtlucpr36lpqp7dbmqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdEJ6BIuZzDlCriV-b6DybSAznQB0D9eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608133543978-oe04rltasbmmfhtlucpr36lpqp7dbmqu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "608133543978-a30utpnavspi4q9ge5503920qh8p7ugc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.leadconcept.LNQ"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608133543978:android:691897892c4861c1",
+        "android_client_info": {
+          "package_name": "com.lnq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608133543978-h5o0m6r9eaf6bnc5qua0pi4jhhgivpmj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lnq",
+            "certificate_hash": "e03f499252104cc1927e3cb7b07470b383f8a9d8"
+          }
+        },
+        {
+          "client_id": "608133543978-uast4udvn6qlo19nj6v2fd8ulb4lmdqr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lnq",
+            "certificate_hash": "f5e3c22256a1a8df228cfb073406c6c940cbcc90"
+          }
+        },
+        {
+          "client_id": "608133543978-n38en9hroqdb578f12quo28ki7ttae58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lnq",
+            "certificate_hash": "3720653b85a6cd1c6ede9f43d4dcf84bbca9a7c6"
+          }
+        },
+        {
+          "client_id": "608133543978-chs6imnfc2cdhilnln89cbl9ohr3kjed.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lnq",
+            "certificate_hash": "d16914148d42fb3c5bfaa9074ae3fe3c758534ea"
+          }
+        },
+        {
+          "client_id": "608133543978-j8ns43di9k9rq4p32nae9lum73ud6u41.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lnq",
+            "certificate_hash": "52faa975e416fde82f69abc637beda70e9bac236"
+          }
+        },
+        {
+          "client_id": "608133543978-oe04rltasbmmfhtlucpr36lpqp7dbmqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdEJ6BIuZzDlCriV-b6DybSAznQB0D9eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608133543978-oe04rltasbmmfhtlucpr36lpqp7dbmqu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "608133543978-a30utpnavspi4q9ge5503920qh8p7ugc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.leadconcept.LNQ"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

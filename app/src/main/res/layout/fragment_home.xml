@@ -1,0 +1,772 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="lnq.com.lnq.fragments.home.FragmentHome.HomeClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.home.FragmentHome">
+
+        <include
+            android:id="@+id/topBarContact"
+            layout="@layout/cus_topbar_contacts_new_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/frameLayoutMap"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+
+        <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_350sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_40ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/frameLayoutLayers"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="@dimen/_3sdp"
+                android:layout_height="match_parent"
+                android:progressDrawable="@drawable/custom_seekbar_progress"
+                android:splitTrack="false"
+                android:thumb="@drawable/custom_thumb"
+                app:seekBarRotation="CW270" /> <!-- Rotation: CW90 or CW270 -->
+        </com.h6ah4i.android.widget.verticalseekbar.VerticalSeekBarWrapper>
+
+        <!--        <View-->
+        <!--            android:id="@+id/mViewBgTopBar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="@dimen/_150sdp"-->
+        <!--            android:background="@drawable/bg_top_bar_contacts"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollViewHomeFilters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbarSize="0dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewQrCode"
+            app:layout_constraintStart_toStartOf="@+id/textViewCommunityHeading"
+            app:layout_constraintTop_toBottomOf="@+id/topBarContact">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutHomeFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/_20sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_20sdp"-->
+        <!--            android:layout_marginTop="@dimen/_10sdp"-->
+        <!--            android:orientation="vertical"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textViewNearbyUsersCount">-->
+
+
+        <!--&lt;!&ndash;            <androidx.appcompat.widget.AppCompatButton&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:id="@+id/textViewDirection"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_width="@dimen/_26sdp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_height="@dimen/_26sdp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:layout_marginTop="@dimen/_10sdp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:background="@drawable/bg_circle_white"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:textColor="@color/colorPrimaryBlue"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:textSize="@dimen/_11ssp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:visibility="gone"&ndash;&gt;-->
+        <!--&lt;!&ndash;                android:textStyle="bold" />&ndash;&gt;-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/buttonLockCompass"-->
+        <!--                android:layout_width="@dimen/_30sdp"-->
+        <!--                android:layout_height="@dimen/_30sdp"-->
+        <!--                android:onClick="@{clickHandler::onCompassLockClick}"-->
+        <!--                android:background="@drawable/bg_circle_white"-->
+        <!--                android:src="@drawable/ic_action_lock_cmpass" />-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/buttonCompass"-->
+        <!--                android:layout_width="@dimen/_30sdp"-->
+        <!--                android:layout_height="@dimen/_30sdp"-->
+        <!--                android:layout_marginTop="@dimen/_5sdp"-->
+        <!--                android:src="@drawable/ic_action_compass" />-->
+
+        <!--        </LinearLayout>-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textViewCommunityHeading"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/_20sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_20sdp"-->
+        <!--            android:layout_marginTop="@dimen/_20sdp"-->
+        <!--            android:text="@string/explore"-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:textSize="@dimen/_22ssp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/linearLayoutGridMapButtons"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginEnd="@dimen/_20sdp"-->
+        <!--            android:layout_marginRight="@dimen/_20sdp"-->
+        <!--            android:background="@drawable/bg_terms_condition_container"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/textViewCommunityHeading"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/textViewCommunityHeading">-->
+
+        <!--            <LinearLayout-->
+        <!--                android:id="@+id/layoutMap"-->
+        <!--                android:layout_width="@dimen/_50sdp"-->
+        <!--                android:layout_height="@dimen/_25sdp"-->
+        <!--                android:background="@drawable/bg_terms_btn"-->
+        <!--                android:paddingStart="@dimen/_10sdp"-->
+        <!--                android:paddingLeft="@dimen/_10sdp"-->
+        <!--                android:paddingEnd="@dimen/_5sdp"-->
+        <!--                android:paddingRight="@dimen/_5sdp"-->
+        <!--                android:textColor="@color/colorAccentTeenTransparent"-->
+        <!--                app:layout_constraintBottom_toBottomOf="@+id/textViewCommunityHeading"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/textViewCommunityHeading">-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/clearTextViewMap"-->
+        <!--                    android:layout_width="@dimen/_20sdp"-->
+        <!--                    android:layout_height="@dimen/_20sdp"-->
+        <!--                    android:layout_gravity="center"-->
+        <!--                    android:layout_marginStart="@dimen/_5sdp"-->
+        <!--                    android:layout_marginLeft="@dimen/_5sdp"-->
+        <!--                    android:gravity="center"-->
+        <!--                    android:src="@drawable/map_newicon" />-->
+        <!--            </LinearLayout>-->
+
+        <!--            <LinearLayout-->
+        <!--                android:id="@+id/layoutGrid"-->
+        <!--                android:layout_width="@dimen/_50sdp"-->
+        <!--                android:layout_height="@dimen/_25sdp"-->
+        <!--                android:background="@drawable/bg_terms_btn"-->
+        <!--                android:onClick="@{clickHandler::onGridClick}"-->
+        <!--                android:paddingStart="@dimen/_10sdp"-->
+        <!--                android:paddingLeft="@dimen/_10sdp"-->
+        <!--                android:paddingEnd="@dimen/_10sdp"-->
+        <!--                android:paddingRight="@dimen/_10sdp"-->
+        <!--                app:layout_constraintBottom_toBottomOf="@+id/textViewCommunityHeading"-->
+        <!--                app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                app:layout_constraintTop_toTopOf="@+id/textViewCommunityHeading">-->
+
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/buttonGrid"-->
+        <!--                    android:layout_width="@dimen/_20sdp"-->
+        <!--                    android:layout_height="@dimen/_20sdp"-->
+        <!--                    android:layout_gravity="center"-->
+        <!--                    android:layout_marginStart="@dimen/_5sdp"-->
+        <!--                    android:layout_marginLeft="@dimen/_5sdp"-->
+        <!--                    android:gravity="center"-->
+        <!--                    android:src="@drawable/grid_newicon" />-->
+
+        <!--            </LinearLayout>-->
+
+        <!--        </LinearLayout>-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewSearch"-->
+        <!--            android:layout_width="@dimen/_15sdp"-->
+        <!--            android:layout_height="@dimen/_15sdp"-->
+        <!--            android:layout_marginStart="@dimen/_30sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_30sdp"-->
+        <!--            android:onClick="@{clickHandler::onSearchClick}"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/icon_search" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatAutoCompleteTextView-->
+        <!--            android:id="@+id/editTextSearch"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="@dimen/_17sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_17sdp"-->
+        <!--            android:layout_marginTop="@dimen/_5sdp"-->
+        <!--            android:hint="@string/search_through_profiles"-->
+        <!--            android:imeOptions="actionSearch"-->
+        <!--            android:inputType="text"-->
+        <!--            android:paddingStart="@dimen/_50sdp"-->
+        <!--            android:paddingEnd="@dimen/_50sdp"-->
+        <!--            android:singleLine="true"-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:textColorHint="@color/colorWhite"-->
+        <!--            android:textSize="@dimen/_13ssp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            app:backgroundTint="@color/colorWhite"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/imageViewQrCode"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/textViewCommunityHeading" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewQrCode"-->
+        <!--            android:layout_width="@dimen/_30sdp"-->
+        <!--            android:layout_height="@dimen/_30sdp"-->
+        <!--            android:onClick="@{clickHandler::onQrCodeClick}"-->
+        <!--            android:padding="@dimen/_5sdp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/linearLayoutGridMapButtons"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/qr_user_icon" />-->
+
+        <!--        <androidx.appcompat.widget.AppCompatImageView-->
+        <!--            android:id="@+id/imageViewClose"-->
+        <!--            android:layout_width="@dimen/_12sdp"-->
+        <!--            android:layout_height="@dimen/_12sdp"-->
+        <!--            android:layout_marginEnd="@dimen/_5sdp"-->
+        <!--            android:layout_marginRight="@dimen/_5sdp"-->
+        <!--            android:onClick="@{clickHandler::onCloseClick}"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintRight_toLeftOf="@+id/imageViewQrCode"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--            app:srcCompat="@drawable/icon_close"-->
+        <!--            app:tint="@color/colorWhite" />-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/buttonFilter"-->
+        <!--            android:layout_width="@dimen/_20sdp"-->
+        <!--            android:layout_height="@dimen/_17sdp"-->
+        <!--            android:background="@drawable/filter_icon_new1"-->
+        <!--            android:gravity="center"-->
+        <!--            android:onClick="@{clickHandler::onFilterClick}"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/textViewCommunityHeading"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch" />-->
+
+        <!--        <lnq.com.lnq.custom.views.ClearTextView-->
+        <!--            android:id="@+id/clearTextViewFilter"-->
+        <!--            android:layout_width="@dimen/_20sdp"-->
+        <!--            android:layout_height="@dimen/_17sdp"-->
+        <!--            android:background="@drawable/filter_icon_new1"-->
+        <!--            android:gravity="center"-->
+        <!--            android:onClick="@{clickHandler::onFilterClick}"-->
+        <!--            android:visibility="invisible"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/textViewCommunityHeading"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/editTextSearch" />-->
+
+        <!--        <View-->
+        <!--            android:id="@+id/viewBottomBar"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="@dimen/_100sdp"-->
+        <!--            android:background="@drawable/bg_bottom_bar"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_21sdp"
+            android:layout_marginRight="@dimen/_21sdp"
+            android:layout_marginBottom="@dimen/_75sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:id="@+id/compassLayout"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/bg_verification_white_btn"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                >
+
+                <ImageView
+                    android:id="@+id/buttonCompass"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:onClick="@{clickHandler::onCompassLockClick}"
+                    android:src="@drawable/orient_me_icon">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+            <!--            android:id="@+id/fabMyLocation"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="@dimen/_35sdp"-->
+            <!--            android:onClick="@{clickHandler::onMyLocationClick}"-->
+            <!--            app:backgroundTint="@color/colorMyLocationFab"-->
+            <!--            app:fabSize="mini"-->
+            <!--            app:srcCompat="@drawable/center_me_icon"-->
+            <!--            app:tint="@color/colorWhite" />-->
+
+        </FrameLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fabMyLocation"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_60sdp"
+            android:onClick="@{clickHandler::onMyLocationClick}"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@mipmap/location_icon_new" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/textViewNearbyUsersCount"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_circle_grey"
+            android:gravity="center"
+            android:onClick="@{clickHandler::onGridClick}"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/frameLayoutLayers"
+            app:layout_constraintStart_toStartOf="@+id/topBarContact"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollViewHomeFilters" />
+
+
+        <FrameLayout
+            android:id="@+id/frameLayoutLayers"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/bg_circle_grey"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/topBarContact"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollViewHomeFilters">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_gravity="center"
+                android:onClick="@{clickHandler::onMenuClick}"
+                app:srcCompat="@drawable/map_layers_icon" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textViewCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fabMyLocation" />
+
+        <TextView
+            android:id="@+id/textViewRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/textViewCityName"
+            app:layout_constraintStart_toStartOf="@+id/textViewCityName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCityName" />
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnMinus"-->
+        <!--            android:layout_width="@dimen/_32sdp"-->
+        <!--            android:layout_height="@dimen/_32sdp"-->
+        <!--            android:layout_marginBottom="@dimen/_4sdp"-->
+        <!--            android:text=" - "-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:onClick="@{clickHandler::onZoomOutButtonClick}"-->
+        <!--            android:textSize="@dimen/_20ssp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:background="@color/colorMyLocationFab"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/fabMyLocation"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/fabMyLocation"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/fabMyLocation" />-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnPlus"-->
+        <!--            android:layout_width="@dimen/_32sdp"-->
+        <!--            android:layout_height="@dimen/_32sdp"-->
+        <!--            android:text=" + "-->
+        <!--            android:textColor="@color/colorWhite"-->
+        <!--            android:layout_marginBottom="@dimen/_8sdp"-->
+        <!--            android:onClick="@{clickHandler::onZoomInButtonClick}"-->
+        <!--            android:textSize="@dimen/_17ssp"-->
+        <!--            android:background="@color/colorMyLocationFab"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/btnMinus"-->
+        <!--            app:layout_constraintEnd_toEndOf="@+id/fabMyLocation"-->
+        <!--            app:layout_constraintStart_toStartOf="@+id/fabMyLocation" />-->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/slideViewContacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottomsheet_corners"
+            android:elevation="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="@dimen/_17sdp"
+                android:layout_height="@dimen/_17sdp"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginLeft="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:padding="@dimen/_2sdp"
+                android:tint="@color/colorBlackNewTheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mTvAccountHeading1"
+                app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1"
+                app:srcCompat="@drawable/back_arrow_thin" />
+
+            <TextView
+                android:id="@+id/mTvAccountHeading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:text="@string/back_to_explore"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewClearAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_18sdp"
+                android:text="@string/reset"
+                android:textColor="@color/colorBlueDarkNewTheme"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@id/mTvAccountHeading1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_17sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_17sdp"
+                android:visibility="gone"
+                android:background="@drawable/bg_searchbargray_new_theme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTvAccountHeading1">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/editTextSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_45sdp"
+                    android:paddingEnd="@dimen/_45sdp"
+                    android:textColor="@color/colorGrayNewTheme"
+                    android:textColorHint="@color/colorGrayNewTheme"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/colorGrayLightNewTheme"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/imageViewSearch"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:background="@color/colorGrayNewTheme"
+                    android:onClick="@{clickHandler::onSearchClick}"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                    app:layout_constraintStart_toEndOf="@+id/buttonFilter"
+                    app:layout_constraintTop_toTopOf="@+id/editTextSearch" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewClose"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:onClick="@{clickHandler::onCloseClick}"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                    app:layout_constraintEnd_toEndOf="@+id/editTextSearch"
+                    app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                    app:srcCompat="@drawable/icon_close"
+                    app:tint="@color/colorBlackHintNewTheme" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/buttonFilter"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_marginStart="@dimen/_7sdp"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:gravity="center"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                    app:srcCompat="@drawable/filter_icon_new1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sortLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@+id/searchBarLayout"
+                app:layout_constraintTop_toBottomOf="@+id/searchBarLayout">
+
+                <TextView
+                    android:id="@+id/textViewSortBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/sort_by"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/clearTextViewDistance"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/bg_verification_blue_btn"
+                    android:gravity="center"
+                    android:text="@string/distance"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewSortBy" />
+
+                <TextView
+                    android:id="@+id/textViewShowOnly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/show_only"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                    app:layout_constraintTop_toBottomOf="@+id/clearTextViewDistance" />
+
+                <TextView
+                    android:id="@+id/textViewFavorites"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/favorites"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxFavourites"
+                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewShowOnly" />
+
+                <TextView
+                    android:id="@+id/textViewVerifiedProfiles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/verified_profile"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxVerifiedProfile"
+                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewFavorites" />
+
+                <TextView
+                    android:id="@+id/textViewPendingLnq"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/pending_lnqs"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxPendingLNQs"
+                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewVerifiedProfiles" />
+
+                <TextView
+                    android:id="@+id/textViewOutstandingTasks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/outstanding_tasks"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_16ssp"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxOutstandingTasks"
+                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPendingLnq" />
+
+                <Button
+                    android:id="@+id/mBtnApply"
+                    android:layout_width="@dimen/_220sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@mipmap/btn_blue_newtheme"
+                    android:gravity="center"
+                    android:text="@string/apply"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxOutstandingTasks" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxFavourites"
+                    style="@style/CustomCheckbox02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewFavorites"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewFavorites" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxVerifiedProfile"
+                    style="@style/CustomCheckbox02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewVerifiedProfiles"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewVerifiedProfiles" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxPendingLNQs"
+                    style="@style/CustomCheckbox02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewPendingLnq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewPendingLnq" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkBoxOutstandingTasks"
+                    style="@style/CustomCheckbox02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/textViewOutstandingTasks"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textViewOutstandingTasks" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@color/colorGrayNewTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sortLayout">
+
+            </View>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewScroll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/topBarContact"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topBarContact">
+
+        </View>
+
+        <View
+            android:id="@+id/viewHideTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slideViewContacts">
+
+        </View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

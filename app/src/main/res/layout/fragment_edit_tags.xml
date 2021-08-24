@@ -1,0 +1,157 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.profile.editprofile.FragmentEditTags">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_8sdp"
+                android:tint="@color/colorBlackHintNewTheme"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mTvEditTagsHeading"
+                app:layout_constraintTop_toTopOf="@+id/mTvEditTagsHeading"
+                app:srcCompat="@drawable/back_arrow_thin" />
+
+
+            <TextView
+                android:id="@+id/mTvEditTagsHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:text="@string/profile_interests"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mTvEditTagsDes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/edit_interests_des"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@id/mTvEditTagsHeading"
+                app:layout_constraintTop_toBottomOf="@+id/mTvEditTagsHeading" />
+
+            <TextView
+                android:id="@+id/mTvHashTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingLeft="@dimen/_5sdp"
+                android:text="#"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/mTiEditTags"
+                app:layout_constraintStart_toStartOf="@id/mTiEditTags"
+                app:layout_constraintTop_toTopOf="@+id/mTiEditTags" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mTiEditTags"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:layout_marginRight="@dimen/_24sdp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/mTvEditTagsDes"
+                app:layout_constraintTop_toBottomOf="@+id/mTvEditTagsDes">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mEtEditTags"
+                    style="@style/editTextNewTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/your_interests"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingLeft="@dimen/_15sdp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/mBtnAddTag"
+                style="@style/buttonNewTheme"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:layout_marginRight="@dimen/_24sdp"
+                android:text="@string/add"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/mTiEditTags"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mTiEditTags" />
+
+            <lnq.com.lnq.custom.views.android_tag_view.TagContainerLayout
+                android:id="@+id/mTagContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:padding="10dp"
+                app:container_background_color="@android:color/transparent"
+                app:container_border_color="@android:color/transparent"
+                app:container_border_radius="0dp"
+                app:container_border_width="0dp"
+                app:container_enable_drag="false"
+                app:horizontal_interval="@dimen/_3sdp"
+                app:layout_constraintEnd_toEndOf="@+id/mTiEditTags"
+                app:layout_constraintStart_toStartOf="@+id/mTiEditTags"
+                app:layout_constraintTop_toBottomOf="@+id/mTiEditTags"
+                app:tag_background_color="@android:color/transparent"
+                app:tag_border_color="@color/colorBlackHintNewTheme"
+                app:tag_border_width="1dp"
+                app:tag_clickable="false"
+                app:tag_corner_radius="14dp"
+                app:tag_cross_color="@color/colorBlackHintNewTheme"
+                app:tag_cross_line_width="1dp"
+                app:tag_enable_cross="true"
+                app:tag_horizontal_padding="@dimen/_10sdp"
+                app:tag_text_color="@color/colorBlackHintNewTheme"
+                app:tag_text_size="@dimen/_12ssp"
+                app:tag_theme="none"
+                app:tag_vertical_padding="@dimen/_5sdp"
+                app:vertical_interval="@dimen/_3sdp" />
+
+            <Button
+                android:id="@+id/mBtnSaveChange"
+                style="@style/buttonNewTheme"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/save_changes"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTagContainer" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,371 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginClick"
+            type="lnq.com.lnq.fragments.registeration.FragmentLogin.LogInClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.registeration.FragmentLogin">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mRoot1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="@{loginClick::onRootClick}"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:id="@+id/imageViewLnqLogo1"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_55sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:contentDescription="@string/lnq_logo"
+                        android:src="@mipmap/new_logo2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewSignInYourAccount1"
+                        style="@style/textViewTitleDetailsNewTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="@string/sign_in_your_account"
+                        android:textSize="@dimen/_9ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo1" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutEmail1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSignInYourAccount1">
+
+                        <EditText
+                            android:id="@+id/editTextEmail1"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/user_email"
+                            android:inputType="textEmailAddress"
+                            tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutPassword1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutEmail1"
+                        app:layout_constraintStart_toStartOf="@+id/textInputLayoutEmail1"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail1">
+
+                        <EditText
+                            android:id="@+id/editTextPassword1"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textViewHideShow1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:onClick="@{loginClick::onShowHideClick}"
+                        android:text="@string/show"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPassword1"
+                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPassword1" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageBiometric1"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:src="@drawable/touc_icon"
+                        android:tint="@color/colorDarkBlueNewTheme"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textInputLayoutPassword1">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                        android:id="@+id/clearTextViewLogin1"
+                        style="@style/buttonNewTheme"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:onClick="@{loginClick::onLogInClick}"
+                        android:text="@string/sign_in"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword1" />
+
+
+                    <TextView
+                        android:id="@+id/textViewForgotPassword1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:onClick="@{loginClick::onForgotPasswordClick}"
+                        android:text="@string/forgot_password"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clearTextViewLogin1" />
+
+                    <TextView
+                        android:id="@+id/textViewSignUp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:onClick="@{loginClick::onSignUpClick}"
+                        android:text="@string/don_t_have_an_account_signup"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewForgotPassword1" />
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                        android:id="@+id/clearTextViewFingerPrint1"
+                        android:layout_width="@dimen/_215sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        android:background="@mipmap/btn_blue_newtheme"
+                        android:gravity="center"
+                        android:text="@string/finger_print"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_13ssp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewForgotPassword1" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/mRoot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="@{loginClick::onRootClick}"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/imageViewLnqLogo"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        android:contentDescription="@string/lnq_logo"
+                        android:src="@mipmap/new_logo2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewSignInToYourAccount"
+                        style="@style/textViewTitleDetailsNewTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/sign_in_your_account"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSignInToYourAccount">
+
+                        <EditText
+                            android:id="@+id/editTextEmail"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/user_email"
+                            android:inputType="textEmailAddress"
+                            tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutEmail"
+                        app:layout_constraintStart_toStartOf="@+id/textInputLayoutEmail"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
+
+                        <EditText
+                            android:id="@+id/editTextPassword"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            tools:ignore="Autofill" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textViewHideShow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:onClick="@{loginClick::onShowHideClick}"
+                        android:text="@string/show"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPassword"
+                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPassword" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageBiometric"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:src="@drawable/touc_icon"
+                        android:tint="@color/colorDarkBlueNewTheme"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textInputLayoutPassword">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                        android:id="@+id/clearTextViewLogin"
+                        style="@style/buttonNewTheme"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:onClick="@{loginClick::onLogInClick}"
+                        android:text="@string/sign_in"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
+
+                    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                            android:id="@+id/clearTextViewLogin2"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:text= "@string/sign_in"
+                            android:visibility="gone"
+                            app:spinning_bar_color="@color/colorWhite"
+                            android:background="@drawable/cus_loading_btn"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPassword" />
+
+                    <TextView
+                        android:id="@+id/textViewForgotPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:onClick="@{loginClick::onForgotPasswordClick}"
+                        android:text="@string/forgot_password"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clearTextViewLogin" />
+
+                    <TextView
+                        android:id="@+id/textViewSignup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:onClick="@{loginClick::onSignUpClick}"
+                        android:text="@string/don_t_have_an_account_signup"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_11ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewForgotPassword" />
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                        android:id="@+id/clearTextViewFingerPrint"
+                        android:layout_width="@dimen/_215sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_60sdp"
+                        android:background="@drawable/bg_verification_white_btn"
+                        android:gravity="center"
+                        android:text="@string/finger_print"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_13ssp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewForgotPassword" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

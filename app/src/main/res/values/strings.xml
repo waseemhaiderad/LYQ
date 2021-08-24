@@ -1,0 +1,661 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">LNQ</string>
+    <string name="google_maps_key">AIzaSyCyhZpRSrMODwfz_JgpiaoDA1akbOpE4e8</string>
+    <string name="google_maps_server_key">AIzaSyD-lkEkcFvZAHA2lo0aLd1ahGafMFt3KA8</string>
+    <string name="clientID">608133543978-oe04rltasbmmfhtlucpr36lpqp7dbmqu.apps.googleusercontent.com</string>
+    <string name="clientSecret">c2x_wln8iy2JY-3vbORNlpWQ</string>
+    <string name="default_notification_channel_id">Lnq_CH_01</string>
+
+    <!--Splash fragment strings-->
+    <string name="lnq_logo">LNQ Logo</string>
+    <string name="facebook_app_id">1280846008974082</string>
+    <string name="fb_login_protocol_scheme">fb1280846008974082</string>
+
+    <!--Tutorials fragment strings-->
+    <string name="skip">Skip</string>
+    <string name="what_lnq_is">What the LNQ app is</string>
+    <string name="what_is_lnq">What is LNQ</string>
+    <string name="welcome_to_lnq">Welcome to the LNQ Community</string>
+    <string name="existing_features">Exciting Features</string>
+    <string name="in_app_examples">In-App Examples</string>
+    <string name="circle_dots">Circle Dots</string>
+    <string name="tutorial_image">Tutorial Images</string>
+    <string name="what_lnq_can_do">What LNQ can do for you</string>
+    <string name="example_lnq">Example use of LNQ</string>
+    <string name="community_guidlines">Community Guidelines</string>
+
+    <!--Sign up fragment strings-->
+    <string name="create_account">Create Account</string>
+    <string name="already_have_account">Already have an account?&#160;&#160;<u>Sign in</u></string>
+    <string name="wifi_internet_not_connected">Wifi or Internet is not Connected.</string>
+    <string name="email_empty">Please enter an email address.</string>
+    <string name="password_empty">Please enter the password.</string>
+    <string name="invalid_email">Please enter a valid email address.</string>
+    <string name="re_enter_password">Re-Enter Password</string>
+    <string name="re_enter_your_password">Please enter the confirm password.</string>
+    <string name="password_did_not_matched">Passwords did not matched.</string>
+
+    <!--login-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lnq">LNQ</string>
+    <string name="export_contact_description">Where you want to Export your contacts ?</string>
+    <string name="join_lnq_community">Join the LNQ community</string>
+    <string name="sign_in_your_account">Sign into your account</string>
+    <string name="user_email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="finger_print">Sign In with finger print and Face</string>
+    <string name="face_detection">Sign In with face detection</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="forgot_password1">Forgot Password?</string>
+    <string name="don_t_have_an_account_signup">Don\'t have an account?&#160;&#160;<u>Join the community</u></string>
+    <string name="don_t_have_an_account_signup1">Don\'t have an account?</string>
+    <string name="don_t_have_an_account_signup2">&#160;&#160;<u>Join the community</u></string>
+    <string name="personal_profiles_only">Personal Profiles Only</string>
+    <string name="by_signing_up_you_accept_the">By signing up you accept the</string>
+    <string name="terms_of_services"><u>Terms of Services</u></string>
+    <string name="and">\u0020and\u0020</string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+
+    <!--forgot password-->
+    <string name="trouble_logging_in">Trouble logging in?</string>
+    <string name="enter_your_email_address_and_we_will_send_you_a_link_to_reset_your_password">Enter your email address and we will send you a link to reset your password.</string>
+    <string name="send_email">Send Email</string>
+    <string name="resend_email">ReSend Email</string>
+
+    <!--Forgot user_email strings-->
+    <string name="first_name_signup">First Name</string>
+    <string name="last_name_signup">Last Name</string>
+    <string name="nick_name">Nick Name</string>
+    <string name="nick_name_optional">Nickname (optional)</string>
+    <string name="phone_number_signup">Phone Number</string>
+    <string name="empty_first_name">Please enter your first name.</string>
+    <string name="empty_all_fields">Please fill in missing fields</string>
+
+    <string name="empty_last_name">Please enter your last name.</string>
+    <string name="empty_phone_number">Please enter your phone number.</string>
+    <string name="forgot_email_des">Enter your information and we\'ll send you a link to reset your email</string>
+
+    <!--Terms and conditions strings-->
+    <string name="terms_condition">Terms &amp; Conditions</string>
+    <string name="lorem_ipsum_description">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="lorem_ipsum1">Lorem ipsum</string>
+    <string name="privacy">Privacy</string>
+    <string name="terms_des">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing </string>
+    <string name="privacy_des">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</string>
+
+    <!--Personal profiles strings-->
+    <string name="ok">OK</string>
+    <string name="okay">OKay</string>
+    <string name="got_it">Got it</string>
+
+    <!--Phone verification strings-->
+    <string name="phone_verification_des">Welcome! Now we need to verify your identity before showing you who\'s around you</string>
+    <string name="enter_phone_number">Enter Your Phone No</string>
+    <string name="phone_verification_des1">We will send you a 6 digit verification code.</string>
+    <string name="phone_verification_des2">Please enter the code on the following screen.</string>
+    <string name="send_code">Send Code</string>
+    <string name="invalid_phone_number">Please enter valid phone number.</string>
+    <string name="not_send_invite">You can not send invite to yourself.</string>
+    <string name="verify_phone_number">Verify your phone number</string>
+    <string name="verify_code_for_email">Verify your email and reset password</string>
+    <string name="enter_six_digit_code">Enter 6 digit code just send you</string>
+    <string name="verify">Verify</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="resend_code">Re-Send Code</string>
+    <string name="number_already_verified">Your number is verified you will be redirected to next step.</string>
+    <string name="code_sent">Verification code successfully sent.</string>
+    <string name="invalid_code">You entered wrong code.</string>
+    <string name="enter_verification_code">Please enter code first.</string>
+    <string name="verification_code_resent">Verification code re-sent</string>
+
+    <!--Create profile strings-->
+    <string name="create_profile">Create Profile</string>
+    <string name="create_profile_des">Finish filling out your profile and make\nany edit you would like.</string>
+    <string name="user_a">User A</string>
+    <string name="user_a_last">User A Last</string>
+    <string name="current_position">Job title</string>
+    <string name="company">Company</string>
+    <string name="living_in">Living In</string>
+    <string name="birthday">Birthday</string>
+    <string name="gender">Gender:</string>
+    <string name="bio">Bio</string>
+    <string name="verify_your_account">Verify Your Account</string>
+    <string name="empty_current_position">Please enter current position.</string>
+    <string name="empty_company">Please enter company name.</string>
+    <string name="empty_living_in">Please select your city from table.</string>
+    <string name="empty_birthday">Please enter your birthday.</string>
+    <string name="empty_gender">Please select gender.</string>
+    <string name="add_profile_picture">Add Profile Picture</string>
+
+    <!--Tutorial strings-->
+    <string name="next">Next</string>
+    <string name="take_profile_picture">Take Profile Picture</string>
+
+    <!--Create profile picture strings-->
+    <string name="profile_picture">Profile Picture</string>
+    <string name="profile_picture_des">Upload a photo of yourself, photo may\nalso be used for verification purpose.</string>
+    <string name="profile_picture_des_two">Let other users know what you look like.\nPhoto also potentially used for\nverification purpose.</string>
+    <string name="upload_photo">Upload Photo</string>
+    <string name="set_picture">Set Picture</string>
+    <string name="or">or</string>
+    <string name="select_image_first">Please select an image first.</string>
+    <string name="select_human_image">No face detected.</string>
+    <string name="single_face_image">Please select single face image.</string>
+
+    <!--Verify profile picture strings-->
+    <string name="verify_profile_picture">Verify Profile Picture</string>
+    <string name="verify_profile_des">Choose an image of yourself for\nverification purposes.</string>
+    <string name="use_this_photo">Use This Photo</string>
+    <string name="take_new_photo">Take a New Photo</string>
+    <string name="picture_uploaded">Picture Uploaded!</string>
+
+    <!--Identification verify strings-->
+    <string name="verify_identification">Verify Identification</string>
+    <string name="verify_identification_des">Take a photo of your drivers license or ID\nfor verification purpose.</string>
+    <string name="finish">Finish</string>
+
+    <!--Forgot password user_email sent strings-->
+    <string name="email_sent">Email Sent.</string>
+    <string name="check_inbox">Please Check your inbox for a password reset\nlink.Don\'t forget check your spam folder.</string>
+    <string name="re_send_email">Re-Send Email</string>
+
+    <!--Looking good strings-->
+    <string name="looking_good">Looking good?</string>
+    <string name="profile_looks_good_des">Finish filling out your profile and make\nany edit you would like.</string>
+    <string name="looks_good">Looks Good</string>
+
+    <!--Welcome lnq strings-->
+    <string name="welcome_lnq">Welcome to the LNQ community.</string>
+    <string name="verify_your_profile">Verify Your Profile</string>
+    <string name="skip_for_now">Skip For Now</string>
+
+    <!--Profile picture required strings-->
+    <string name="profile_required">Profile picture required.</string>
+    <string name="profile_req_des">To maintain the integrity of our community.\nLNQ requires every profile to have a profile\nphoto.</string>
+    <string name="profile_req_des2">To use LNQ please either upload a photo from\nyour camera roll or take a selfie now.</string>
+    <string name="take_a_selfie">Take a Selfie</string>
+    <string name="upload_a_photo">Upload a Photo</string>
+
+    <!--Email sent strings-->
+    <string name="email_sent_des">Please check your inbox for a password reset link.Don\'t forget to check your spam folder.</string>
+
+    <!--Verified profile strings-->
+    <string name="verified_profile">Verified Profile</string>
+    <string name="verify_id">Verify ID</string>
+    <string name="city_or_zip">City or ZIP</string>
+    <string name="mm_dd_yyyy">MM/DD/YYYY</string>
+
+    <string name="forgot_email"><u>Forgot email address?</u></string>
+    <string name="forgot_your_email"><u>Forgot Your Email?</u></string>
+
+    <!--Verify profile take photo strings-->
+    <string name="verify_profile_take_photo_des">Take a photo of yourself for verification\npurposes.</string>
+
+    <!--Verify identity success strings-->
+    <string name="verify_identity_des">Your identity credentials have been uploaded.\nWe will be in touch with you&#8230;</string>
+    <string name="uploaded">Uploaded!</string>
+
+    <!--Profile strings-->
+    <string name="your_profile">Your Profile</string>
+    <string name="update_status">Update Status</string>
+    <string name="profile_info">Profile Info</string>
+    <string name="first_name">First Name:</string>
+    <string name="last_name">Last Name:</string>
+    <string name="title">Title:</string>
+    <string name="company_profile">Company:</string>
+    <string name="home_base">Home Base:</string>
+    <string name="birthday_profile">Birthday:</string>
+    <string name="bio_profile">Bio:</string>
+    <string name="save">Save</string>
+    <string name="nothing_to_update">Nothing to update.</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="edit_your_info">Edit your profile info below</string>
+    <string name="profile_image_updated">Profile image updated successfully.</string>
+
+    <!--Setting strings-->
+    <string name="settings">Settings</string>
+    <string name="account">Account</string>
+    <string name="back_to_account">Back to Account</string>
+    <string name="back_to_activity">Back to Activity</string>
+    <string name="back_to_messages">Back to Messages</string>
+    <string name="back_to_connections">Back to Connections</string>
+    <string name="back_to_explore">Back to Explore</string>
+    <string name="back_to_general">Back to General</string>
+    <string name="general">General</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="faq">FAQ</string>
+    <string name="privacy_policies">Privacy Policy</string>
+
+    <!--Share qr code strings-->
+    <string name="lnq_code">LNQ Code</string>
+    <string name="scan">Scan</string>
+    <string name="my_code">My Code</string>
+    <string name="share_my_code">Share my code</string>
+    <string name="save_to_photo">Save to photos</string>
+
+    <!--Visibility strings-->
+    <string name="networking">Networking</string>
+    <string name="lorem">Lorem ipsum dolar sit</string>
+    <string name="exact_city">Exact City</string>
+    <string name="nearest_metro">Nearest Metro</string>
+    <string name="off">Off</string>
+
+    <!--Visibility setting strings-->
+    <string name="visibility_settings">Visibility Settings</string>
+    <string name="current_visibility_level">Current Visibility Level</string>
+    <string name="open">Open</string>
+    <string name="select">Select</string>
+    <string name="stealth">Stealth</string>
+    <string name="lorem_ipsum">Lorem ipsum dolar sit amet, consectetur adipiscing elit. Nam rutrum vitae sem ut mollis.</string>
+    <string name="guidline_des">Verified profile…Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="guidline_des1">Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="default_visibility">Default Visibility Level</string>
+    <string name="visibility_notification">Visibility Notifications</string>
+    <string name="settings_visibility">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
+    <string name="settings_privacy">How many people are allowed to see all your data vs some of your data (enable people to feel unthreatened by being visible)</string>
+    <string name="settings_faqs">We love that you have questions. To learn more, please visit our website where you can also submit a question, request for a feature, or give us your feedback.</string>
+    <string name="settings_block">Blocked users cannot see your location and cannot find your profile in LNQ.</string>
+    <string name="settings_notification">You will receive notifications that may you take advantage of the moment. For example, learning when a favorite connection is near you and in Networking mode.</string>
+    <string name="settings_export">You can export data about your LNQs to your phone contacts from within your LNQ Contact list. Your notes, taks, and their basic profile will be included in the export.</string>
+    <string name="settings_import">By importing your contacts to LNQ, you can begin to manage all of your contact info within the LNQ app. After importing, you can also invite your contacts to the LNQ app.</string>
+
+    <string name="picker_today">Today</string>
+    <string name="picker_am">AM</string>
+    <string name="picker_pm">PM</string>
+
+    <!--Contact strings-->
+    <string name="contacts">Contacts</string>
+    <string name="connections">Connections</string>
+    <string name="import_connections">Import Connections</string>
+    <string name="_import">Import</string>
+    <string name="search_your_connections">Search your connections</string>
+    <string name="export">Export</string>
+    <string name="export_connections">Export Connections</string>
+    <string name="import_to_gmail_connections">Import From Gmail</string>
+    <string name="export_to_gmail">Export To CSV</string>
+    <string name="export_from_salesforce">Export To Salesforce </string>
+    <string name="expand_lnq_community">Expand you LNQ community by</string>
+    <string name="search_members">Searching our Members</string>
+    <string name="importing_contacts_from_phone">Importing Contacts from your Phone</string>
+    <string name="lnq_count">LNQ Count</string>
+    <string name="invite">Invite</string>
+    <string name="remove">Remove</string>
+    <string name="phone_contacts">Phone contacts</string>
+    <string name="salesfore">SalesForce</string>
+    <string name="export_to_csv">Export as CSV</string>
+    <string name="one_hour">1 Hour</string>
+    <string name="mid_night">Mid Night</string>
+    <string name="untill_unmute">Until</string>
+    <string name="un_mute">Un Mute</string>
+
+    <!--Import contacts strings-->
+    <string name="contacts_imported_successfully">Contacts imported.</string>
+    <string name="import_users">Import Users?</string>
+    <string name="import_user">Import Users</string>
+    <string name="import_users_gmail">Import Users Gmail?</string>
+
+    <!--Export contacts strings-->
+    <string name="export_users">Export Users?</string>
+    <string name="exported_successfully">Connections exported.</string>
+
+    <!--Home strings-->
+    <string name="community">Community</string>
+    <string name="explore">Explore</string>
+    <string name="map">Map</string>
+    <string name="grid">Grid</string>
+    <string name="search">Search</string>
+    <string name="filters">Filters</string>
+    <string name="search_through_profiles">Search through profiles</string>
+    <string name="empty_list_string">There seems to be nobody around to show you. Please check your internet connection.</string>
+
+    <!--Home map profile strings-->
+    <string name="sent">SENT</string>
+    <string name="recv">RECV</string>
+    <string name="request_sent_on">Request sent on</string>
+    <string name="request_received_on">Request received on</string>
+    <string name="since">Since</string>
+    <string name="in">in</string>
+
+    <!--Home map profile popup menu strings-->
+    <string name="send_message">Send Message</string>
+    <string name="un_favorite">Un-favorite</string>
+    <string name="location_hidden">Location Hidden</string>
+    <string name="fully_block">Fully Block</string>
+    <string name="un_lnq">Un-LNQ</string>
+    <string name="favorite">Favorite</string>
+
+    <!--Update status strings-->
+    <string name="update">Update</string>
+    <string name="write_status_here">Write your status message here</string>
+    <string name="please_enter_status_message">Please enter some status to update.</string>
+
+    <!--Home map filter strings-->
+    <string name="clear_all">Clear All</string>
+    <string name="recent_lnqs">Recent LNQs</string>
+    <string name="recently_viewed">Recently Viewed</string>
+    <string name="apply">Apply</string>
+    <string name="favorites">Favorites</string>
+    <string name="verified_profiles">Verified Profiles</string>
+    <string name="pending_lnqs">Pending LNQs</string>
+    <string name="outstanding_tasks">Outstanding Tasks</string>
+    <string name="blacklisted_users">Blacklisted users</string>
+    <string name="sort_by">Sort by</string>
+    <string name="show_only">Show only</string>
+    <string name="reset">Reset</string>
+    <string name="distance">Distance</string>
+
+    <!--Full profile view strings-->
+    <string name="invite_to_lnq">Invite to LNQ</string>
+    <string name="history">History</string>
+    <string name="about">About</string>
+    <string name="notes">Notes</string>
+    <string name="tags">Tags</string>
+    <string name="interests">Interests</string>
+    <string name="tasks">Tasks</string>
+
+    <!--activity strings-->
+    <string name="activity">Activity</string>
+    <string name="blocked_users">Blocked Users</string>
+    <string name="most_recent">Most Recent</string>
+    <string name="favorited">Favorited</string>
+    <string name="un_favorited">Un-Favorited</string>
+    <string name="lnq_accepted">LNQ accepted</string>
+    <string name="lnq_request_sent_to">LNQ Request sent to</string>
+    <string name="lnq_request">LNQ Request</string>
+    <string name="note_added">Note added</string>
+    <string name="task_added">Task added</string>
+    <string name="note_edited">Note edited</string>
+    <string name="task_edited">Task edited</string>
+    <string name="task_completed">Task completed</string>
+    <string name="blocked">Blocked</string>
+    <string name="un_blocked">Un-blocked</string>
+    <string name="tags_edited">Interests edited</string>
+    <string name="profile_viewed">Viewed profile of</string>
+    <string name="you_hid_your_location">You hid your location from</string>
+    <string name="no_activity_found_yet">No activity found yet.</string>
+    <string name="you_show_your_location">You show your location to</string>
+
+    <!--Tags screen strings-->
+    <string name="profile_tags">Profile Tags</string>
+    <string name="edit_tags_des">Edit your tags below.</string>
+    <string name="your_tag">#YourTag</string>
+    <string name="add">Add</string>
+
+    <!--Edit bio strings-->
+    <string name="edit_bio">Edit Bio</string>
+    <string name="edit_your_bio">Edit your bio below.</string>
+    <string name="empty_bio">Please enter the text first.</string>
+    <string name="bio_updated">User bio updated!</string>
+    <string name="contacted">Your query is sent!</string>
+
+
+    <!--Edit task strings-->
+    <string name="edit_task">Edit Task</string>
+    <string name="create_task">Create Task</string>
+    <string name="create">Create</string>
+    <string name="edit_note">Edit Note</string>
+    <string name="cancel">Cancel</string>
+    <string name="your_tags">your tags</string>
+
+    <!--Visibility fragment strings-->
+    <string name="visibility_status">Location Visibility</string>
+    <string name="show_your_location">Show Your location with street level \naccuracy to:</string>
+    <string name="noBody">Nobody</string>
+    <string name="street_lelvel_accuracy">When street-level accuracy is not\navailable, show my location as:</string>
+    <string name="people_near_me">People \nnear me</string>
+    <string name="globle_region">Globle region</string>
+    <string name="off_grid">Off grid</string>
+    <string name="everyOne">Everyone</string>
+    <string name="local_region">local region</string>
+    <string name="city">City</string>
+
+    <string name="bolcked_user">Blocked Users</string>
+
+    <string name="profile_created">Profile Created March 10, 2007</string>
+    <string name="lnqs">LNQs</string>
+    <string name="view_or_edit_status"> View or Edit Status Message</string>
+    <string name="profile_verification">Profile Verification</string>
+    <string name="sync_contacts">Sync Contacts</string>
+    <string name="import_contacts">Import Contacts</string>
+    <string name="export_contacts">Export Contacts</string>
+    <string name="tell_people_about">Tell People about you</string>
+    <string name="phone">Phone #</string>
+    <string name="secondary_phone">Secondary Phone #</string>
+    <string name="emaill">Email</string>
+    <string name="secondary_emaill">Secondary Email</string>
+    <string name="what_topics_would_you_like_to_be_associated_with">What topics would you like to be associated with?</string>
+
+
+    <!--Account Setting strings-->
+    <string name="account_setting">Account Settings</string>
+
+    <!--Blocked Users strings-->
+    <string name="see_blocked_users">See Blocked Users</string>
+
+    <!--General strings-->
+    <string name="frequently_asked">Frequently asked questions</string>
+    <string name="view_FAQs">View FAQs</string>
+
+    <!--Community GuidLine strings-->
+    <string name="community_guid_lines">Community guidlines</string>
+    <string name="lorem_ipsum_doller">Lorem ipsum dolor</string>
+    <string name="visibility_policy">Visibility Policy</string>
+
+    <string name="alphabetical">Alphabetical</string>
+    <string name="lnq_users_only">LNQ users Only</string>
+
+    <!--Account setting strings-->
+    <string name="enable_push_notification">Enable Push Notification</string>
+    <string name="enable_location_services">Enable Location Services</string>
+    <string name="enable_camera">Enable Camera</string>
+    <string name="enable_access_contacts">Enable Access to Contacts</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="account_actions">Account Actions</string>
+    <string name="request_your_data">Request Your Data</string>
+    <string name="freeze_account">Freeze Account</string>
+    <string name="delete_account">Delete Account</string>
+
+    <!--Contact us strings-->
+    <string name="contact_us">Contact Us</string>
+    <string name="submit">Submit</string>
+
+    <!--Edit password strings-->
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+
+    <!--Edit Email strings-->
+    <string name="change_email">Change email address?</string>
+    <string name="update_email">Yes, update my email</string>
+    <string name="password_required">Password is required to change your email address.</string>
+
+    <!--Edit Phone strings-->
+    <string name="change_phone">Change Phone #></string>
+    <string name="contact">Contact #:</string>
+    <string name="phone_des">This will change the info that your LNQ connections have for you.</string>
+    <string name="nevermind">Nevermind</string>
+    <string name="update_phone">Yes update myphone</string>
+
+    <!--Edit Phone Number strings-->
+    <string name="my_phone_number">My phone # Should be:</string>
+    <string name="change_password">Change Password?</string>
+    <string name="go_back">No, goback?</string>
+    <string name="update_password">Yes, update my password</string>
+    <string name="password_updated">Your Password has been updated</string>
+
+    <!--Edit number verify code strings-->
+    <string name="please_enter_six_digit_code">Please enter the 6 digit code just sent to your new number</string>
+
+    <!--Lnq counts strings-->
+    <string name="track_your_connection">Keep track of your LNQs to track the growth of your network. The more connected you are, the more you can accompish.</string>
+
+    <!--Conversation strings-->
+    <string name="search_messages">Search messages</string>
+    <string name="messages">Messages</string>
+    <string name="start_conversation">Start a conversation</string>
+    <string name="your_connections">Your Connections</string>
+    <string name="search_your_area">Search Your Area</string>
+
+    <!--Chat strings-->
+    <string name="say_something">Say something&#8230;</string>
+    <string name="new_message">New Message</string>
+    <string name="sign_up">Sign up</string>
+    <string name="default_setting">Default Settings</string>
+    <string name="show_default_contacts">Show contacts with default view to:</string>
+    <string name="show_default_map">Show home with default view to:</string>
+    <!--    <string name="contact_info">Contact Info</string>-->
+
+    <string name="social_media">Social Media</string>
+    <string name="social_media_links">Link Name</string>
+
+    <!--Tags screen strings-->
+    <string name="profile_interests">Profile Interests</string>
+    <string name="edit_interests_des">Edit your interests below.</string>
+    <string name="your_interests">YourInterests</string>
+    <string name="phonenumber">0345 1234567</string>
+
+    <!--    Array for Gender-->
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+
+    <!--    Biomatric Strings Values-->
+
+    <string name="biometric_title">Login</string>
+    <string name="biometric_subtitle">Login to your LNQ account</string>
+    <string name="biometric_description">Place your finger on the device home button to verify your identity</string>
+    <string name="biometric_negative_button_text">CANCEL</string>
+
+
+    <string name="biometric_error_sdk_not_supported">Sdk version not supported</string>
+    <string name="biometric_error_hardware_not_supported">Device does not support biometric authentication</string>
+    <string name="biometric_error_fingerprint_not_available">Fingerprint is not registered in device</string>
+    <string name="biometric_error_permission_not_granted">Permission is not granted by user</string>
+    <string name="biometric_failure">Login not successful!</string>
+    <string name="biometric_cancelled">Authentication cancelled by user</string>
+    <string name="biometric_success">Login Successful</string>
+    <string name="loading_verid">"Loading Verification "</string>
+    <string name="import_registration_of_person">Import the registered faces of this person?</string>
+    <string name="overwrite_existing_registration">Overwrite existing registration</string>
+    <string name="import_registration">Import registration</string>
+    <string name="security">"Security "</string>
+    <string name="pref_key_security_level">pref_key_security_level</string>
+    <string name="security_level">Security Level</string>
+    <string name="pref_key_required_pose_count">pref_key_required_pose_coun</string>
+    <string name="pose_count">Liveness detection pose coun</string>
+    <string name="verid_failed_to_load">Ver-ID failed to load</string>
+    <string name="failed_to_load_users">Failed to load registered user</string>
+    <string name="unexpected_error">Unexpected error</string>
+    <string name="error">Error</string>
+    <string name="failed_to_import_registration">Failed to impoet registration</string>
+    <string name="reset_registration">Reset Registration</string>
+    <string name="export_registration">Export Registration</string>
+    <string name="pref_key_enable_liveness_detection">pref_key_enable_liveness_detection</string>
+    <string name="verid_person_sdk">Ver-ID person SDk</string>
+    <string name="one_registration">1. Regitration</string>
+    <string name="two_authentication">2. Authentication</string>
+    <string name="verid_person_sdk_text">This app demonstrates how Ver-ID performs two common user authentication tasks.</string>
+    <string name="one_registration_text">The app collects images of your face and stores them as templates.</string>
+    <string name="two_authentication_text">The app captures images of you and verifies them against the templates collected at registration.</string>
+    <string name="downloading">"Downloding "</string>
+    <string name="unable_to_authenticate_with_settings">You opted for strict liveness detection. This requires face registration in additional poses. You\'ll now be prompted to register more faces.</string>
+    <string name="confirm_unregister">Unregister ?</string>
+    <string name="unregister">Unregister</string>
+    <string name="share_registration">Share Registration</string>
+    <string name="app_will_generate_code">The app will generate a code. Scan the code with this app on another device to import your registration.</string>
+    <string name="generate_code">Generate Code</string>
+    <string name="exporting_registration">Exporting Registration</string>
+    <string name="scan_to_import">Scan to Import</string>
+    <string name="failed_to_export_registration">Failed to export registration</string>
+    <string name="add_note_tasks">Add a private note or task to {User B}</string>
+
+    <!--    Salesforce-->
+    <string name="consumer_key">3MVG9n_HvETGhr3CERZaiIIUVsYK7pc1zedybwLl4irGzoYKeVM5XsLnXVoR5_qXr0Cazyyrqy5tBX_aF0dED</string>
+    <string name="consumer_secret">0C1446A81775C92309F82C2565A1B629EC31DEE4366E5AE9BFC92CBF15CEB5DD</string>
+    <string name="oAuthUrl">https://na15.salesforce.com/services/oauth2/authorize?response_type=token&amp;display=touch&amp;client_id=</string>
+    <string name="callbackUrl">https://na15.salesforce.com/services/oauth2/success</string>
+    <string name="API_Version">v22.0</string>
+    <string name="oAuthRefreshUrl">https://na15.salesforce.com/services/oauth2/token</string>
+    <string name="contactlist">Contact List</string>
+    <string name="secondryphone">Secondary Phone #</string>
+    <string name="secondryemail">Secondary Email</string>
+    <string name="request_cancelled">Request Cancelled</string>
+    <string name="due_date">Due Date</string>
+    <string name="mute_notification">Mute notifications for…</string>
+    <string name="unmute_notification">Do you want to un mute chat?</string>
+    <string name="active_profile_des">Switch to this profile?</string>
+    <string name="creategroup_description">Enter group name</string>
+    <string name="verification_description">What would you like to choose for sign in?</string>
+    <string name="face_id">Face ID</string>
+    <string name="touch_id">Touch ID</string>
+    <string name="group_namehint">Group Name</string>
+    <string name="no">No</string>
+    <string name="replace">Replace</string>
+    <string name="hide">Hide</string>
+    <string name="show">Show</string>
+    <string name="completed_tasks">Completed Tasks</string>
+    <string name="view_profile">View Profile</string>
+    <string name="share_contact_description">Select any contact you want to share.</string>
+    <string name="addgroup_contact_description">Select any contact you want to add to this group.</string>
+    <string name="yes">Yes</string>
+    <string name="select_profile">Select Profile</string>
+    <string name="secondary_profile_info">Fill out your secondary profile info below.</string>
+    <string name="group_members">Group Members</string>
+    <string name="more_actions">More Actions</string>
+    <string name="mute_chat">Mute Chat</string>
+    <string name="leave_chat">Leave Chat</string>
+    <string name="create_new_group">Create New Group</string>
+    <string name="create_group">Create Group</string>
+    <string name="create_a_group">Create a Group</string>
+    <string name="creategroup_contact_description">Select contacts you want to add to Group.</string>
+    <string name="you_dont_have_group">You do not have any group to show</string>
+    <string name="add_to_group">Add to Group</string>
+    <string name="delete">Delete</string>
+    <string name="upload">Upload</string>
+    <string name="recent">Recent</string>
+    <string name="reason_for_contacting">Reason for Contacting</string>
+    <string name="miles">0 – 50 miles</string>
+    <string name="milesDes">Lorem ipsum dolor sit amet.</string>
+    <string name="add_connection">Add Connection</string>
+    <string name="add_private_notes">Add Private Notes</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="back_to_chat">Back to Chat</string>
+    <string name="report">Report</string>
+    <string name="block">Block</string>
+    <string name="use">Use</string>
+    <string name="ocr">OCR</string>
+
+    <string-array name="security_level_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="pose_counts">
+        <item>Liveness detection off</item>
+        <item>Require 1 pose</item>
+        <item>Require 2 poses</item>
+        <item>Require 3 poses</item>
+        <item>Require 4 poses</item>
+    </string-array>
+    <string-array name="pose_count_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+
+</resources>

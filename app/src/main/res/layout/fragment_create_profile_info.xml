@@ -1,0 +1,369 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mRoot1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-20dp"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.profile.createmultipleprofiles.FragmentCreateProfileInfo">
+
+        <include
+            android:id="@+id/tobBar"
+            layout="@layout/cus_topbar_new_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/mRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/mTvCreateProfileDes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_100sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:paddingStart="@dimen/_4sdp"
+                    android:paddingEnd="@dimen/_4sdp"
+                    android:text="@string/secondary_profile_info"
+                    android:textColor="@color/colorBlackNewTheme"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/mTvUser"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_3sdp"-->
+                <!--                    android:layout_marginEnd="@dimen/_3sdp"-->
+                <!--                    android:layout_marginRight="@dimen/_3sdp"-->
+                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
+                <!--                    android:text="@string/first_name_signup"-->
+                <!--                    android:textColor="#90ffffff"-->
+                <!--                    android:textSize="@dimen/_13ssp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@+id/mTiUser"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@+id/mTiUser" />-->
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/mTiUser"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_15sdp"-->
+                <!--                    android:theme="@style/TextInputLayoutAppearance"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@+id/mTvCreateProfileHeading"-->
+                <!--                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileHeading"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/mTvCreateProfileDes">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/mEtUser"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:ems="10"-->
+                <!--                        android:hint="@string/first_name_signup"-->
+                <!--                        android:editable="false"-->
+                <!--                        android:focusable="false"-->
+                <!--                        android:clickable="false"-->
+                <!--                        android:inputType="textCapWords"-->
+                <!--                        android:textColor="@color/colorWhite"-->
+                <!--                        android:maxLength="40"-->
+                <!--                        android:textColorHint="@color/colorWhite"-->
+                <!--                        android:textSize="@dimen/_14ssp" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/mTvLastName"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_3sdp"-->
+                <!--                    android:layout_marginEnd="@dimen/_3sdp"-->
+                <!--                    android:layout_marginRight="@dimen/_3sdp"-->
+                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
+                <!--                    android:text="@string/last_name_signup"-->
+                <!--                    android:textColor="#90ffffff"-->
+                <!--                    android:textSize="@dimen/_13ssp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@+id/mTiLastName"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@+id/mTiLastName" />-->
+
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/mTiLastName"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_10sdp"-->
+                <!--                    android:theme="@style/TextInputLayoutAppearance"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@id/mTiUser"-->
+                <!--                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileHeading"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/mTiUser">-->
+
+                <!--                    <com.google.android.material.textfield.TextInputEditText-->
+                <!--                        android:id="@+id/mEtLastName"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:ems="10"-->
+                <!--                        android:hint="@string/last_name_signup"-->
+                <!--                        android:editable="false"-->
+                <!--                        android:focusable="false"-->
+                <!--                        android:clickable="false"-->
+                <!--                        android:inputType="textCapWords"-->
+                <!--                        android:textColor="@color/colorWhite"-->
+                <!--                        android:textColorHint="@color/colorWhite"-->
+                <!--                        android:maxLength="40"-->
+                <!--                        android:textSize="@dimen/_14ssp" />-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/mTvCeoTitle"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_3sdp"-->
+                <!--                    android:layout_marginEnd="@dimen/_3sdp"-->
+                <!--                    android:layout_marginRight="@dimen/_3sdp"-->
+                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
+                <!--                    android:text="Title"-->
+                <!--                    android:textColor="@color/colorBlackHintNewTheme"-->
+                <!--                    android:textSize="@dimen/_13ssp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@+id/mTiCeo"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@+id/mTiCeo" />-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mTiCeo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@id/mTvCreateProfileDes"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileDes"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvCreateProfileDes">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mEtCeo"
+                        style="@style/editTextNewTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Title"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/mTvCompany"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginEnd="@dimen/_3sdp"-->
+                <!--                    android:layout_marginRight="@dimen/_3sdp"-->
+                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
+                <!--                    android:text="@string/company"-->
+                <!--                    android:textColor="@color/colorBlackHintNewTheme"-->
+                <!--                    android:textSize="@dimen/_13ssp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@+id/mTiCompany"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@+id/mTiCompany" />-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mTiCompany"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@id/mTiCeo"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileDes"
+                    app:layout_constraintTop_toBottomOf="@+id/mTiCeo">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mEtComapny"
+                        style="@style/editTextNewTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/company"
+                        android:inputType="textCapWords"
+                        android:textAllCaps="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/mTvHomeBase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="@string/city_or_zip"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/mTiHomeBase"
+                    app:layout_constraintEnd_toEndOf="@+id/mTiHomeBase" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mTiHomeBase"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@id/mTiCeo"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileDes"
+                    app:layout_constraintTop_toBottomOf="@+id/mTiCompany">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/mEtHomeBase"
+                        style="@style/editTextNewTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Homebase"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapWords" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--                <TextView-->
+                <!--                    android:id="@+id/mTvNicKName"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginEnd="@dimen/_3sdp"-->
+                <!--                    android:layout_marginRight="@dimen/_3sdp"-->
+                <!--                    android:layout_marginBottom="@dimen/_10sdp"-->
+                <!--                    android:text="@string/nick_name_optional"-->
+                <!--                    android:textColor="@color/colorBlackHintNewTheme"-->
+                <!--                    android:textSize="@dimen/_13ssp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="@+id/mTiNicKName"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@+id/mTiNicKName" />-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mTiNicKName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@id/mTiCeo"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileDes"
+                    app:layout_constraintTop_toBottomOf="@+id/mTiHomeBase">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mEtNicKName"
+                        style="@style/editTextNewTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/nick_name_optional"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/mTiGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@id/mTiCeo"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileDes"
+                    app:layout_constraintTop_toBottomOf="@+id/mTiNicKName">
+
+
+                    <TextView
+                        android:id="@+id/textViewGenderHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gender:"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintEnd_toEndOf="@id/mTiUser"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileDes"
+                        app:layout_constraintTop_toBottomOf="@+id/mTiBirthDay">
+
+                    </TextView>
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/mSpinnerGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:ems="10"
+                        android:entries="@array/Gender"
+                        android:popupBackground="@color/colorWhite"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textColorHint="@color/colorBlackHintNewTheme">
+
+                    </androidx.appcompat.widget.AppCompatSpinner>
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/mETGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:visibility="invisible">
+
+                    </androidx.appcompat.widget.AppCompatEditText>
+
+                </LinearLayout>
+                <!--                <com.google.android.material.textfield.TextInputLayout-->
+                <!--                    android:id="@+id/mTiGender"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:orientation="horizontal"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="@dimen/_10sdp"-->
+                <!--                    android:theme="@style/TextInputLayoutAppearance"-->
+                <!--                    app:layout_constraintEnd_toEndOf="@id/mTiUser"-->
+                <!--                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileHeading"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/mTiBirthDay">-->
+
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/textViewGenderHeading"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:text="Gender:"-->
+                <!--                        >-->
+                <!--                    </TextView>-->
+
+                <!--                    <androidx.appcompat.widget.AppCompatSpinner-->
+                <!--                        android:id="@+id/mSpinnerGender"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:ems="10"-->
+                <!--                        android:entries="@array/Gender"-->
+                <!--                        android:textColor="@color/colorWhite"-->
+                <!--                        android:textColorHint="@color/colorWhite"-->
+                <!--                        android:textSize="@dimen/_14ssp"-->
+                <!--                        >-->
+                <!--                    </androidx.appcompat.widget.AppCompatSpinner>-->
+
+                <!--                </com.google.android.material.textfield.TextInputLayout>-->
+
+                <lnq.com.lnq.custom.views.ClearTextView
+                    android:id="@+id/mBtnSaveChange"
+                    style="@style/buttonNewTheme"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:text="@string/add"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_13ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mTiGender" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

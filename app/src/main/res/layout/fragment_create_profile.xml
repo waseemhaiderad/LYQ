@@ -1,0 +1,546 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="createProfileClick"
+            type="lnq.com.lnq.fragments.registeration.createprofile.FragmentCreateProfile.FragmentCreateProfileClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mRootlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.registeration.createprofile.FragmentCreateProfile">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_back_new" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mRoot1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:onClick="@{createProfileClick::onRootClicked}"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewBack">
+
+            <include
+                android:id="@+id/tobBar1"
+                layout="@layout/cus_topbar_new_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewCreateProfileDescription1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:text="@string/create_profile_des"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tobBar1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutCurrentPosition1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintTop_toBottomOf="@+id/textViewCreateProfileDescription1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCurrentPosition1"
+                    style="@style/editTextNewTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/current_position"
+                    android:inputType="textCapWords" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutCompany1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCurrentPosition1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCompany1"
+                    style="@style/editTextNewTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/company"
+                    android:inputType="textCapWords" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textViewLivingFormat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/city_or_zip"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutLiving1"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutLiving1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutLiving1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCompany1">
+
+                <AutoCompleteTextView
+                    android:id="@+id/editTextLiving1"
+                    style="@style/editTextNewTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/living_in"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapWords" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textViewBirthdayFormat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:text="@string/mm_dd_yyyy"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutBirthday1"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutBirthday1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutBirthday1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLiving1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextBirthday1"
+                    style="@style/editTextNewTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/birthday"
+                    android:inputType="none"
+                    android:onClick="@{createProfileClick::onBirthdayClicked}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textViewBio1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/bio"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_15ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/editTextBio1"
+                app:layout_constraintStart_toStartOf="@+id/editTextBio1"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBirthday1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextBio1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_80sdp"
+                android:background="@drawable/bg_profile_bio"
+                android:ems="10"
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textCapWords"
+                android:lines="8"
+                android:minLines="6"
+                android:padding="@dimen/_5sdp"
+                android:scrollbars="vertical"
+                android:textColor="@color/colorBlackHintNewTheme"
+                android:textSize="@dimen/_15ssp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBio1" />
+
+            <LinearLayout
+                android:id="@+id/mTiGender1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription1"
+                app:layout_constraintTop_toBottomOf="@+id/editTextBio1">
+
+
+                <TextView
+                    android:id="@+id/textViewGenderHeading1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender:"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintEnd_toEndOf="@id/mTiUser"
+                    app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileHeading"
+                    app:layout_constraintTop_toBottomOf="@+id/mTiBirthDay">
+
+                </TextView>
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/mSpinnerGenderCreate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:ems="10"
+                    android:entries="@array/Gender"
+                    android:popupBackground="@color/colorWhite"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textColorHint="@color/colorBlackHintNewTheme">
+
+                </androidx.appcompat.widget.AppCompatSpinner>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/mETGender1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:visibility="invisible">
+
+                </androidx.appcompat.widget.AppCompatEditText>
+
+            </LinearLayout>
+
+            <lnq.com.lnq.custom.views.ClearTextView
+                android:id="@+id/clearTextViewAddProfilePicture1"
+                style="@style/buttonNewTheme"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{createProfileClick::onCreateProfileClick1}"
+                android:text="@string/take_profile_picture"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mTiGender1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{createProfileClick::onRootClicked}"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/tobBar"
+                layout="@layout/cus_topbar_new_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_80sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/textViewCreateProfileDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_24sdp"
+                        android:text="@string/create_profile_des"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutCurrentPosition"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewCreateProfileDescription">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextCurrentPosition"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/current_position"
+                            android:inputType="textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutCompany"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCurrentPosition">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextCompany"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/company"
+                            android:inputType="textCapWords"
+                            android:textAllCaps="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textViewLivingFormat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:text="@string/city_or_zip"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutLivingIn"
+                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutLivingIn" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutLivingIn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCompany">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/editTextLivingIn"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/living_in"
+                            android:imeOptions="actionDone"
+                            android:inputType="textCapWords" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/textViewBirthdayFormat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_3sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:text="@string/mm_dd_yyyy"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_10ssp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutBirthday"
+                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutBirthday" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutBirthday"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLivingIn">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editTextBirthday"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/birthday"
+                            android:inputType="none"
+                            android:onClick="@{createProfileClick::onBirthdayClicked}" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <TextView
+                        android:id="@+id/textViewBio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/bio"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/editTextBio"
+                        app:layout_constraintStart_toStartOf="@+id/editTextBio"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBirthday" />
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextBio"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:background="@drawable/bg_profile_bio"
+                        android:ems="10"
+                        android:gravity="top|start"
+                        android:inputType="textMultiLine|textCapWords"
+                        android:lines="8"
+                        android:minLines="6"
+                        android:padding="@dimen/_5sdp"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_15ssp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewBio" />
+
+                    <LinearLayout
+                        android:id="@+id/mTiGender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintStart_toStartOf="@+id/textViewCreateProfileDescription"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextBio">
+
+
+                        <TextView
+                            android:id="@+id/textViewGenderHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gender:"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textSize="@dimen/_15ssp"
+                            app:layout_constraintEnd_toEndOf="@id/mTiUser"
+                            app:layout_constraintStart_toStartOf="@+id/mTvCreateProfileHeading"
+                            app:layout_constraintTop_toBottomOf="@+id/mTiBirthDay">
+
+                        </TextView>
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/mSpinnerGenderCreate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:ems="10"
+                            android:entries="@array/Gender"
+                            android:popupBackground="@color/colorWhite"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:textColorHint="@color/colorBlackHintNewTheme">
+
+                        </androidx.appcompat.widget.AppCompatSpinner>
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/mETGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:textColor="@color/colorBlackHintNewTheme"
+                            android:visibility="invisible">
+
+                        </androidx.appcompat.widget.AppCompatEditText>
+
+                    </LinearLayout>
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                        android:id="@+id/clearTextViewAddProfilePicture"
+                        style="@style/buttonNewTheme"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:onClick="@{createProfileClick::onCreateProfileClick}"
+                        android:text="@string/add_profile_picture"
+                        android:textAllCaps="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTiGender" />
+
+                    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                            android:id="@+id/clearTextViewLogin2"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:text= "@string/add_profile_picture"
+                            android:visibility="gone"
+                            app:spinning_bar_color="@color/colorWhite"
+                            android:background="@drawable/cus_loading_btn"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/mTiGender" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

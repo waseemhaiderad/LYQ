@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_toolbar"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_back_new" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgLookingFor"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                app:layout_constraintEnd_toStartOf="@+id/mImgVisible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_status" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgVisible"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                app:layout_constraintEnd_toStartOf="@+id/mImgSetting"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_eye" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mImgSetting"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_setting" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/mViewBgTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:background="@drawable/bg_top_bar"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/mTopBar" />
+
+        <FrameLayout
+            android:id="@+id/main_frag"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorTransparaent"
+            app:layout_constraintBottom_toTopOf="@+id/viewOnBottom"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTopBar" />
+
+        <View
+            android:id="@+id/viewOnBottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:background="@color/colorWhiteNewTheme"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </View>
+
+        <!--    <View-->
+        <!--        android:id="@+id/mViewBgBottomBar"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="@dimen/_100sdp"-->
+        <!--        android:background="@drawable/bg_bottom_bar"-->
+        <!--        android:visibility="visible"-->
+        <!--        app:layout_constraintBottom_toTopOf="@+id/mBottomBar" />-->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mBottomBar"
+            style="@style/MyCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.MaterialComponents.Light"
+            android:visibility="gone"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mImgProfile"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@mipmap/profile_nc_black" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mImgContacts"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/mImgHome"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/mImgProfile"
+                    app:srcCompat="@mipmap/contact_nc_black" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mImgHome"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/mImgMessages"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/mImgContacts"
+                    app:srcCompat="@mipmap/map_nc_blue" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mImgMessages"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/mImgAlerts"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/mImgHome"
+                    app:srcCompat="@mipmap/chat_nc_black" />
+
+                <TextView
+                    android:id="@+id/textViewCount"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:background="@drawable/ic_textview_circle"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_8ssp"
+                    android:visibility="gone"
+                    app:layout_constraintCircle="@+id/mImgMessages"
+                    app:layout_constraintCircleAngle="45"
+                    app:layout_constraintCircleRadius="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/mImgMessages"
+                    app:layout_constraintTop_toTopOf="@+id/mImgMessages" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mImgAlerts"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:srcCompat="@mipmap/activity_nc_black" />
+
+                <TextView
+                    android:id="@+id/textViewActivityCount"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:background="@drawable/ic_textview_circle"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_8ssp"
+                    android:visibility="gone"
+                    app:layout_constraintCircle="@+id/mImgAlerts"
+                    app:layout_constraintCircleAngle="45"
+                    app:layout_constraintCircleRadius="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/mImgAlerts"
+                    app:layout_constraintTop_toTopOf="@+id/mImgAlerts" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/progressQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,208 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_top_bar_filter"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.filters.FragmentConversationFilter">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_back_new" />
+
+        <TextView
+            android:id="@+id/mTvClearAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_18sdp"
+            android:layout_marginRight="@dimen/_18sdp"
+            android:text="@string/reset"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageViewBack" />
+
+        <TextView
+            android:id="@+id/textViewSortByHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/sort_by"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_22ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewBack" />
+
+        <lnq.com.lnq.custom.views.ClearTextView
+            android:id="@+id/clearTextViewDistance"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_verification_white_btn"
+            android:gravity="center"
+            android:text="@string/most_recent"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@+id/textViewSortByHeading"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSortByHeading" />
+
+        <Button
+            android:id="@+id/mBtnRecentlyViewed"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_login_emailreset_btn"
+            android:text="@string/recently_viewed"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/clearTextViewDistance"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSortByHeading" />
+
+        <View
+            android:id="@+id/viewDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="@+id/mTvClearAll"
+            app:layout_constraintStart_toStartOf="@+id/textViewSortByHeading"
+            app:layout_constraintTop_toBottomOf="@+id/clearTextViewDistance" />
+
+        <TextView
+            android:id="@+id/textViewShowOnly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/show_only"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_22ssp"
+            app:layout_constraintStart_toStartOf="@+id/textViewSortByHeading"
+            app:layout_constraintTop_toBottomOf="@+id/viewDivider" />
+
+
+        <TextView
+            android:id="@+id/textViewFavorites"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/favorites"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxFavourites"
+            app:layout_constraintStart_toStartOf="@+id/textViewSortByHeading"
+            app:layout_constraintTop_toBottomOf="@+id/textViewShowOnly" />
+
+        <TextView
+            android:id="@+id/textViewVerifiedProfiles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/verified_profile"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxVerifiedProfile"
+            app:layout_constraintStart_toStartOf="@+id/textViewSortByHeading"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFavorites" />
+
+        <TextView
+            android:id="@+id/textViewPendingLnq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/pending_lnqs"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxPendingLNQs"
+            app:layout_constraintStart_toStartOf="@+id/textViewSortByHeading"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVerifiedProfiles" />
+
+        <TextView
+            android:id="@+id/textViewOutstandingTasks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/outstanding_tasks"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintEnd_toStartOf="@+id/checkBoxOutstandingTasks"
+            app:layout_constraintStart_toStartOf="@+id/textViewSortByHeading"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPendingLnq" />
+
+        <lnq.com.lnq.custom.views.ClearTextView
+            android:id="@+id/clearTextViewApply"
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_verification_white_btn"
+            android:gravity="center"
+            android:text="@string/apply"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxOutstandingTasks" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxFavourites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewFavorites"
+            app:layout_constraintEnd_toEndOf="@+id/mTvClearAll"
+            app:layout_constraintTop_toTopOf="@+id/textViewFavorites" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxVerifiedProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewVerifiedProfiles"
+            app:layout_constraintEnd_toEndOf="@+id/mTvClearAll"
+            app:layout_constraintTop_toTopOf="@+id/textViewVerifiedProfiles" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxPendingLNQs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewPendingLnq"
+            app:layout_constraintEnd_toEndOf="@+id/mTvClearAll"
+            app:layout_constraintTop_toTopOf="@+id/textViewPendingLnq" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBoxOutstandingTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewOutstandingTasks"
+            app:layout_constraintEnd_toEndOf="@+id/mTvClearAll"
+            app:layout_constraintTop_toTopOf="@+id/textViewOutstandingTasks" />
+
+        <View
+            android:id="@+id/viewCloseFilter"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_220sdp"
+            app:layout_constraintTop_toBottomOf="@id/clearTextViewApply">
+
+        </View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

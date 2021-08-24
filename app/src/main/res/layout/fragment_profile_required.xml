@@ -1,0 +1,80 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="lnq.com.lnq.fragments.registeration.createprofile.FragmentProfileRequired.ProfileRequiredClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.registeration.createprofile.FragmentProfileRequired">
+
+        <include
+            android:id="@+id/tobBar"
+            layout="@layout/cus_topbar_new_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewProfileRequiredDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:text="@string/profile_req_des"
+            android:textColor="@color/colorBlackNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tobBar" />
+
+        <TextView
+            android:id="@+id/textViewProfileRequiredDes2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/profile_req_des2"
+            android:textColor="@color/colorBlackNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="@id/textViewProfileRequiredDes"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProfileRequiredDes" />
+
+
+        <lnq.com.lnq.custom.views.ClearTextView
+            android:id="@+id/clearTextViewTakeSelfie"
+            style="@style/buttonNewTheme"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:onClick="@{clickHandler::onTakeSelfieClick}"
+            android:text="@string/take_a_selfie"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewProfileRequiredDes2" />
+
+        <Button
+            android:id="@+id/buttonUploadPhoto"
+            style="@style/buttonWhiteNewTheme"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:onClick="@{clickHandler::onUploadPhotoClick}"
+            android:text="@string/upload_a_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clearTextViewTakeSelfie" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

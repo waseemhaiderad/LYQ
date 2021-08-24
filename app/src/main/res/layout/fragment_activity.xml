@@ -1,0 +1,573 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="clickHandler"
+                type="lnq.com.lnq.fragments.activity.FragmentActivity.ActivityClickHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_map"
+            android:clickable="true"
+            android:focusable="true"
+            tools:context="lnq.com.lnq.fragments.activity.FragmentActivity">
+
+        <include
+                android:id="@+id/tobBar"
+                layout="@layout/cus_topbar_contacts_new_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <io.supercharge.shimmerlayout.ShimmerLayout
+                android:id="@+id/shimmerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_100sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tobBar"
+                app:shimmer_animation_duration="2000">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+                <include layout="@layout/cus_shimmer_chat" />
+
+            </LinearLayout>
+
+        </io.supercharge.shimmerlayout.ShimmerLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewActivity"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tobBar" />
+
+        <!--    <View-->
+        <!--        android:id="@+id/viewTopBar"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="@dimen/_140sdp"-->
+        <!--        android:background="@drawable/bg_top_bar_contacts"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--    <TextView-->
+        <!--        android:id="@+id/textViewActivityHeading"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginStart="@dimen/_20sdp"-->
+        <!--        android:layout_marginLeft="@dimen/_20sdp"-->
+        <!--        android:layout_marginTop="@dimen/_20sdp"-->
+        <!--        android:text="@string/activity"-->
+        <!--        android:textColor="@color/colorWhite"-->
+        <!--        android:textSize="@dimen/_22ssp"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--    <androidx.appcompat.widget.AppCompatAutoCompleteTextView-->
+        <!--        android:id="@+id/editTextSearch"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginTop="@dimen/_5sdp"-->
+        <!--        android:layout_marginEnd="@dimen/_40sdp"-->
+        <!--        android:layout_marginRight="@dimen/_40sdp"-->
+        <!--        android:layout_marginStart="@dimen/_17sdp"-->
+        <!--        android:layout_marginLeft="@dimen/_17sdp"-->
+        <!--        android:hint="@string/search"-->
+        <!--        android:imeOptions="actionSearch"-->
+        <!--        android:inputType="text"-->
+        <!--        android:paddingStart="@dimen/_50sdp"-->
+        <!--        android:paddingEnd="@dimen/_50sdp"-->
+        <!--        android:textColor="@color/colorWhite"-->
+        <!--        android:textColorHint="@color/colorWhite"-->
+        <!--        android:textSize="@dimen/_13ssp"-->
+        <!--        android:textStyle="bold"-->
+        <!--        app:backgroundTint="@color/colorWhite"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/textViewActivityHeading" />-->
+
+        <!--    <androidx.appcompat.widget.AppCompatImageView-->
+        <!--        android:id="@+id/imageViewQrCode"-->
+        <!--        android:layout_width="@dimen/_30sdp"-->
+        <!--        android:layout_height="@dimen/_30sdp"-->
+        <!--        android:onClick="@{clickHandler::onQrCodeClick}"-->
+        <!--        android:padding="@dimen/_5sdp"-->
+        <!--        android:layout_marginRight="@dimen/_10sdp"-->
+        <!--        android:layout_marginEnd="@dimen/_10sdp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--        app:srcCompat="@drawable/qr_user_icon" />-->
+
+        <!--    <androidx.appcompat.widget.AppCompatImageView-->
+        <!--        android:id="@+id/imageViewSearch"-->
+        <!--        android:layout_width="@dimen/_15sdp"-->
+        <!--        android:layout_height="@dimen/_15sdp"-->
+        <!--        android:layout_marginStart="@dimen/_30sdp"-->
+        <!--        android:layout_marginLeft="@dimen/_30sdp"-->
+        <!--        android:onClick="@{clickHandler::onSearchClick}"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--        app:layout_constraintStart_toStartOf="@+id/editTextSearch"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--        app:srcCompat="@drawable/icon_search" />-->
+
+        <!--    <androidx.appcompat.widget.AppCompatImageView-->
+        <!--        android:id="@+id/imageViewClose"-->
+        <!--        android:layout_width="@dimen/_12sdp"-->
+        <!--        android:layout_height="@dimen/_12sdp"-->
+        <!--        android:layout_marginEnd="@dimen/_5sdp"-->
+        <!--        android:layout_marginRight="@dimen/_5sdp"-->
+        <!--        android:onClick="@{clickHandler::onCloseClick}"-->
+        <!--        android:visibility="gone"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--        app:layout_constraintEnd_toEndOf="@+id/editTextSearch"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/editTextSearch"-->
+        <!--        app:srcCompat="@drawable/icon_close"-->
+        <!--        app:tint="@color/colorWhite" />-->
+
+        <!--    <Button-->
+        <!--        android:id="@+id/buttonFilter"-->
+        <!--        android:layout_width="@dimen/_20sdp"-->
+        <!--        android:layout_height="@dimen/_17sdp"-->
+        <!--        android:background="@drawable/filter_icon_new1"-->
+        <!--        android:gravity="center"-->
+        <!--        android:onClick="@{clickHandler::onFilterClick}"-->
+        <!--        android:visibility="visible"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--        app:layout_constraintStart_toStartOf="@+id/textViewActivityHeading"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/editTextSearch" />-->
+
+        <!--    <lnq.com.lnq.custom.views.ClearTextView-->
+        <!--        android:id="@+id/clearTextViewFilter"-->
+        <!--        android:layout_width="@dimen/_20sdp"-->
+        <!--        android:layout_height="@dimen/_17sdp"-->
+        <!--        android:gravity="center"-->
+        <!--        android:onClick="@{clickHandler::onFilterClick}"-->
+        <!--        android:background="@drawable/filter_icon_new1"-->
+        <!--        android:visibility="invisible"-->
+        <!--        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"-->
+        <!--        app:layout_constraintStart_toStartOf="@+id/textViewActivityHeading"-->
+        <!--        app:layout_constraintTop_toTopOf="@+id/editTextSearch" />-->
+
+        <HorizontalScrollView
+                android:id="@+id/horizontalScrollViewActivityFilters"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scrollbarSize="0dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/tobBar"
+                app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+            <LinearLayout
+                    android:id="@+id/linearLayoutActivityFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
+        <!--    <androidx.appcompat.widget.AppCompatImageView-->
+        <!--        android:id="@+id/progressBar"-->
+        <!--        android:background="@drawable/qloading"-->
+        <!--        android:layout_width="@dimen/_50sdp"-->
+        <!--        android:layout_height="@dimen/_50sdp"-->
+        <!--        android:visibility="invisible"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/slideView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_bottomsheet_corners"
+                android:elevation="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewBack"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_marginStart="@dimen/_14sdp"
+                    android:layout_marginLeft="@dimen/_14sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:tint="@color/colorBlackHintNewTheme"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mTvAccountHeading1"
+                    app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1"
+                    app:srcCompat="@drawable/back_arrow_thin" />
+
+            <TextView
+                    android:id="@+id/mTvAccountHeading1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_30sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:text="@string/back_to_activity"
+                    android:textColor="@color/colorBlackHintNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                    android:id="@+id/textViewClearAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:layout_marginRight="@dimen/_18sdp"
+                    android:text="@string/reset"
+                    android:textColor="@color/colorBlueDarkNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/mTvAccountHeading1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mTvAccountHeading1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/searchBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_17sdp"
+                    android:background="@drawable/bg_searchbargray_new_theme"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mTvAccountHeading1">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/editTextSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/search"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:paddingStart="@dimen/_45sdp"
+                        android:paddingEnd="@dimen/_45sdp"
+                        android:textColor="@color/colorGrayNewTheme"
+                        android:textColorHint="@color/colorGrayNewTheme"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/colorGrayLightNewTheme"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                        android:id="@+id/imageViewSearch"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:background="@color/colorGrayNewTheme"
+                        android:onClick="@{clickHandler::onSearchClick}"
+                        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                        app:layout_constraintStart_toEndOf="@+id/buttonFilter"
+                        app:layout_constraintTop_toTopOf="@+id/editTextSearch" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imageViewClose"
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:onClick="@{clickHandler::onCloseClick}"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                        app:layout_constraintEnd_toEndOf="@+id/editTextSearch"
+                        app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                        app:srcCompat="@drawable/icon_close"
+                        app:tint="@color/colorBlackHintNewTheme" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/buttonFilter"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:gravity="center"
+                        android:onClick="@{clickHandler::onFilterClick}"
+                        android:tint="@color/colorBlackHintNewTheme"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/editTextSearch"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/editTextSearch"
+                        app:srcCompat="@drawable/filter_icon_new1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/filtersRoot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="@+id/searchBarLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/searchBarLayout">
+
+                <TextView
+                        android:id="@+id/textViewSortBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/sort_by"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                        android:id="@+id/clearTextViewMostRecent"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/bg_verification_blue_btn"
+                        android:gravity="center"
+                        android:text="@string/most_recent"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewSortBy" />
+
+                <!--                <View-->
+                <!--                    android:id="@+id/viewDivider"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="1dp"-->
+                <!--                    android:layout_marginTop="@dimen/_15sdp"-->
+                <!--                    android:background="@color/colorBlackNewTheme"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="@+id/textViewSortBy"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/clearTextViewMostRecent" />-->
+
+                <TextView
+                        android:id="@+id/textViewShowOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/show_only"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                        app:layout_constraintTop_toBottomOf="@+id/clearTextViewMostRecent" />
+
+                <TextView
+                        android:id="@+id/textViewFavorites"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="@string/favorites"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBoxFavourites"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewShowOnly" />
+
+                <TextView
+                        android:id="@+id/textViewVerifiedProfiles"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/verified_profile"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBoxVerifiedProfile"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewFavorites" />
+
+                <TextView
+                        android:id="@+id/textViewPendingLnq"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/pending_lnqs"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBoxPendingLNQs"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewVerifiedProfiles" />
+
+                <TextView
+                        android:id="@+id/textViewOutstandingTasks"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/outstanding_tasks"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBoxOutstandingTasks"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewPendingLnq" />
+
+                <TextView
+                        android:id="@+id/textViewBlockedUsers"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/blocked_users"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/checkBoxBlockedUsers"
+                        app:layout_constraintStart_toStartOf="@+id/textViewSortBy"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewOutstandingTasks" />
+
+                <Button
+                        android:id="@+id/clearTextViewApply"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@mipmap/btn_blue_newtheme"
+                        android:gravity="center"
+                        android:text="@string/apply"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/checkBoxBlockedUsers" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkBoxFavourites"
+                        style="@style/CustomCheckbox02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewFavorites"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textViewFavorites" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkBoxVerifiedProfile"
+                        style="@style/CustomCheckbox02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewVerifiedProfiles"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textViewVerifiedProfiles" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkBoxPendingLNQs"
+                        style="@style/CustomCheckbox02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewPendingLnq"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textViewPendingLnq" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkBoxOutstandingTasks"
+                        style="@style/CustomCheckbox02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewOutstandingTasks"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textViewOutstandingTasks" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/checkBoxBlockedUsers"
+                        style="@style/CustomCheckbox02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/textViewBlockedUsers"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textViewBlockedUsers" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                    android:id="@+id/view2"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:background="@color/colorGrayNewTheme"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/filtersRoot">
+
+            </View>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+                android:id="@+id/viewScroll"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_50sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/tobBar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tobBar">
+
+        </View>
+
+        <View
+                android:id="@+id/viewHideTopBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/slideView">
+
+        </View>
+
+        <TextView
+                android:id="@+id/textViewNoActivityFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="@string/no_activity_found_yet"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_16ssp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tobBar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

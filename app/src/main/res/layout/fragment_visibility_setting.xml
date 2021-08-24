@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.setting.account.FragmentVisibilitySetting">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewBack"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginLeft="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:padding="@dimen/_2sdp"
+            android:tint="@color/colorBlackHintNewTheme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/mTvAccount1"
+            app:layout_constraintTop_toTopOf="@+id/mTvAccount1"
+            app:srcCompat="@drawable/back_arrow_thin" />
+
+        <TextView
+            android:id="@+id/mTvAccount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/back_to_account"
+            android:textColor="@color/colorBlackHintNewTheme"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:background="@mipmap/bg_map">
+
+            <ScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <TextView
+                        android:id="@+id/mTvVisibilitySettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/visibility_settings"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/mTvShowToSeePolicy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:text="Show to See Policy"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvVisibilitySettings" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgArrowShowToSeePolicy"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:tint="@color/colorBlackHintNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvShowToSeePolicy"
+                        app:layout_constraintStart_toEndOf="@+id/mTvShowToSeePolicy"
+                        app:layout_constraintTop_toTopOf="@+id/mTvShowToSeePolicy"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+                    <TextView
+                        android:id="@+id/mTvLoremOpen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:text="@string/lorem_ipsum"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_11ssp"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="@+id/mTvShowToSeePolicy"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvShowToSeePolicy" />
+
+                    <TextView
+                        android:id="@+id/mTvVisibilitySettingWork"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="How Visibility Settings Work"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLoremOpen" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgArrowVisibilitySettingWork"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:tint="@color/colorBlackHintNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvVisibilitySettingWork"
+                        app:layout_constraintStart_toEndOf="@+id/mTvVisibilitySettingWork"
+                        app:layout_constraintTop_toTopOf="@+id/mTvVisibilitySettingWork"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+                    <TextView
+                        android:id="@+id/mTvLoremOpen1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:text="@string/lorem_ipsum"
+                        android:textColor="@color/colorBlackHintNewTheme"
+                        android:textSize="@dimen/_11ssp"
+                        android:visibility="gone"
+                        app:layout_constraintLeft_toLeftOf="@+id/mTvVisibilitySettingWork"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvVisibilitySettingWork" />
+
+                    <TextView
+                        android:id="@+id/mTvCurrentVisibility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="Current Visibility Settings"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvLoremOpen1" />
+
+                    <TextView
+                        android:id="@+id/mTvExactCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exact City"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCurrentVisibility"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvCurrentVisibility" />
+
+                    <View
+                        android:id="@+id/mViewDivider"
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:background="@color/colorBlackSettingNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvExactCity"
+                        app:layout_constraintStart_toEndOf="@+id/mTvExactCity"
+                        app:layout_constraintTop_toTopOf="@+id/mTvExactCity" />
+
+                    <TextView
+                        android:id="@+id/mTvOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="On"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/mViewDivider"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvCurrentVisibility" />
+
+                    <Button
+                        android:id="@+id/mBtnUpdateVisibility"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/bg_blue_border_btn"
+                        android:text="Update Visibility"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvCurrentVisibility"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvExactCity" />
+
+                    <TextView
+                        android:id="@+id/mTvSetDefaultVisibility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="Set Default Visibility"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"
+                        app:layout_constraintTop_toBottomOf="@+id/mBtnUpdateVisibility" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgArrowSetDefaultVisibility"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:tint="@color/colorBlackHintNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvSetDefaultVisibility"
+                        app:layout_constraintStart_toEndOf="@+id/mTvSetDefaultVisibility"
+                        app:layout_constraintTop_toTopOf="@+id/mTvSetDefaultVisibility"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+                    <TextView
+                        android:id="@+id/mTvBlockingUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="Blocking a User"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvSetDefaultVisibility" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgArrowBlockingUser"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:tint="@color/colorBlackHintNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvBlockingUser"
+                        app:layout_constraintStart_toEndOf="@+id/mTvBlockingUser"
+                        app:layout_constraintTop_toTopOf="@+id/mTvBlockingUser"
+                        app:srcCompat="@drawable/icon_menu_right" />
+
+                    <TextView
+                        android:id="@+id/mTvSubmitFeedback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:text="Submit Feedback"
+                        android:textColor="@color/colorBlackSettingNewTheme"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvBlockingUser" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/mImgArrowYourProfile"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:tint="@color/colorBlackHintNewTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/mTvSubmitFeedback"
+                        app:layout_constraintStart_toEndOf="@+id/mTvSubmitFeedback"
+                        app:layout_constraintTop_toTopOf="@+id/mTvSubmitFeedback"
+                        app:srcCompat="@drawable/icon_arrow_right"
+                        app:tint="@color/picker_default_text_color" />
+
+
+                    <!--<android.support.v7.widget.AppCompatCheckBox-->
+                    <!--android:id="@+id/mCbOpen"-->
+                    <!--android:layout_width="@dimen/_20sdp"-->
+                    <!--android:layout_height="@dimen/_20sdp"-->
+                    <!--android:layout_marginStart="@dimen/_5sdp"-->
+                    <!--android:layout_marginLeft="@dimen/_5sdp"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:button="@drawable/custom_checkbox"-->
+                    <!--android:checked="true" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvOpen"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="@dimen/_10sdp"-->
+                    <!--android:layout_marginLeft="@dimen/_10sdp"-->
+                    <!--android:text="@string/open"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/_14sdp"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvVisibilitySettings" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvLoremOpen"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+                    <!--android:layout_marginRight="@dimen/_20sdp"-->
+                    <!--android:text="@string/lorem_ipsum"-->
+                    <!--android:textSize="@dimen/_12sdp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="@+id/mTvOpen"-->
+                    <!--app:layout_constraintRight_toRightOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvOpen" />-->
+
+                    <!--&lt;!&ndash;<android.support.v7.widget.AppCompatCheckBox&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:id="@+id/mCbNetWorking"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginTop="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:button="@drawable/custom_checkbox"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="@id/mCbOpen"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/mTvLoremOpen" />&ndash;&gt;-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvNetWorking"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/networking"-->
+                    <!--android:textColor="@color/colorAccent"-->
+                    <!--android:textSize="@dimen/_14sdp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/mTvOpen"-->
+                    <!--app:layout_constraintTop_toTopOf="@+id/mCbNetWorking" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvLoremNetWorking"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+                    <!--android:layout_marginRight="@dimen/_20sdp"-->
+                    <!--android:text="@string/lorem_ipsum"-->
+                    <!--android:textSize="@dimen/_12sdp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="@+id/mTvNetWorking"-->
+                    <!--app:layout_constraintRight_toRightOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvNetWorking" />-->
+
+                    <!--&lt;!&ndash;<android.support.v7.widget.AppCompatCheckBox&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:id="@+id/mCbGeneral"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginTop="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:button="@drawable/custom_checkbox"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="@id/mCbNetWorking"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/mTvLoremNetWorking" />&ndash;&gt;-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvGeneral"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/general"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/_14sdp"-->
+                    <!--app:layout_constraintStart_toStartOf="@id/mTvOpen"-->
+                    <!--app:layout_constraintTop_toTopOf="@+id/mCbGeneral" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvLoremGeneral"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+                    <!--android:layout_marginRight="@dimen/_20sdp"-->
+                    <!--android:text="@string/lorem_ipsum"-->
+                    <!--android:textSize="@dimen/_12sdp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="@+id/mTvGeneral"-->
+                    <!--app:layout_constraintRight_toRightOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvGeneral" />-->
+
+
+                    <!--&lt;!&ndash;<android.support.v7.widget.AppCompatCheckBox&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:id="@+id/mCbSelect"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginTop="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:button="@drawable/custom_checkbox"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="@id/mCbOpen"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/mTvLoremGeneral" />&ndash;&gt;-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvSelect"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/select"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/_14sdp"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/mTvOpen"-->
+                    <!--app:layout_constraintTop_toTopOf="@+id/mCbSelect" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvLoremSelect"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+                    <!--android:layout_marginRight="@dimen/_20sdp"-->
+                    <!--android:text="@string/lorem_ipsum"-->
+                    <!--android:textSize="@dimen/_12sdp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="@+id/mTvSelect"-->
+                    <!--app:layout_constraintRight_toRightOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvSelect" />-->
+
+                    <!--&lt;!&ndash;<android.support.v7.widget.AppCompatCheckBox&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:id="@+id/mCbStealth"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_width="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_height="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:layout_marginTop="@dimen/_20sdp"&ndash;&gt;-->
+                    <!--&lt;!&ndash;android:button="@drawable/custom_checkbox"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="@id/mCbOpen"&ndash;&gt;-->
+                    <!--&lt;!&ndash;app:layout_constraintTop_toBottomOf="@+id/mTvLoremSelect" />&ndash;&gt;-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvStealth"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/stealth"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/_14sdp"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/mTvOpen"-->
+                    <!--app:layout_constraintTop_toTopOf="@+id/mCbStealth" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvLoremStealth"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+                    <!--android:layout_marginRight="@dimen/_20sdp"-->
+                    <!--android:text="@string/lorem_ipsum"-->
+                    <!--android:textSize="@dimen/_12sdp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="@+id/mTvStealth"-->
+                    <!--app:layout_constraintRight_toRightOf="parent"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvStealth" />-->
+
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvGeneralHeading"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="@dimen/_25sdp"-->
+                    <!--android:text="@string/general"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/_16sdp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/mTvVisibilitySettings"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvLoremStealth" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvDefaultVisibility"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="@dimen/_10sdp"-->
+                    <!--android:layout_marginLeft="@dimen/_10sdp"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:text="@string/default_visibility"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/_14sdp"-->
+                    <!--app:layout_constraintLeft_toLeftOf="@+id/mTvGeneralHeading"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvGeneralHeading" />-->
+
+                    <!--<android.support.v7.widget.AppCompatImageView-->
+                    <!--android:id="@+id/mImgArrowDefaultVisibility"-->
+                    <!--android:layout_width="@dimen/_16sdp"-->
+                    <!--android:layout_height="@dimen/_16sdp"-->
+                    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+                    <!--android:layout_marginRight="@dimen/_20sdp"-->
+                    <!--app:layout_constraintBottom_toBottomOf="@+id/mTvDefaultVisibility"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintTop_toTopOf="@+id/mTvDefaultVisibility"-->
+                    <!--app:srcCompat="@drawable/icon_arrow_right" />-->
+
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/mTvVisibilityNotifications"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--android:layout_marginBottom="@dimen/_40sdp"-->
+                    <!--android:text="@string/visibility_notification"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/_14sdp"-->
+                    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/mTvDefaultVisibility"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/mTvDefaultVisibility" />-->
+
+                    <!--<android.support.v7.widget.AppCompatImageView-->
+                    <!--android:id="@+id/mImgArrowVisibilityNotifications"-->
+                    <!--android:layout_width="@dimen/_16sdp"-->
+                    <!--android:layout_height="@dimen/_16sdp"-->
+                    <!--android:layout_marginEnd="@dimen/_20sdp"-->
+                    <!--android:layout_marginRight="@dimen/_20sdp"-->
+                    <!--app:layout_constraintBottom_toBottomOf="@+id/mTvVisibilityNotifications"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintTop_toTopOf="@+id/mTvVisibilityNotifications"-->
+                    <!--app:srcCompat="@drawable/icon_arrow_right" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

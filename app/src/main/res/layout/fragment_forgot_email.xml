@@ -1,0 +1,441 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="lnq.com.lnq.fragments.registeration.forgotemail.FragmentForgotEmail.ForgotEmailClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.registeration.forgotemail.FragmentForgotEmail">
+
+        <include
+            android:id="@+id/tobBar"
+            layout="@layout/cus_topbar_new_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mRoot1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:onClick="@{clickListener::onRootClick}"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+            <ImageView
+                android:id="@+id/imageViewLnqLogo1"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:contentDescription="@string/lnq_logo"
+                android:src="@mipmap/new_logo2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewTroubleLogin1"
+                style="@style/textViewTitleDetailsNewTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:text="@string/trouble_logging_in"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo1" />
+
+            <TextView
+                android:id="@+id/textViewEnterEmail1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:text="@string/forgot_email_des"
+                android:textColor="@color/colorBlueNewTheme"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTroubleLogin1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutFirstName1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEnterEmail1">
+
+                <EditText
+                    android:id="@+id/editTextFirstName1"
+                    style="@style/editTextNewTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name_signup"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutLastName1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:theme="@style/TextInputLayoutAppearanceBlack"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName1"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName1"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFirstName1">
+
+                <EditText
+                    android:id="@+id/editTextLastName1"
+                    style="@style/editTextNewTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/last_name_signup"
+                    android:inputType="textEmailAddress"
+                    tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.hbb20.CountryCodePicker
+                    android:id="@+id/countryCodePicker1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_autoFormatNumber="true"
+                    app:ccp_contentColor="@color/colorBlackNewTheme"
+                    app:ccp_defaultPhoneCode="1"
+                    app:ccp_showArrow="false"
+                    app:ccp_showFlag="true"
+                    app:ccp_showFullName="false"
+                    app:ccp_showNameCode="false"
+                    app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintEnd_toStartOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName1"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayoutPhone1" />
+
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:background="@color/colorBlackNewTheme"
+                    app:layout_constraintBottom_toBottomOf="@+id/countryCodePicker1"
+                    app:layout_constraintEnd_toEndOf="@+id/countryCodePicker1"
+                    app:layout_constraintStart_toStartOf="@+id/countryCodePicker1" />
+
+            <TextView
+                    android:id="@+id/textViewCode1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:text="+1"
+                    android:textColor="@color/colorBlackNewTheme"
+                    android:textSize="@dimen/_14ssp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintEnd_toStartOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayoutPhone1"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayoutPhone1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPhone1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:theme="@style/TextInputLayoutAppearanceBlack"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName1"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName1"
+                    app:layout_constraintStart_toEndOf="@+id/countryCodePicker1">
+
+                <EditText
+                        android:id="@+id/editTextPhone1"
+                        style="@style/editTextNewTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/enter_phone_number"
+                        android:inputType="phone"
+                        tools:ignore="Autofill" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/textInputLayoutPhone1"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/_2sdp"-->
+<!--                android:theme="@style/TextInputLayoutAppearanceBlack"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName1"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName1"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName1">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editTextPhone1"-->
+<!--                    style="@style/editTextNewTheme"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="@string/phone_number_signup"-->
+<!--                    android:inputType="phone"-->
+<!--                    tools:ignore="Autofill" />-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <lnq.com.lnq.custom.views.ClearTextView
+                android:id="@+id/clearTextViewSendEmail1"
+                style="@style/buttonNewTheme"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{clickListener::onSendEmailClick}"
+                android:text="@string/send_email"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhone1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mRoot"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:onClick="@{clickListener::onRootClick}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tobBar">
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewLnqLogo"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginTop="@dimen/_31sdp"
+                        android:contentDescription="@string/lnq_logo"
+                        android:src="@mipmap/new_logo2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewTroubleLogin"
+                        style="@style/textViewTitleDetailsNewTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/trouble_logging_in"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageViewLnqLogo" />
+
+                    <TextView
+                        android:id="@+id/textViewEnterEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:gravity="center"
+                        android:text="@string/forgot_email_des"
+                        android:textColor="@color/colorBlueNewTheme"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewTroubleLogin" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_30sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewEnterEmail">
+
+                        <EditText
+                            android:id="@+id/editTextFirstName"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/first_name_signup"
+                            android:inputType="textEmailAddress"
+                            tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayoutLastName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:theme="@style/TextInputLayoutAppearanceBlack"
+                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName"
+                        app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFirstName">
+
+                        <EditText
+                            android:id="@+id/editTextLastName"
+                            style="@style/editTextNewTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/last_name_signup"
+                            android:inputType="textEmailAddress"
+                            tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.hbb20.CountryCodePicker
+                            android:id="@+id/countryCodePicker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            app:ccp_autoDetectCountry="true"
+                            app:ccp_autoFormatNumber="true"
+                            app:ccp_contentColor="@color/colorBlackNewTheme"
+                            app:ccp_defaultPhoneCode="1"
+                            app:ccp_showArrow="false"
+                            app:ccp_showFlag="true"
+                            app:ccp_showFullName="false"
+                            app:ccp_showNameCode="false"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayouPhone"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayouPhone"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayouPhone" />
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:background="@color/colorBlackNewTheme"
+                            app:layout_constraintBottom_toBottomOf="@+id/countryCodePicker"
+                            app:layout_constraintEnd_toEndOf="@+id/countryCodePicker"
+                            app:layout_constraintStart_toStartOf="@+id/countryCodePicker" />
+
+                    <TextView
+                            android:id="@+id/textViewCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:layout_marginLeft="@dimen/_3sdp"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:text="+1"
+                            android:textColor="@color/colorBlackNewTheme"
+                            android:textSize="@dimen/_14ssp"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@+id/textInputLayouPhone"
+                            app:layout_constraintEnd_toStartOf="@+id/textInputLayouPhone"
+                            app:layout_constraintStart_toStartOf="@+id/textInputLayouPhone"
+                            app:layout_constraintTop_toTopOf="@+id/textInputLayouPhone" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/textInputLayouPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:theme="@style/TextInputLayoutAppearanceBlack"
+                            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName"
+                            app:layout_constraintStart_toEndOf="@+id/countryCodePicker">
+
+                        <EditText
+                                android:id="@+id/editTextPhone"
+                                style="@style/editTextNewTheme"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/enter_phone_number"
+                                android:inputType="phone"
+                                tools:ignore="Autofill" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--                    <com.google.android.material.textfield.TextInputLayout-->
+<!--                        android:id="@+id/textInputLayoutPhone"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/_10sdp"-->
+<!--                        android:theme="@style/TextInputLayoutAppearanceBlack"-->
+<!--                        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutFirstName"-->
+<!--                        app:layout_constraintStart_toStartOf="@+id/textInputLayoutFirstName"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName">-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/editTextPhone"-->
+<!--                            style="@style/editTextNewTheme"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:hint="@string/phone_number_signup"-->
+<!--                            android:inputType="phone"-->
+<!--                            tools:ignore="Autofill" />-->
+
+<!--                    </com.google.android.material.textfield.TextInputLayout>-->
+
+                    <lnq.com.lnq.custom.views.ClearTextView
+                        android:id="@+id/clearTextViewSendEmail"
+                        style="@style/buttonNewTheme"
+                        android:layout_width="@dimen/_200sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:onClick="@{clickListener::onSendEmailClick}"
+                        android:text="@string/send_email"
+                        android:textAllCaps="false"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textInputLayouPhone" />
+
+                    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+                            android:id="@+id/clearTextViewSendEmail2"
+                            android:layout_width="@dimen/_200sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:text= "@string/send_email"
+                            android:visibility="gone"
+                            app:spinning_bar_color="@color/colorWhite"
+                            android:background="@drawable/cus_loading_btn"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPhone" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

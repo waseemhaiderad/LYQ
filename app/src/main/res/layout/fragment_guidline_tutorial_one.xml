@@ -1,0 +1,68 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteNewTheme"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context="lnq.com.lnq.fragments.onboardtutorials.guidlines.FragmentGuidlineTutorialOne">
+
+        <ImageView
+            android:id="@+id/imageViewTutorialOne"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_320sdp"
+            android:contentDescription="@string/tutorial_image"
+            android:scaleType="fitXY"
+            android:src="@mipmap/guidlines1_new"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewTutorialOneHeading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="Welcome to the\nLNQ Community"
+            android:textColor="@color/colorBlack"
+            android:singleLine="false"
+            style="@style/textViewTitleNewTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewTutorialOne" />
+
+        <TextView
+            android:id="@+id/mTvTutorialOneDes1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:text="@string/guidline_des"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textViewTutorialOneHeading"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTutorialOneHeading" />
+
+        <lnq.com.lnq.custom.views.ClearTextView
+            android:id="@+id/mBtnOk1"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="@string/apply"
+            style="@style/buttonNewTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTvTutorialOneDes1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
